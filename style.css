@@ -40,6 +40,7 @@ html, html a {
 #content {
     position: absolute;
     width: 800px;
+    height: 100%;
     left: 50%;
     margin-left: -400px;
 }
@@ -57,6 +58,7 @@ html, html a {
 
 #main {
     position: absolute;
+    width: 610px;
     margin-left: 190px;
     margin-top: 70px;
     padding-bottom: 100px;
@@ -79,7 +81,7 @@ html, html a {
 #headings {
     position: fixed;
     width: 150px;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 #headings a {
@@ -139,7 +141,8 @@ pre {
 pre code.language-c {
     display: block;
     width: 620px;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y:hidden;
     font-size: 11px;
     color: var(--darker);
     line-height: 1;
