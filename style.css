@@ -1,0 +1,146 @@
+:root {
+    --white:    rgba(255,255,255,1);
+    --black:    rgb(30,30,30);
+    --lightish: rgba(255,255,255,0.9);
+    --dark:     rgb(60, 60, 60);
+    --darker:   rgba(0,0,0,0.4);
+}
+
+/*theme*/
+
+html {
+    background-color: var(--white);
+    color: var(--dark);
+}
+html, html a {
+    color: var(--dark);
+}
+*::selection {
+    background: var(--dark);
+    color: var(--white);
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--black);
+    }
+    html, html a {
+        color: var(--light);
+    }
+    *::selection {
+        background: var(--light);
+        color: var(--dark);
+    }
+}
+*/
+
+/*general layout*/
+
+#content {
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    margin-left: -400px;
+}
+
+#banner {
+    margin-top: 50px;
+}
+
+#sidebar {
+    position: absolute;
+    width: 150px;
+    text-align: right;
+    margin-top: 125px;
+}
+
+#main {
+    position: absolute;
+    margin-left: 190px;
+    margin-top: 70px;
+    padding-bottom: 100px;
+}
+
+/* banner */
+
+#banner a {
+    position: absolute;
+    left: 0px;
+    font-size: 30px;
+}
+
+#banner a:hover {
+    text-decoration: none;
+}
+
+/* sidebar */
+
+#headings {
+    position: fixed;
+    width: 150px;
+    margin-top: 100px;
+}
+
+#headings a {
+    font-weight: normal;
+}
+
+#sidebar a {
+    font-weight: normal;
+}
+
+#sidebar.home a.home {
+    font-weight: bold;
+}
+
+#sidebar.contact a.contact {
+    font-weight: bold;
+}
+
+/* text */
+
+html {
+    font-family: courier, monospace;
+    font-weight: lighter;
+    line-height: 1.4;
+    /*text-align: justify;
+    text-justify: inter-word; */
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+/* other */
+
+hr {
+    border: none;
+    text-align: center;
+}
+hr:before {
+    content:" * * * ";
+}
+
+pre {
+    width: 620px;
+}
+
+pre code.language-c {
+    display: block;
+    width: 620px;
+    overflow: scroll;
+    font-size: 11px;
+    color: var(--darker);
+    line-height: 1;
+}

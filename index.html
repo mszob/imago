@@ -1,35 +1,391 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>imago mundi</title>
-    <meta name="generator" content="VuePress 1.8.2">
-    <link rel="shortcut icon" href="/images/favicon.svg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&amp;display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="href=&quot;https://fonts.gstatic.com">
-    <link rel="preconnect" href="script.ttf">
-    <meta name="description" content="imago_mundi">
-    <meta name="theme-color" content="#3eaf7c">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<html lang="en">
+
+<head>
+    <title>Imago Mundi</title>
+    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+
+<body>
+
+<div id="content">
+
+    <div id="banner">
+        <a href="index.html">Imago Mundi</a>
+    </div>
+
+    <div id="sidebar" class="home">
+        <div id="pages">
+            <p><a href="index.html" class="home">Home</a></p>
+            <p><a href="digital.html">Digital Writing</a></p>
+            <p><a href="analog.html">Analog Writing</a></p>
+        </div>
+        <div id="headings">
+            <p><a href="#hi">Hi :)</a></p>
+            <p><a href="#mt3-susuwatari">MT3 Susuwatari</a></p>
+            <p><a href="#keymapc">Keymap.c</a></p>
+        </div>
+    </div>
+
+    <div id="main">
+        <h1 id="hi"><a class="anchor" href="#hi"></a>Hi :)</h1>
+        <p>Tinkering with writing tools tends to be the focus around here. 
+           Writing tools can be both physical writing instruments as well as writing systems. 
+           Inks, scripts, mechanical keyboard switches... I like it all.</p>
+        
+        <p>I've got two main projects I tend to spend most of my time on:</p>
+        <p>I like to think of my Planck keyboard as an exercise in creatively combining vintage keyboard design and engineering 
+            with modern custom keyboard hardware and software.
+            The goal is that these come together as the perfect writing tool tailored both to the shape of my mind and the mechanics of my fingers.</p>
+        <p>I like to think of my script as a playful exploration into the frustrating tension between handwriting ergonomics, visual appeal, and rationale.
+            As with the keyboard, the goal is that these come together as a practical and enjoyable writing experience that results in a beautiful and legible text.
+        </p>        
+        <p>Below I like to put excerpts from various project logs, ones I've picked because I think they're interesting.</p>
+        <h1 id="mt3-susuwatari"><a class="anchor" href="#mt3-susuwatari"></a>MT3 Susuwatari</h1>
+        <p>The MT3 keycap profile is a modern cap which draws heavy inspiration from a family of much-loved vintage IBM terminal keyboards. The design was a community effort headed up by <a href="https://matt3o.com/about-mt3-profile-and-devtty-set/">Matt3o</a> in 2015.</p>
+        <p>Helpful MT3 features</p>
+        <ul>
+        <li>Sculpted profile, meaning each row's height and angle is unique and determined by its distance and interaction with your fingers — this is a fairly common feature</li>
+        <li>Spherical tops, meaning the caps mold to your fingertips through a slightly concave spherical top, as opposed to the far more common flat or cylindrical tops</li>
+        <li>Some sets, such as Susuwatari, are thick double-shot, meaning the keycap legends are molded rather than printed, making them crisp, vivid, and durable in an unrivaled way</li>
+        <li>The relatively tall caps contribute to a pleasant sound profile</li>
+        </ul>
+        <p>Anyone can eavesdrop on the lengthy desine brainstorms, production frustrations, surges of excitement, and empassioned deabtes that accompanied the creation of the MT3 profile on the <a href="https://deskthority.net/viewtopic.php?f=7&amp;t=10805">Deskthority forum</a> over the course of several years. It's a fun rabbit hole to fall into. Mad props to Matt3o for managing the strong-willed, strong-charactered keyboard enthusiasts that were both a huge help and a chaotic factor in this project!</p>
+        <p>The deskthority debates also birthed my favorite — although perhaps not the most accurate or astute — description of the Helvetica font, which on user had the misfortune to suggest for the keycap legends:</p>
+        <blockquote>
+        <p>There is no “whimsy” in Helvetica. It’s more like an orderly little jail in which the letters are a series of identical looking prisoners in tiny cells crying into their meagre rations, keeping their heads down so the warden doesn’t come beat them again.</p>
+        </blockquote>
+        <h1 id="keymapc"><a class="anchor" href="#keymapc"></a>Keymap.c</h1>
+            <p>The Planck is programmed according to my keylayout design using the QMK firmware. Below is the C file that is compiled and flashed onto the Planck's microcontroller usique the QMK Firmware.</p>
+            <pre><code class="language-c">
+#include QMK_KEYBOARD_H
+#include &quot;quantum.h&quot;
+
+enum {
+    QMKBEST = SAFE_RANGE,
+};
+
+enum {
+    SINGLE_TAP = 1,
+    SINGLE_HOLD,
+    DOUBLE_TAP,
+    DOUBLE_HOLD,
+    DOUBLE_SINGLE_TAP,
+    TRIPLE_TAP,
+    TRIPLE_HOLD
+};
+
+enum {
+    SH,
+    SP,
+    QU,
+    CM
+};
+
+typedef struct {
+    bool is_press_action;
+    uint8_t state;
+} tap;
+
+uint8_t cur_dance(qk_tap_dance_state_t *state);
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+/* 1 Base layer
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |  '   |  ,   |  .   |  p   |  y   || VOL+ | VOL- ||  f   |  g   |  c   |  r   |  l   |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |  a   |  o   |  e   |  u   |  i   || BRI+ | BRI- ||  d   |  h   |  t   |  n   |  s   | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |  ;   |  q   |  j   |  k   |  x   || MREC | MREP ||  b   |  m   |  w   |  v   |  z   |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * | BSP  |  (   |  !   |  -   |  SFT ||  TAB |     SPC      |  =   |  ?   |  )   |  ENT |
+ * `----------------------------------'`------'--------------'---------------------------'
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      | ESC  ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * | SFT  | CTL  | OPT  | CMD  |      ||      |      ||      | CMD  | OPT  | CTL  | SFT  |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |  L4  |  L2  ||      |              |  L4  |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ */
+            
+[1] = LAYOUT_ortho_4x12(
+KC_QUOT, 		KC_COMM, 	    KC_DOT, 		KC_P, 	            TD(QU), 	    /**/KC__VOLDOWN,KC__VOLUP,/**/  KC_F, 		  KC_G, 	        KC_C, 		       KC_R, 	            KC_L,
+
+LSFT_T(KC_A),   CTL_T(KC_O), 	OPT_T(KC_E),	CMD_T(KC_U), 	    KC_I, 		    /**/KC_BRID,    KC_BRIU,  /**/  KC_D, 	      CMD_T(KC_H), 	    OPT_T(KC_T), 	   CTL_T(KC_N),	        RSFT_T(KC_S), 
+
+KC_SCLN, 	    KC_Q, 			KC_J, 			KC_K, 	            KC_X, 		    /**/DM_REC1,    DM_PLY1,  /**/  KC_B, 		  KC_M, 	        KC_W, 		       KC_V, 			    KC_Z,
+
+KC_BSPC, 	    LSFT(KC_9),    LSFT(KC_1),     LT(4, KC_MINS),      TD(SH),         /**/KC_TAB,    TD(SP),   /**/  TD(SP),       LT(5, KC_EQL),    LSFT(KC_SLSH),     LSFT(KC_0),          KC_ENT),
+
+/*  2 Navigation
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * | &lt;&lt;&gt;&gt; |  &lt;&lt;  |   ▲  |  &gt;&gt;  |  &lt;-  ||      |      ||      |  7   |  8   |  9   |  *   |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |   ◀︎  |   ▼  |   ▶︎  | CLP  ||      |      ||      |  4   |  5   |  6   |  -   | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |  SS3 |  SS3 |  SS4 |  SS4 |  -&gt;  ||      |      ||  1   |  2   |  3   |  +   |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * | ENT  |      |      |      | **** ||      |    CMD_SP    |  BSP |  0   |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * | SFT  | CTL  | OPT  | CMD  |      ||      |      ||      | CMD  | OPT  | CTL  | SFT  |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      | **** ||      |              |      |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ */
+
+[2] = LAYOUT_ortho_4x12(
+A(KC_UP),       A(KC_LEFT),     KC_UP,          A(KC_RIGHT),    LGUI(KC_RBRC),  /**/_______,        _______,/**/    KC_COMM,        KC_7,           KC_8, 		    KC_9, 		    KC_PAST,
+
+SFT_T(KC_NO),   CTL_T(KC_LEFT), OPT_T(KC_DOWN), CMD_T(KC_RIGHT),LCAG(KC_V), 	/**/_______,        _______,/**/    _______, 		CMD_T(KC_4),    OPT_T(KC_5),    CTL_T(KC_6),    RSFT(KC_PMNS),
+
+SCMD(KC_3),     LCAG(KC_3),     SCMD(KC_4),     LCAG(KC_4),     LGUI(KC_LBRC), 	/**/_______,        _______,/**/    _______, 	    KC_1,  	        KC_2, 		    KC_3, 		    KC_PPLS,
+
+KC_ENT,         _______,        _______,        _______,        _______,		/**/LGUI(KC_SPC),   LGUI(KC_SPC),   LGUI(KC_SPC), 	KC_BSPC,  	    KC_0, 		    _______, 		KC_ENT),
+
+/*  3 Commands
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |   1  |   2  |   3  |   4  |   5  ||  L5  |      ||   6  |   7  |   8  |   9  |   0  |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      |      ||      |     ****     |      |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * | SFT  | CTL  | OPT  |      |      ||      |      ||      |      | OPT  | CTL  | SFT  |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      |      ||      |     ****     |      |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ */
+
+[3] = LAYOUT_ortho_4x12(
+KC_1, 	        KC_2, 	        KC_3, 		    KC_4, 		    KC_5, 		    /**/LT(5, KC_NO),   KC_NO,  /**/    KC_6, 		    KC_7, 			KC_8, 		    KC_9, 		    KC_0,
+
+SFT_T(KC_NO),   CTL_T(KC_NO),   OPT_T(KC_NO),	_______,        _______,        /**/_______,        _______,/**/    _______, 	    OPT_T(KC_NO),	CTL_T(KC_NO),   SFT_T(KC_NO),   _______, 
     
-    <link rel="preload" href="/assets/css/0.styles.91f4ee23.css" as="style"><link rel="preload" href="/assets/js/app.ae3c42d8.js" as="script"><link rel="preload" href="/assets/js/2.4a530985.js" as="script"><link rel="preload" href="/assets/js/10.473657fc.js" as="script"><link rel="prefetch" href="/assets/js/11.f24bad60.js"><link rel="prefetch" href="/assets/js/12.aff71c16.js"><link rel="prefetch" href="/assets/js/13.a9d4c7bc.js"><link rel="prefetch" href="/assets/js/14.5e8fd77c.js"><link rel="prefetch" href="/assets/js/15.b6da1766.js"><link rel="prefetch" href="/assets/js/16.5143364a.js"><link rel="prefetch" href="/assets/js/17.8affcb9b.js"><link rel="prefetch" href="/assets/js/18.ae4933d3.js"><link rel="prefetch" href="/assets/js/3.a69bff96.js"><link rel="prefetch" href="/assets/js/4.54317f72.js"><link rel="prefetch" href="/assets/js/5.187d9d25.js"><link rel="prefetch" href="/assets/js/6.a8e9dfde.js"><link rel="prefetch" href="/assets/js/7.0d948b14.js"><link rel="prefetch" href="/assets/js/8.7ade18ae.js"><link rel="prefetch" href="/assets/js/9.156c5d29.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.91f4ee23.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar homePage"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" aria-current="page" class="home-link router-link-exact-active router-link-active"><img src="/images/logo4.svg" alt="imago mundi" class="logo"> <span class="site-name can-hide">imago mundi</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/writing/" class="nav-link">
-  writing tools
-</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/writing/" class="nav-link">
-  writing tools
-</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="active sidebar-link">Home</a></li></ul> </aside> <main aria-labelledby="main-title" class="home"><header class="hero"><!----> <h1 id="main-title">
-      imago mundi
-    </h1> <p class="description">
-      imago_mundi
-    </p> <!----></header> <!----> <div class="theme-default-content custom content__default"><div class="VertCenter"><img src="images/logo4.svg" class="HomeLogo center"></div></div> <!----></main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.ae3c42d8.js" defer></script><script src="/assets/js/2.4a530985.js" defer></script><script src="/assets/js/10.473657fc.js" defer></script>
-  </body>
+_______,        _______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,         _______,        _______,
+
+CTL_T(KC_SPC), 	_______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,         _______,        _______),
+
+/*  4 Mouse and Keypad
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |  7   |  8   |  9   |  *   ||      |      ||      |  ∆   |  ^   |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |  .   |  4   |  5   |  6   |  -   ||      |      ||  ○   |  &lt;   |  v   |  &gt;   |  ●   | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |  ,   |  1   |  2   |  3   |  +   ||      |      ||      |  ∇   |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |  0   |  .   | **** |      ||      |      ○       | **** |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      |      ||      |      ||      |  ∆   |  ^   |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * | SFT  | CTL  | OPT  | CMD  |      ||      |      ||  ○   |  &lt;   |  v   |  &gt;   |  ●   |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |  ∇   |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      |      ||      |      ○       | **** |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ */
+
+[4] = LAYOUT_ortho_4x12(
+KC_NO, 	        KC_7, 		    KC_8, 		    KC_9, 		    KC_PAST, 	    /**/_______,        _______,/**/    _______, 		KC_WH_D, 	    KC_MS_U, 	    _______, 		_______,
+
+SFT_T(KC_DOT), 	CTL_T(KC_4), 	OPT_T(KC_5), 	CMD_T(KC_6),    KC_PMNS, 	    /**/_______,        _______,/**/    KC_BTN1, 	    KC_MS_L, 	    KC_MS_D, 	    KC_MS_R, 	    KC_BTN2,
+
+KC_COMM, 	    KC_1, 		    KC_2, 		    KC_3, 		    KC_PPLS,  	    /**/_______,        _______,/**/    _______,        KC_WH_U, 	    _______, 		_______, 		_______,
+
+_______,        _______,        KC_0,           KC_DOT,         KC_SPC,         /**/_______,        _______,/**/    KC_BTN1,        _______,        _______,        _______,        _______),
+
+/*  Commands
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      |      || **** | RSET ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      |      ||      |              |      |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ * ,----------------------------------.,-------------.,----------------------------------.
+ * |      |      |      |      |      || **** |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      | 
+ * |------+------+------+------+------||------+------||------+------+------+------+------|
+ * |      |      |      |      |      ||      |      ||      |      |      |      |      |
+ * |------+------+------+------+------||------+------''------.------+------+------+------|
+ * |      |      |      |      |      ||      |              |      |      |      |      |
+ * `----------------------------------'`------'--------------'---------------------------'
+ */
+
+[5] = LAYOUT_ortho_4x12(
+_______,        _______,        _______,        _______,        _______,        /**/_______,        RESET,  /**/    _______,        _______,        _______,        _______,        _______,
+
+_______,        _______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,        _______,        _______,
+
+_______,        _______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,        _______,        _______,
+
+_______,        _______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,        _______,        _______),
+};
+
+// custom tapping terms
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(3,KC_BSPC):
+            return TAPPING_TERM + 100;
+        case TD(SP):
+            return 110;
+        case TD(SH):
+            return 110;
+        case TD(QU):
+            return 110;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+// tap dance scenarios
+
+uint8_t cur_dance(qk_tap_dance_state_t *state) {
+    if (state-&gt;count == 1) {
+        if (state-&gt;interrupted || !state-&gt;pressed) return SINGLE_TAP;
+        else return SINGLE_HOLD;
+    } else if (state-&gt;count == 2) {
+        if (state-&gt;interrupted) return DOUBLE_SINGLE_TAP;
+        else if (state-&gt;pressed) return DOUBLE_HOLD;
+        else return DOUBLE_TAP;
+    }
+    if (state-&gt;count == 3) {
+        if (state-&gt;interrupted || !state-&gt;pressed) return TRIPLE_TAP;
+        else return TRIPLE_HOLD;
+    } else return 8;
+}
+
+// tap instances
+
+static tap SHtap_state = {
+    .is_press_action = true,
+    .state = 0
+};
+
+static tap SPtap_state = {
+    .is_press_action = true,
+    .state = 0
+};
+
+static tap QUtap_state = {
+    .is_press_action = true,
+    .state = 0
+};
+
+static tap CMtap_state = {
+    .is_press_action = true,
+    .state = 0
+};
+
+// SF;L2
+
+void SH_finished(qk_tap_dance_state_t *state, void *user_data) {
+    SHtap_state.state = cur_dance(state);
+    switch (SHtap_state.state) {
+        case SINGLE_TAP: set_oneshot_mods(MOD_BIT(KC_LSFT)); break;
+        case SINGLE_HOLD: layer_on(2); break;
+    }
+}
+
+void SH_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (SHtap_state.state) {
+        case SINGLE_HOLD: layer_off(2); break;
+    }
+    SHtap_state.state = 0;
+}
+
+// SH;L3
+
+void SP_finished(qk_tap_dance_state_t *state, void *user_data) {
+    SPtap_state.state = cur_dance(state);
+    switch (SPtap_state.state) {
+        case SINGLE_TAP: register_code(KC_SPC); break;
+        case SINGLE_HOLD: layer_on(3); register_code(KC_LCMD); break;
+        case DOUBLE_TAP: register_code(KC_0); break;
+    }
+}
+
+void SP_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (SPtap_state.state) {
+        case SINGLE_TAP: unregister_code(KC_SPC); break;
+        case SINGLE_HOLD: layer_off(3); unregister_code(KC_LCMD); break;
+        case DOUBLE_TAP: unregister_code(KC_0); break;
+    }
+    SPtap_state.state = 0;
+}
+
+// y;esc
+
+void QU_finished(qk_tap_dance_state_t *state, void *user_data) {
+    QUtap_state.state = cur_dance(state);
+    switch (QUtap_state.state) {
+        case SINGLE_TAP: register_code(KC_Y); break;
+        case SINGLE_HOLD: register_code(KC_ESC); break;
+    }
+}
+
+void QU_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (QUtap_state.state) {
+        case SINGLE_TAP: unregister_code(KC_Y); break;
+        case SINGLE_HOLD: unregister_code(KC_ESC); break;
+    }
+    QUtap_state.state = 0;
+}
+
+// comm;tab
+
+void CM_finished(qk_tap_dance_state_t *state, void *user_data) {
+    QUtap_state.state = cur_dance(state);
+    switch (QUtap_state.state) {
+        case SINGLE_TAP: register_code(KC_COMM); break;
+        case SINGLE_HOLD: register_code(KC_TAB); break;
+    }
+}
+
+void CM_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (QUtap_state.state) {
+        case SINGLE_TAP: unregister_code(KC_COMM); break;
+        case SINGLE_HOLD: unregister_code(KC_TAB); break;
+    }
+    CMtap_state.state = 0;
+}
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [SH] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, SH_finished, SH_reset),
+    [SP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, SP_finished, SP_reset),
+    [QU] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, QU_finished, QU_reset),
+    [CM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, CM_finished, CM_reset),
+};
+
+const uint8_t RGBLED_RAINBOW_SWIRL_INTERVALS[] PROGMEM = {20, 20, 20};
+            </code></pre>
+
+    </div>
+
+</div>
+
+</body>
+
 </html>

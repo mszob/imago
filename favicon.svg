@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<svg width="50" height="50" viewBox="-5 -5 70 70" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    rect {
+      fill: rgb(60,60,60);
+      stroke: rgba(0,0,0,0);
+      stroke-width: 5px;
+    }
+    @media (prefers-color-scheme: dark) {
+      rect {
+        fill: rgb(255,255,255);
+        border: 50px solid red;
+      }
+    }
+  </style>
+  <rect width="50" height="50" rx="6"/>
+</svg>
