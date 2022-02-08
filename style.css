@@ -90,6 +90,9 @@
 h1 {
     font-size: 18px;
 }
+pre code {
+    font-size: 11px;
+}
 
 html, button {
     font-family: courier, monospace;
@@ -126,6 +129,9 @@ h1 {
     }
     h1 {
         font-size: 28px;
+    }
+    pre code {
+        font-size: 11px;
     }
 }
 
