@@ -112,7 +112,7 @@ h1 {
 /*mobile*/
 
 @media only screen and (max-device-width: 700px) {
-    * {
+    *, #sidebar, #headings, #theme-toggle {
         font-size: 20px;
     }
     #sidebar {
