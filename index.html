@@ -5,11 +5,15 @@
     <title>Imago Mundi</title>
     <link rel="shortcut icon" href="favicon.svg">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link id="theme" rel="stylesheet" type="text/css" media="screen" href="light.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
 
 <div id="content">
+
+    <button id="theme-toggle">Toggle Theme</button>
 
     <div id="banner">
         <a href="index.html">Imago Mundi</a>
@@ -27,6 +31,11 @@
             <p><a href="#keymapc">Keymap.c</a></p>
         </div>
     </div>
+
+<!--
+--------------------------------------------------------------------------------------------------------------
+-->
+
     <div id="main">
         <h1 id="hi"><a class="anchor" href="#hi"></a>Hi :)</h1>
         <p>Tinkering with writing tools tends to be the focus around here. 
@@ -242,144 +251,8 @@ _______,        _______,        _______,        _______,        _______,        
 _______,        _______,        _______,        _______,        _______,        /**/_______,        _______,/**/    _______,        _______,        _______,        _______,        _______),
 };
 
-// custom tapping terms
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(3,KC_BSPC):
-            return TAPPING_TERM + 100;
-        case TD(SP):
-            return 110;
-        case TD(SH):
-            return 110;
-        case TD(QU):
-            return 110;
-        default:
-            return TAPPING_TERM;
-    }
-}
-
-// tap dance scenarios
-
-uint8_t cur_dance(qk_tap_dance_state_t *state) {
-    if (state-&gt;count == 1) {
-        if (state-&gt;interrupted || !state-&gt;pressed) return SINGLE_TAP;
-        else return SINGLE_HOLD;
-    } else if (state-&gt;count == 2) {
-        if (state-&gt;interrupted) return DOUBLE_SINGLE_TAP;
-        else if (state-&gt;pressed) return DOUBLE_HOLD;
-        else return DOUBLE_TAP;
-    }
-    if (state-&gt;count == 3) {
-        if (state-&gt;interrupted || !state-&gt;pressed) return TRIPLE_TAP;
-        else return TRIPLE_HOLD;
-    } else return 8;
-}
-
-// tap instances
-
-static tap SHtap_state = {
-    .is_press_action = true,
-    .state = 0
-};
-
-static tap SPtap_state = {
-    .is_press_action = true,
-    .state = 0
-};
-
-static tap QUtap_state = {
-    .is_press_action = true,
-    .state = 0
-};
-
-static tap CMtap_state = {
-    .is_press_action = true,
-    .state = 0
-};
-
-// SF;L2
-
-void SH_finished(qk_tap_dance_state_t *state, void *user_data) {
-    SHtap_state.state = cur_dance(state);
-    switch (SHtap_state.state) {
-        case SINGLE_TAP: set_oneshot_mods(MOD_BIT(KC_LSFT)); break;
-        case SINGLE_HOLD: layer_on(2); break;
-    }
-}
-
-void SH_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (SHtap_state.state) {
-        case SINGLE_HOLD: layer_off(2); break;
-    }
-    SHtap_state.state = 0;
-}
-
-// SH;L3
-
-void SP_finished(qk_tap_dance_state_t *state, void *user_data) {
-    SPtap_state.state = cur_dance(state);
-    switch (SPtap_state.state) {
-        case SINGLE_TAP: register_code(KC_SPC); break;
-        case SINGLE_HOLD: layer_on(3); register_code(KC_LCMD); break;
-        case DOUBLE_TAP: register_code(KC_0); break;
-    }
-}
-
-void SP_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (SPtap_state.state) {
-        case SINGLE_TAP: unregister_code(KC_SPC); break;
-        case SINGLE_HOLD: layer_off(3); unregister_code(KC_LCMD); break;
-        case DOUBLE_TAP: unregister_code(KC_0); break;
-    }
-    SPtap_state.state = 0;
-}
-
-// y;esc
-
-void QU_finished(qk_tap_dance_state_t *state, void *user_data) {
-    QUtap_state.state = cur_dance(state);
-    switch (QUtap_state.state) {
-        case SINGLE_TAP: register_code(KC_Y); break;
-        case SINGLE_HOLD: register_code(KC_ESC); break;
-    }
-}
-
-void QU_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (QUtap_state.state) {
-        case SINGLE_TAP: unregister_code(KC_Y); break;
-        case SINGLE_HOLD: unregister_code(KC_ESC); break;
-    }
-    QUtap_state.state = 0;
-}
-
-// comm;tab
-
-void CM_finished(qk_tap_dance_state_t *state, void *user_data) {
-    QUtap_state.state = cur_dance(state);
-    switch (QUtap_state.state) {
-        case SINGLE_TAP: register_code(KC_COMM); break;
-        case SINGLE_HOLD: register_code(KC_TAB); break;
-    }
-}
-
-void CM_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (QUtap_state.state) {
-        case SINGLE_TAP: unregister_code(KC_COMM); break;
-        case SINGLE_HOLD: unregister_code(KC_TAB); break;
-    }
-    CMtap_state.state = 0;
-}
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-    [SH] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, SH_finished, SH_reset),
-    [SP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, SP_finished, SP_reset),
-    [QU] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, QU_finished, QU_reset),
-    [CM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, CM_finished, CM_reset),
-};
-
-const uint8_t RGBLED_RAINBOW_SWIRL_INTERVALS[] PROGMEM = {20, 20, 20};
-            </code></pre>
+        </code></pre>
 
     </div>
 

@@ -1,0 +1,26 @@
+:root {
+    --white:    rgba(255,255,255,1);
+    --black:    rgb(30,30,30);
+    --lightish: rgba(255,255,255,0.9);
+    --dark:     rgb(60, 60, 60);
+    --darker:   rgba(0,0,0,0.4);
+    --lighter:  rgba(255,255,255,0.5);
+    --trans:    rgba(0,0,0,0);
+}
+
+/*theme*/
+
+html {
+    background-color: var(--black);
+    color: var(--dark);
+}
+html, html a, button {
+    color: var(--lightish);
+}
+pre code {
+    color: var(--lighter);
+}
+*::selection {
+    background: var(--lightish);
+    color: var(--dark);
+}
