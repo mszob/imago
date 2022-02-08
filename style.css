@@ -126,6 +126,23 @@ h1 {
     margin-top: 30px;
 }
 
+/* other element types */
+
+hr {
+    border: none;
+    text-align: center;
+}
+hr:before {
+    content:" * * * ";
+}
+
+pre code.language-c {
+    display: block;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    line-height: 1;
+}
+
 /*mobile*/
 
 @media only screen and (max-device-width: 700px) {
@@ -144,21 +161,4 @@ h1 {
     pre code {
         font-size: 11px;
     }
-}
-
-/* other */
-
-hr {
-    border: none;
-    text-align: center;
-}
-hr:before {
-    content:" * * * ";
-}
-
-pre code.language-c {
-    display: block;
-    overflow-x: scroll;
-    overflow-y:hidden;
-    line-height: 1;
 }
