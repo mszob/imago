@@ -20,9 +20,12 @@
 
 #sidebar {
     position: absolute;
+    margin-top: 125px;
+}
+
+#sidebar, #headings {
     width: 150px;
     text-align: right;
-    margin-top: 125px;
 }
 
 #main {
