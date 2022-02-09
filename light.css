@@ -7,8 +7,8 @@ html {
 html, html a, button {
     color: var(--dark);
 }
-pre code {
-    color: var(--darker);
+pre, code, pre code {
+    color: var(--faded);
 }
 *::selection {
     background: var(--dark);

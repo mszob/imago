@@ -5,10 +5,10 @@ html {
     color: var(--dark);
 }
 html, html a, button {
-    color: var(--lightish);
+    color: var(--light);
 }
-pre code {
-    color: var(--lighter);
+pre, code, pre code {
+    color: var(--faded);
 }
 *::selection {
     background: var(--light);

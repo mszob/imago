@@ -1,11 +1,10 @@
 :root {
     --white:    rgba(255,255,255,1);
-    --black:    rgb(30,30,30);
-    --lightish: rgba(255,255,255,0.9);
     --light:    rgb(230,230,230);
+    --faded:    rgb(150,150,150);
     --dark:     rgb(60, 60, 60);
-    --darker:   rgba(0,0,0,0.4);
-    --lighter:  rgba(255,255,255,0.5);
+    --black:    rgb(30,30,30);
+
     --trans:    rgba(0,0,0,0);
 }
 
@@ -24,9 +23,7 @@
 }
 
 #theme-toggle {
-    position: absolute;
-    margin-top: 65px;
-    right: 0;
+    margin-top: 71px;
 }
 
 #sidebar {
@@ -46,7 +43,7 @@
     padding-bottom: 100px;
 }
 
-#main, pre, pre code.language-c {
+#main, pre, pre code {
     width: 610px;
 }
 
@@ -101,6 +98,9 @@
 h1 {
     font-size: 18px;
 }
+pre {
+    line-height: 1.5;
+}
 pre code {
     font-size: 11px;
 }
@@ -136,7 +136,7 @@ hr:before {
     content:" * * * ";
 }
 
-pre code.language-c {
+pre code {
     display: block;
     overflow-x: scroll;
     overflow-y:hidden;
