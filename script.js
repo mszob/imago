@@ -34,7 +34,7 @@ $(document).ready(function() {
                 current = $(icon).appendTo('head');
             }
         }
-        match.addListener(swap);
+        match.addEventListener('change', swap);
         swap();
     });
 });
