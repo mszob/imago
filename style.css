@@ -8,6 +8,11 @@
     --trans:    rgba(0,0,0,0);
 }
 
+@font-face { 
+font-family: "Myfont"; 
+src: url("Myfont.ttf")format("ttf");
+}
+
 /*general layout*/
 
 #content {
@@ -22,13 +27,9 @@
     margin-top: 50px;
 }
 
-#theme-toggle {
-    margin-top: 71px;
-}
-
 #sidebar {
     position: absolute;
-    margin-top: 125px;
+    margin-top: 70px;
 }
 
 #sidebar, #headings {
@@ -45,6 +46,10 @@
 
 #main, pre, pre code {
     width: 610px;
+}
+
+.invis {
+    visibility: hidden;
 }
 
 /* banner */
@@ -82,7 +87,7 @@
     font-weight: normal;
 }
 
-#sidebar.home a.home {
+#sidebar a.active {
     font-weight: bold;
 }
 
@@ -97,6 +102,9 @@
 }
 h1 {
     font-size: 18px;
+}
+h2 {
+    margin: 16px 0px 16px 0px;
 }
 pre {
     line-height: 1.5;
@@ -141,6 +149,33 @@ pre code {
     overflow-x: scroll;
     overflow-y:hidden;
     line-height: 1;
+}
+
+/* special classes */
+
+.theta {
+    font-family: menlo, sans-serif;
+}
+.s {
+    font-family: "Myfont", monospace;
+}
+
+/* tables */
+
+table {
+    margin: 25px 0px 25px 0px;
+}
+thead tr th {
+    border-bottom: 1px dashed var(--black);
+}
+h1#alphabet ~ table td {
+    width: 100px;
+}
+
+th {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
 /*mobile*/
