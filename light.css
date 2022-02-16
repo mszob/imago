@@ -14,3 +14,6 @@ pre, code, pre code {
     background: var(--dark);
     color: var(--white);
 }
+thead tr th {
+    border-color: var(--black);
+}
