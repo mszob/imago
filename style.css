@@ -1,7 +1,7 @@
 :root {
     --white:    rgba(255,255,255,1);
     --light:    rgb(230,230,230);
-    --faded:    rgb(150,150,150);
+    --faded:    rgb(170,170,170);
     --dark:     rgb(60, 60, 60);
     --black:    rgb(30,30,30);
 
@@ -118,6 +118,11 @@
 
 /* text */
 
+html, button, pre, pre code {
+    font-family: courier new, monospace;
+    line-height: 1.4;
+}
+
 * {
     font-size: 16px;
 }
@@ -132,14 +137,6 @@ pre {
 }
 pre code {
     font-size: 11px;
-}
-
-html, button {
-    font-family: courier, monospace;
-    font-weight: lighter;
-    line-height: 1.4;
-    /*text-align: justify;
-    text-justify: inter-word; */
 }
 
 a {
@@ -169,7 +166,10 @@ pre code {
     display: block;
     overflow-x: scroll;
     overflow-y:hidden;
-    line-height: 1;
+}
+
+pre, pre code {
+    line-height: 1.2;
 }
 
 /* special classes */
@@ -180,6 +180,10 @@ pre code {
 .s {
     font-family: "Hello", monospace;
     font-size: 1.2em;
+}
+
+.single+pre code {
+    line-height: 1;
 }
 
 /* tables */
