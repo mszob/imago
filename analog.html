@@ -45,67 +45,99 @@
     </h1>
 
 <!--
-There are three families of consonants based on where they are pronounced in the mouth. 
-Each family is represented with a general letter design.
+The script tries to be a bit more phonetically coherent that typical English spelling.
+
+Below are the 26 consonant sounds that I use to write English.
+The idea was that the chart can be filled out and extended for different languages.
+
+<pre>
+FRONT -----------.   MIDDLE -----------.   BACK -------------.
+|                |   |                 |   |                 |
+|  P --.         |   |  T -----------. |   |  R --.          |
+|  | P |         |   |  | T | Θ | Tʃ | |   |  | R |          |
+|  | B |         |   |  | D | Ð | DƷ | |   |  `---'          |
+|  `---'         |   |  `------------' |   |  Ŋ --.          |
+|  M ------.     |   |  S-------.      |   |  | Ŋ |          |
+|  | M | W |     |   |  | S | ʃ |      |   |  `---'          |
+|  `-------'     |   |  | Z | Ʒ |      |   |  K -----------. |
+|  F --.         |   |  `-------'      |   |  | K |   | KS | |
+|  | F |         |   |  L --.          |   |  | G |   | GZ | |
+|  | V |         |   |  | L |          |   |  `------------' |
+|  `---'         |   |  `---'          |   |  Y --.          |
+|                |   |  N --.          |   |  | Y |          |
+`----------------'   |  | N |          |   |  `---'          |
+                     |  `---'          |   |  H --.          |
+                     |                 |   |  | H |          |
+                     `-----------------'   |  `---'          |
+                                           |                 |
+                                           `-----------------'
+</pre>
+
+The chart uses five symbols for sounds which don't have their own letters in the english alphabet:
+- Θ: **th**anks
+- Ð: **th**us
+- ʃ: **sh**irt
+- Ʒ: vi**s**ion
+- Ŋ: stro**ng**
+
+The compound sounds are pretty straightforward:
+- Tʃ: **ch**air
+- DƷ: **j**am
+- KS: ta**x**
+- GZ: e**x**am
+
+There are three families of consonants based on how they are pronounced:
 - Front: pronounced with the lips
 - Middle: pronounced with teeth and soft palate
 - Back: pronounced with hard palate and throat
 
 In each family, there are a few parent sounds. 
-Each parent sound represents a distinct glyph.
+Each parent sound can have multiple sounds in its family:
+- Column 1: contains the parent letter itself and the vocalized version of the parent letter, if there is one.
+- Column 2: contains letters which are close in pronunciation to the parent letter and placed within its family.
+  They also are categorized as silent (top), and vocal (bottom).
+- Column 3: contains double sounds, the first of which is the parent letter or its vocal variant.
+  They also are categorized as silent (top), and vocal (bottom).
 
-Finally, each parent letter can have several derived letters
-- silent: this is the parent letter itself
-- vocal: this is a vocalized version of the parent letter
-- related: these are letters which are close enough in pronunciation to the parent letter that they have been grouped with it.
-- compound: this is technically two separate sounds, the first of which is the parent letter or its vocal variant
--->
+## Consonants
 
-<p>There are three families of consonants based on where they are pronounced in the mouth.
-    Each family is represented with a general letter design.</p>
-    <ul>
-    <li>Front: pronounced with the lips</li>
-    <li>Middle: pronounced with teeth and soft palate</li>
-    <li>Back: pronounced with hard palate and throat</li>
-    </ul>
-    <p>In each family, there are a few parent sounds.
-    Each parent sound represents a distinct glyph.</p>
-    <p>Finally, each parent letter can have several derived letters</p>
-    <ul>
-    <li>silent: this is the parent letter itself</li>
-    <li>vocal: this is a vocalized version of the parent letter</li>
-    <li>related: these are letters which are close enough in pronunciation to the parent letter that they have been grouped with it.</li>
-    <li>compound: this is technically two separate sounds, the first of which is the parent letter or its vocal variant</li>
-    </ul>    
+In the script, the above details about a sound's pronunciation are inherent in how its letter is drawn.
+For example, letters with the same parent all have the same base glyph.
+These base glyphs are modified with a vocal mark for vocal sounds, a compound mark for compound sounds, and so on.
 
-<pre>
+Front letters face right with a stem to their left:
 
-FRONT -----------.   MIDDLE -----------.   BACK ------------.
-|                |   |                 |   |                |
-|  P---.         |   |  T------------. |   |  R---.         |
-|  | P |         |   |  | T | Θ | Tʃ | |   |  | R |         |
-|  | B |         |   |  | D | Ð | DƷ | |   |  `---'         |
-|  `---'         |   |  `------------' |   |  Ŋ---.         |
-|  M-------.     |   |  S-------.      |   |  | Ŋ |         |
-|  | M | W |     |   |  | S | ʃ |      |   |  `---'         |
-|  `-------'     |   |  | Z | Ʒ |      |   |  K--------.    |
-|  F---.         |   |  `-------'      |   |  | K | KS |    |
-|  | F |         |   |  L---.          |   |  | G | GZ |    |
-|  | V |         |   |  | L |          |   |  `--------'    |
-|  `---'         |   |  `---'          |   |  Y---.         |
-|                |   |  N---.          |   |  | Y |         |
-`----------------'   |  | N |          |   |  `---'         |
-                     |  `---'          |   |  H---.         |
-                     |                 |   |  | H |         |
-LEGEND:              `-----------------'   |  `---'         |
-                                           |                |
-parent letter ----------------------.      `----------------'
-| silent | related s. | compound s. |
-| vocal  | related v. | compound v. |
-`-----------------------------------'
-</pre>
+<div class="code"></div>
 
-<!--
+| Parent |   | Vocal | Rel | Rel V. | Com. | Com. V. |
+| ------ | - | ----- | --- | ------ | ---- | ------- |
+| P      | p | b     |     |        |      |         |
+| M      | m |       | w   |        |      |         |
+| F      | f | v     |     |        |      |         |
+
+Middle letters face left with a stem to their right. The stems in the S-family are... invisible.
+
+<div class="code"></div>
+
+| Parent |   | Vocal | Rel | Rel V. | Com. | Com. V. |
+| ------ | - | ----- | --- | ------ | ---- | ------- |
+| T      | t | d     | u   | a      | e    | i       |
+| S      | s | z     | o   | j      |      |         |
+| L      | l |       |     |        |      |         |
+| N      | n |       |     |        |      |         |
+
+Back letters don't have stems:
+
+<div class="code"></div>
+
+| Parent |   | Vocal | Rel | Rel V. | Com. | Com. V. |
+| ------ | - | ----- | --- | ------ | ---- | ------- |
+| R      | r |       |     |        |      |         |
+| Ŋ      | q |       |     |        |      |         |
+| K      | k | g     |     |        | x    | c       |
+| Y      | y |       |     |        |      |         |
+| H      | h |       |     |        |      |         |
+
 Example:
 - The T sound is a parent letter with its own glyph, <span class="s">t</span>. 
   It is pronounced like the T in english, with the tongue placed on the hard palate
@@ -113,110 +145,326 @@ Example:
 - The TH sound as in "thanks" (Θ) is very similar to a T sound. 
   It is represented with a T letter with a related mark, <span class="s">u</span>.
     - A vocalized Θ sound becomes a Ð sound as in "this." 
-      It is represented with a T letter with a related mark and a vocal mark, <span class="s">i</span>.
+      It is represented with a T letter with a related mark and a vocal mark, <span class="s">a</span>.
 - The Tʃ sound as in "chair" is in reality two sound, the first of which is a T sound. 
-  It is represented by a T letter with a compound mark, <span class="s">?</span>.
+  It is represented by a T letter with a compound mark, <span class="s">e</span>.
     - A vocalized Tʃ sound becomes a DƷ sound, as in "juice." 
-      It is represented with a T letter with a compound mark and a vocal mark, <span class="s">?</span>.
+      It is represented with a T letter with a compound mark and a vocal mark (which here looks like a dot), <span class="s">i</span>.
 
+# Vowels
+
+| vowel | short | long | -r   | diphthong | other |
+| ----- | ----- | ---- | ---- | --------- | ----- |
+| A     | tan   | cake | bark |           | aha   |
+| E     | pen   | feet |      |           |       |
+| I     | nib   | ride |      | oil       |       |
+| O     | hop   | rope | fork | owl       | raw   |
+| U     | mud   | muse |      | loud      |       |
+| OO    | room  |      |      |           | took  |
+
+The `aw` sound, as in `bark` is often categorized as  an a-vowel variant. However, since it is close to an O sound, and since the a already has a variant — the a-sound in `aha!` — I have categorized it as an o-variant.
+
+Not all vowel sounds are included. For example, the diphtong `ey` as in `rain` is not included. This diphtong is so similar in prononciation to the sounds `short e` + `y`  and also to the sound `long a` that it is spelled like these.
 -->
+<p>The script tries to be a bit more phonetically coherent that typical English spelling.</p>
+<p>Below are the 26 consonant sounds that I use to write English.
+The idea was that the chart can be filled out and extended for different languages.</p>
+<pre>
+FRONT -----------.   MIDDLE -----------.   BACK -------------.
+|                |   |                 |   |                 |
+|  P --.         |   |  T -----------. |   |  R --.          |
+|  | P |         |   |  | T | Θ | Tʃ | |   |  | R |          |
+|  | B |         |   |  | D | Ð | DƷ | |   |  `---'          |
+|  `---'         |   |  `------------' |   |  Ŋ --.          |
+|  M ------.     |   |  S-------.      |   |  | Ŋ |          |
+|  | M | W |     |   |  | S | ʃ |      |   |  `---'          |
+|  `-------'     |   |  | Z | Ʒ |      |   |  K -----------. |
+|  F --.         |   |  `-------'      |   |  | K |   | KS | |
+|  | F |         |   |  L --.          |   |  | G |   | GZ | |
+|  | V |         |   |  | L |          |   |  `------------' |
+|  `---'         |   |  `---'          |   |  Y --.          |
+|                |   |  N --.          |   |  | Y |          |
+`----------------'   |  | N |          |   |  `---'          |
+                     |  `---'          |   |  H --.          |
+                     |                 |   |  | H |          |
+                     `-----------------'   |  `---'          |
+                                           |                 |
+                                           `-----------------'
+</pre>
 
-<p>Example</p>
+<p>The chart uses five symbols for sounds which don&#39;t have their own letters in the english alphabet:</p>
 <ul>
-<li>The T sound is a parent letter with its own glyph, <span class="s">t</span>.
-It is pronounced like the T in english, with the tongue placed on the hard palate.
+<li>Θ: <strong>th</strong>anks</li>
+<li>Ð: <strong>th</strong>us</li>
+<li>ʃ: <strong>sh</strong>irt</li>
+<li>Ʒ: vi<strong>s</strong>ion</li>
+<li>Ŋ: stro<strong>ng</strong></li>
+</ul>
+<p>The compound sounds are pretty straightforward:</p>
 <ul>
+<li>Tʃ: <strong>ch</strong>air</li>
+<li>DƷ: <strong>j</strong>am</li>
+<li>KS: ta<strong>x</strong></li>
+<li>GZ: e<strong>x</strong>am</li>
+</ul>
+<p>There are three families of consonants based on how they are pronounced:</p>
+<ul>
+<li>Front: pronounced with the lips</li>
+<li>Middle: pronounced with teeth and soft palate</li>
+<li>Back: pronounced with hard palate and throat</li>
+</ul>
+<p>In each family, there are a few parent sounds. 
+Each parent sound can have multiple sounds in its family:</p>
+<ul>
+<li>Column 1: contains the parent letter itself and the vocalized version of the parent letter, if there is one.</li>
+<li>Column 2: contains letters which are close in pronunciation to the parent letter and placed within its family.
+They also are categorized as silent (top), and vocal (bottom).</li>
+<li>Column 3: contains double sounds, the first of which is the parent letter or its vocal variant.
+They also are categorized as silent (top), and vocal (bottom).</li>
+</ul>
+<h2 id="consonants">Consonants</h2>
+<p>In the script, the above details about a sound&#39;s pronunciation are inherent in how its letter is drawn.
+For example, letters with the same parent all have the same base glyph.
+These base glyphs are modified with a vocal mark for vocal sounds, a compound mark for compound sounds, and so on.</p>
+<p>Front letters face right with a stem to their left:</p>
+<div class="code"></div>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th></th>
+<th>Vocal</th>
+<th>Rel</th>
+<th>Rel V.</th>
+<th>Com.</th>
+<th>Com. V.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P</td>
+<td>p</td>
+<td>b</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>m</td>
+<td></td>
+<td>w</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>F</td>
+<td>f</td>
+<td>v</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Middle letters face left with a stem to their right. The stems in the S-family are... invisible.</p>
+<div class="code"></div>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th></th>
+<th>Vocal</th>
+<th>Rel</th>
+<th>Rel V.</th>
+<th>Com.</th>
+<th>Com. V.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T</td>
+<td>t</td>
+<td>d</td>
+<td>u</td>
+<td>a</td>
+<td>e</td>
+<td>i</td>
+</tr>
+<tr>
+<td>S</td>
+<td>s</td>
+<td>z</td>
+<td>o</td>
+<td>j</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>L</td>
+<td>l</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>N</td>
+<td>n</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Back letters don&#39;t have stems:</p>
+<div class="code"></div>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th></th>
+<th>Vocal</th>
+<th>Rel</th>
+<th>Rel V.</th>
+<th>Com.</th>
+<th>Com. V.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R</td>
+<td>r</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ŋ</td>
+<td>q</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>K</td>
+<td>k</td>
+<td>g</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>c</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>y</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>H</td>
+<td>h</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Example:</p>
+<ul>
+<li>The T sound is a parent letter with its own glyph, <span class="s">t</span>. 
+It is pronounced like the T in english, with the tongue placed on the hard palate<ul>
 <li>A vocalized T sound becomes a D sound. The D sound is represented with the T letter with a vocal mark, <span class="s">d</span>.</li>
 </ul>
 </li>
-<li>The TH sound as in &quot;thissle&quot; (Θ) is very similar to a T sound. It is represented with a T letter with a related mark, <span class="s">u</span>.
-<ul>
-<li>A vocalized Θ sound becomes a Ð sound as in &quot;this.&quot; It is represented with a T letter with a related mark and a vocal mark, <span class="s">i</span>.</li>
+<li>The TH sound as in &quot;thanks&quot; (Θ) is very similar to a T sound. 
+It is represented with a T letter with a related mark, <span class="s">u</span>.<ul>
+<li>A vocalized Θ sound becomes a Ð sound as in &quot;this.&quot; 
+It is represented with a T letter with a related mark and a vocal mark, <span class="s">a</span>.</li>
 </ul>
 </li>
-<li>The Tʃ sound as in &quot;chair&quot; is in reality two sound, the first of which is a T sound.
-It is represented by a T letter with a compound mark
-<ul>
-<li>A vocalized Tʃ sound becomes a DƷ sound, as in &quot;juice.&quot; It is represented with a T letter with a compound mark and a vocal mark</li>
+<li>The Tʃ sound as in &quot;chair&quot; is in reality two sound, the first of which is a T sound. 
+It is represented by a T letter with a compound mark, <span class="s">e</span>.<ul>
+<li>A vocalized Tʃ sound becomes a DƷ sound, as in &quot;juice.&quot; 
+It is represented with a T letter with a compound mark and a vocal mark (which here looks like a dot), <span class="s">i</span>.</li>
 </ul>
 </li>
 </ul>
-
-    <h2 id="consonants">
-    <a class="anchor" href="#consonants"></a>consonants
-    </h2>
-    <p>lips</p>
-    <table>
-    <thead>
-    <tr><th>vocal</th><th>silent</th><th>group</th><th>symbol</th></tr>
-    </thead>
-    <tbody>
-    <tr><td>B</td><td>P</td><td>1</td><td><span class="s">p</span></td></tr>
-    <tr><td>M</td><td> </td><td>&quot;</td><td><span class="s">m</span></td></tr>
-    <tr><td>W</td><td> </td><td>2</td><td><span class="s">m</span></td></tr>
-    <tr><td>V</td><td>F</td><td>3</td><td><span class="s">f</span></td></tr>
-    </tbody>
-    </table>
-    <p>teeth and hard palate</p>
-    <table>
-    <thead>
-    <tr><th>vocal</th><th>silent</th><th>group</th><th>symbol</th></tr>
-    </thead>
-    <tbody>
-    <tr><td>Ð</td><td><span class="theta">Θ</span></td><td>4</td><td><span class="s">t</span></td></tr>
-    <tr><td>D</td><td>T</td><td>5</td><td><span class="s">t</span></td></tr>
-    <tr><td>Z</td><td>S</td><td>&quot;</td><td><span class="s">s</span></td></tr>
-    <tr><td>L</td><td> </td><td>&quot;</td><td><span class="s">l</span></td></tr>
-    <tr><td>N</td><td> </td><td>&quot;</td><td><span class="s">n</span></td></tr>
-    <tr><td>J</td><td>ʃ</td><td>6</td><td><span class="s">s</span></td></tr>
-    </tbody>
-    </table>
-    <p>soft palate, throat</p>
-    <table>
-    <thead>
-    <tr><th>vocal</th><th>silent</th><th>group</th><th>symbol</th></tr>
-    </thead>
-    <tbody>
-    <tr><td>R</td><td> </td><td>7</td><td><span class="s">r</span></td></tr>
-    <tr><td>Ŋ</td><td> </td><td>8</td><td><span class="s">k</span></td></tr>
-    <tr><td>G</td><td>K</td><td>&quot;</td><td><span class="s">c</span></td></tr>
-    <tr><td>Y</td><td> </td><td>&quot;</td><td><span class="s">r</span></td></tr>
-    <tr><td> </td><td>H</td><td>9</td><td><span class="s">h</span></td></tr>
-    </tbody>
-    </table>
-    <p>The sound <code>sh</code> as in <code>shoe</code> is spelled with a single character, <code>ʃ</code>.</p>
-    <ul>
-    <li>it makes more phoetic sense</li>
-    <li>it is more compact
-    However, the sound <code>ch</code> as in <code>chase</code> is spelled <code>Tʃ</code> rather than with a single character. The sound <code>nk</code> is also spelled with two characters,  <code>ŊK</code>.</li>
-    <li>this also makes phonetic sense, since <code>ch</code> and <code>nk</code> are really made up each of two sounds, <code>t+sh</code> and <code>ng+k</code>.</li>
-    <li>while this is not more compact, it is not less compact either.</li>
-    </ul>
-    <p>Sometimes a less compact orthography might make more phonetic sense — as opposed to an orthography which is more compact or as compact, see above. For example, the letter <code>x</code> could be broken down into its composing sounds with two letters, such as <code>k+s</code> for <code>axis</code> or <code>gz</code> for <code>exact</code>. However, this is less compact than standard English spelling. In cases such as this, the English orthography is kept.</p>
-    <p>In other words, consonant orthography aims at aligning itself to english, accept in cases <em>where an alternative both makes more phonetic sense and is more compact</em>.</p>
-    <h2 id="vowels">
-    <a class="anchor" href="#vowels"></a>vowels
-    </h2>
-    <table>
-    <thead>
-    <tr><th>vowel</th><th>short</th><th>long</th><th>r-mod</th><th>diphthong</th><th>variant</th></tr>
-    </thead>
-    <tbody>
-    <tr><td>A</td><td>tan</td><td>cake</td><td>bark</td><td> </td><td>aha</td></tr>
-    <tr><td>E</td><td>pen</td><td>feet</td><td> </td><td> </td><td> </td></tr>
-    <tr><td>I</td><td>nib</td><td>ride</td><td> </td><td>oil</td><td> </td></tr>
-    <tr><td>O</td><td>hop</td><td>rope</td><td>fork</td><td>owl</td><td>raw</td></tr>
-    <tr><td>U</td><td>mud</td><td>muse</td><td> </td><td>loud</td><td> </td></tr>
-    <tr><td>OO</td><td>room</td><td> </td><td> </td><td> </td><td>took</td></tr>
-    </tbody>
-    </table>
-    <p>The <code>aw</code> sound, as in <code>bark</code> is often categorized as  an a-vowel variant. However, since it is close to an O sound, and since the a already has a variant — the a-sound in <code>aha!</code> — it is categorized as an o-variant.</p>
-    <p>Not all vowel sounds are included. For example, the diphthong <code>ey</code> as in <code>rain</code> is not included. This diphthong is so similar in pronunciation to the sound <code>long a</code> (as well as  <code>short e</code> + <code>y</code>) that it is spelled as a <code>long a</code>.</p>
-    <h2 id="syllables">
-    <a class="anchor" href="#syllables"></a>syllables
-    </h2>
-    <p>(CCC)V(CCCC), e.g. strengths</p>
-    </div>
+<h1 id="vowels">Vowels</h1>
+<table>
+<thead>
+<tr>
+<th>vowel</th>
+<th>short</th>
+<th>long</th>
+<th>-r</th>
+<th>diphthong</th>
+<th>other</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>tan</td>
+<td>cake</td>
+<td>bark</td>
+<td></td>
+<td>aha</td>
+</tr>
+<tr>
+<td>E</td>
+<td>pen</td>
+<td>feet</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>nib</td>
+<td>ride</td>
+<td></td>
+<td>oil</td>
+<td></td>
+</tr>
+<tr>
+<td>O</td>
+<td>hop</td>
+<td>rope</td>
+<td>fork</td>
+<td>owl</td>
+<td>raw</td>
+</tr>
+<tr>
+<td>U</td>
+<td>mud</td>
+<td>muse</td>
+<td></td>
+<td>loud</td>
+<td></td>
+</tr>
+<tr>
+<td>OO</td>
+<td>room</td>
+<td></td>
+<td></td>
+<td></td>
+<td>took</td>
+</tr>
+</tbody></table>
+<p>The <code>aw</code> sound, as in <code>bark</code> is often categorized as  an a-vowel variant. However, since it is close to an O sound, and since the a already has a variant — the a-sound in <code>aha!</code> — I have categorized it as an o-variant.</p>
+<p>Not all vowel sounds are included. For example, the diphtong <code>ey</code> as in <code>rain</code> is not included. This diphtong is so similar in prononciation to the sounds <code>short e</code> + <code>y</code>  and also to the sound <code>long a</code> that it is spelled like these.</p>
 
 </div>
 

@@ -9,26 +9,13 @@
 }
 
 @font-face {
-    font-family: 'Myfont';
+    font-family: 'Hello';
     src: url('font/Myfont-Regular.eot');
     src: url('font/Myfont-Regular.eot?#iefix') format('embedded-opentype'),
         url('font/Myfont-Regular.woff2') format('woff2'),
         url('font/Myfont-Regular.woff') format('woff'),
         url('font/Myfont-Regular.ttf') format('truetype'),
         url('font/Myfont-Regular.svg#Myfont-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Hello';
-    src: url('font/C2022-Regular.eot');
-    src: url('font/C2022-Regular.eot?#iefix') format('embedded-opentype'),
-        url('font/C2022-Regular.woff2') format('woff2'),
-        url('font/C2022-Regular.woff') format('woff'),
-        url('font/C2022-Regular.ttf') format('truetype'),
-        url('font/C2022-Regular.svg#C2022-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -202,6 +189,13 @@ th {
     text-align: left;
     text-transform: uppercase;
     font-weight: normal;
+}
+
+/* letter tables */
+
+.code+table td+td {
+    font-family: "hello";
+    font-size: 1.1em;
 }
 
 /*mobile*/
