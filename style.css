@@ -207,6 +207,9 @@ th {
 /*mobile*/
 
 @media only screen and (max-device-width: 700px) {
+    html, button, pre, pre code {
+        font-family: courier, monospace;
+    }
     *, #sidebar, #headings, #theme-toggle {
         font-size: 20px;
     }
