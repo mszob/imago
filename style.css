@@ -149,7 +149,7 @@ hr:before {
     content:" * * * ";
 }
 
-pre code {
+pre code, pre {
     display: block;
     overflow-x: scroll;
     overflow-y:hidden;
@@ -203,6 +203,10 @@ th {
 @media only screen and (max-device-width: 700px) {
     html, button, pre, pre code {
         font-family: courier, monospace;
+    }
+    .theta+pre {
+        font-family: 'Courier New', monospace;
+        font-weight: 500;
     }
     *, #sidebar, #headings, #theme-toggle {
         font-size: 20px;
