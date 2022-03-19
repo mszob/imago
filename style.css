@@ -198,6 +198,12 @@ th {
     font-size: 1.1em;
 }
 
+/*lists*/
+
+ul li::marker {
+    content: "- ";
+}
+
 /*mobile*/
 
 @media only screen and (max-device-width: 700px) {
