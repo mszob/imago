@@ -1,19 +1,6 @@
-/*theme*/
-
-html {
-    background-color: var(--white);
-    color: var(--dark);
-}
-html, html a, button {
-    color: var(--dark);
-}
-pre, code, pre code {
-    color: var(--faded);
-}
-*::selection {
-    background: var(--dark);
-    color: var(--white);
-}
-thead tr th {
-    border-color: var(--black);
+:root {
+    --back:     white;
+    --text:     rgb(45,45,45);
+    --fade:     rgb(45,45,45);
+    --trans:    rgba(0,0,0,0);
 }
