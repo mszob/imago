@@ -2,9 +2,11 @@
 <svg width="50" height="50" viewBox="-5 -5 70 70" xmlns="http://www.w3.org/2000/svg">
   <style>
     rect {
-      fill: rgb(255,255,255);
-      border: 50px solid red;
+      fill: rgb(30,30,30);
+      stroke: rgba(255,255,255,255);
+      stroke-width: 5px;
+    }
     }
   </style>
-  <rect width="50" height="50" rx="6"/>
+  <rect width="50" height="50" rx="0"/>
 </svg>

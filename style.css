@@ -141,7 +141,9 @@ th {
 #banner2 {
     transform: scale(-1,1);
     text-align: right;
-    opacity: 0.3;
+}
+#banner2 a {
+    color: var(--fade) !important;
 }
 #main #banner2 a {
     border-bottom: none;
