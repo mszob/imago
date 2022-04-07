@@ -3,7 +3,7 @@
   <style>
     rect {
       fill: rgb(30,30,30);
-      stroke: rgba(255,255,255,255);
+      stroke: rgb(255,255,255);
       stroke-width: 5px;
     }
     }
