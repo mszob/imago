@@ -11,7 +11,6 @@
     font-display: swap;
 }
 
-
 /*------------------------------------
 # DEFAULT ELEMENTS
 ------------------------------------*/
@@ -92,10 +91,10 @@ th {
 
 #content {
     position: absolute;
-    width: 890px;
+    width: 860px;
     height: 100%;
     left: 50%;
-    margin-left: -445px;
+    margin-left: -430px;
 }
 
 #sidebar, #main {
@@ -107,7 +106,7 @@ th {
 }
 
 #sidebar, #headings, #banner {
-    width: 230px;
+    width: 200px;
     text-align: right;
 }
 
@@ -117,7 +116,7 @@ th {
 
 #main {
     position: absolute;
-    margin-left: 280px;
+    margin-left: 250px;
     padding-bottom: 100px;
 }
 
@@ -136,7 +135,7 @@ th {
     font-weight: normal;
 }
 #banner, #banner2 {
-    font-size: 29px;
+    font-size: 25px;
 }
 #banner2 {
     transform: scale(-1,1);
