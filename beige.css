@@ -1,0 +1,12 @@
+:root {
+    --back: #f3e9d7;
+    --text: rgb(45, 45, 45);
+    --text2: rgb(140, 140, 140);
+    --text3: rgb(45, 45, 45);
+    --fade: rgb(157, 150, 140);
+    --trans: rgba(0, 0, 0, 0);
+}
+
+.legend {
+    filter: saturate(1.2);
+}

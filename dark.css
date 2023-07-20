@@ -1,0 +1,16 @@
+:root {
+    --back: rgb(30, 30, 30);
+    --text: rgb(215, 215, 215);
+    --text2: rgb(160, 160, 160);
+    --text3: rgb(255, 255, 255);
+    --fade: rgb(120, 120, 120);
+    --trans: rgba(0, 0, 0, 0);
+}
+
+.svg:not(.legend) {
+    filter: invert(1);
+}
+
+.legend {
+    filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
+}

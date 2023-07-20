@@ -1,0 +1,21 @@
+:root {
+    --back: rgb(255, 255, 255);
+    --text: rgb(45, 45, 45);
+    --text2: rgb(140, 140, 140);
+    --text3: rgb(45, 45, 45);
+    --fade: rgb(170, 170, 170);
+    --trans: rgba(0, 0, 0, 0);
+}
+
+.legend {
+    filter: saturate(1.2);
+}
+
+#avatar img {
+    filter: saturate(0) brightness(0.3);
+}
+
+#logo img {
+    filter: invert(1) brightness(3);
+    opacity: 0.7;
+}

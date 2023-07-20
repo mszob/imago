@@ -1,0 +1,279 @@
+:root {
+    --left-width: 190px;
+    --left-align: right;
+    --right-margin: 250px;
+}
+
+@font-face {
+    font-family: 'Hello';
+    src: url('font/Myfont-Regular.eot');
+    src: url('font/Myfont-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/Myfont-Regular.woff2') format('woff2'),
+        url('font/Myfont-Regular.woff') format('woff'),
+        url('font/Myfont-Regular.ttf') format('truetype'),
+        url('font/Myfont-Regular.svg#Myfont-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*------------------------------------
+# DEFAULT ELEMENTS
+------------------------------------*/
+
+body {
+    margin: 0px;
+    background-color: var(--back);
+}
+
+*::selection {
+    background: var(--text);
+    color: var(--back);
+}
+
+html,
+html a,
+button,
+pre {
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+h2 {
+    margin: 60px 0px 16px 0px;
+    border-bottom: 2px dotted var(--fade);
+    font-family: courier;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li::marker {
+    content: "- ";
+}
+
+code,
+pre {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color: var(--text2);
+}
+
+hr {
+    border: 0px solid var(--fade);
+    border-bottom: 1px solid var(--fade);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+table {
+    margin: 20px 0px 30px 0px;
+    border-collapse: collapse;
+    line-height: 1.7;
+    border-top: 1px solid var(--fade);
+    border-bottom: 1px solid var(--fade);
+}
+
+table thead tr {
+    border-bottom: 1px dotted var(--fade);
+}
+
+th {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: normal;
+    min-width: 60px;
+}
+
+
+/*---------------------------------------
+# UNIVERSAL FIELDS
+---------------------------------------*/
+
+/*
+## Content
+*/
+
+/* guides
+#content, #banner, #article, #sidebar, #pages, #headings {
+    border: 2px dotted var(--fade);
+    padding: 10px;
+    background-color: rgba(120,120,120,0.2)
+}*/
+
+#content {
+    position: absolute;
+    width: 900px;
+    left: 50%;
+    margin-left: -450px;
+}
+
+/*
+## Banner
+*/
+
+header.banner {
+    font-size: 24px;
+    height: fit-content;
+    position: relative;
+    margin: 110px 0px 80px 0px;
+}
+
+.banner-wrapper a {
+    font-family: courier, monospace;
+}
+
+#banner-left {
+    text-align: right;
+    width: var(--left-width);
+    text-align: var(--left-align);
+}
+
+#banner-right {
+    position: relative;
+    transform: scale(-1, 1);
+    text-align: right;
+
+}
+
+#banner-left a {
+    font-weight: 600 !important;
+}
+
+#banner-right a {
+    color: var(--fade) !important;
+}
+
+#author {
+    position: absolute;
+    width: var(--left-width);
+    text-align: var(--left-align);
+    font-size: 14px;
+    color: var(--fade);
+}
+
+/* 
+## Page
+ */
+
+main {
+    width: fit-content;
+    margin-left: var(--right-margin);
+    padding-bottom: 100px;
+}
+
+/*sidebar*/
+
+#sidebar {
+    position: fixed;
+}
+
+#pages,
+#headings {
+    width: var(--left-width);
+    text-align: var(--left-align);
+}
+
+#pages {
+    position: relative;
+    top: 5px;
+}
+
+#headings {
+    margin-top: 100px;
+}
+
+#sidebar.home #headings a {
+    color: var(--fade);
+}
+
+#headings a {
+    font-weight: normal;
+}
+
+#sidebar a {
+    font-weight: normal;
+}
+
+#sidebar a.active {
+    font-weight: bold;
+}
+
+#sidebar.contact a.contact {
+    font-weight: bold;
+}
+
+#theme-toggle {
+    color: var(--fade);
+    background-color: var(--trans);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0px;
+}
+
+/*article*/
+
+#article a {
+    border-bottom: 0.9px solid var(--text);
+}
+
+
+/*---------------------------------------
+# ANALOG
+---------------------------------------*/
+
+/*
+## Inline script
+*/
+
+.s {
+    font-family: "Hello", monospace;
+    font-size: 1.2em;
+}
+
+/*
+## table cell width
+*/
+
+.table+table {
+    width: 100%;
+}
+
+.small-table+table td {
+    width: 100px;
+    border-bottom: 0px solid var(--fade) !important;
+}
+
+/*
+## Script font in tables
+*/
+
+.code-table+table td+td {
+    font-family: "hello";
+    font-size: 1.1em;
+}
+
+
+/*---------------------------------------
+# MOBILE
+---------------------------------------*/

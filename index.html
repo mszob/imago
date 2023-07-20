@@ -3,14 +3,143 @@
 
 <head>
     <title>picturamundi</title>
-    <!--<link id="favicon" rel="icon" href="favicon/light.svg">-->
-    <link id="favicon" rel="icon" href="favicon/favicon.svg">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/pixil-frame-0.png">
+
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-light/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-light/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-light/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon-light/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon-light/safari-pinned-tab.svg" color="#efa94f">
+    <meta name="msapplication-TileColor" content="#efa94f">
+    <meta name="theme-color" content="#efa94f"> -->
+
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <link id="theme" rel="stylesheet" type="text/css" media="screen" href="light.css">
+    <link id="theme" rel="stylesheet" type="text/css" media="screen" href="dark.css">
     <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
+
+    <div id="content">
+        <div id="logo" style="position: absolute">
+            <img src="images/animation-4.gif" alt="" style="width: 300px;">
+            <p>Pictura Mundi</p>
+        </div>
+        <div id="top-spacer"></div>
+        <div id="home-box">
+
+            <aside id="sidebar" class="home">
+
+                <header class="banner">
+                    <div id="avatar"><a href="run/index.html"><img src="images/avatar.gif" alt=""></a></div>
+                    <div id="banner-left"><a href="index.html">Pictura Mundi</a></div>
+                    <div id="author">Matthias Szobody</div>
+                </header>
+
+                <nav id="headings">
+                    <!-- <p><a href="http://picturamundi.com">picturamundi.com</a></p> -->
+                    <p><a href="https://twitter.com/picturamundi" target="_blank">@picturamundi</a></p>
+                    <p><a href="https://reddit.com/user/picturamundi/" target="_blank">/u/picturamundi</a></p>
+                    <p><a href="https://www.keebtalk.com/u/picturamundi" target="_blank">picturamundi</a></p>
+                    <p><button id="theme-toggle">[Theme]</button></p>
+                </nav>
+
+            </aside>
+
+            <main>
+                <header class="banner">
+                    <div id="banner-right"><a href="index.html">Pictura Mundi</a></div>
+                    <div id="author">Matthias Szobody</div>
+                </header>
+                <div id="article">
+                    <article>
+                        <h3><strong>Typing software and hardware</strong></h3>
+                        <p><a href="type.html">Pictura36 keyboard
+                                firmware</a>
+                        </p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2570889084"
+                                target="_blank">Dvorak International for macOS</a></p>
+                        <h3><strong>Custom Manuscript</strong></h3>
+                        <p><a href="https://www.toyotawar.com" target="_blank">Flexible pen</a>
+                        </p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2570889084"
+                                target="_blank">Custom manuscript</a></p>
+                        <h3><strong>The Great Toyota War board game</strong></h3>
+                        <p><a href="https://www.toyotawar.com" target="_blank">The Great Toyota War Handbook</a></p>
+                        <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2570889084"
+                                target="_blank">The Great Toyota War on Steam</a></p>
+                </div>
+            </main>
+        </div>
+        <div id="bottom-spacer"></div>
+
+    </div>
 </body>
+
+<style>
+    ul,
+    ol {
+        padding-left: 0px;
+    }
+
+    p {
+        margin-left: 0px;
+    }
+
+    #content {
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #top-spacer {
+        flex-grow: 2;
+    }
+
+    #bottom-spacer {
+        flex-grow: 3;
+    }
+
+    #home-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sidebar,
+    main {
+        position: relative;
+        left: 0px;
+        width: auto;
+        height: auto;
+        padding: 30px;
+    }
+
+    header.banner {
+        margin-top: 0px;
+    }
+
+    #article a {
+        border-bottom: none;
+        font-family: 'Courier New';
+    }
+
+    #headings {
+        top: 0px;
+    }
+
+    #banner-right+#author {
+        right: 0px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+</style>
 
 </html>
