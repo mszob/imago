@@ -1,7 +1,26 @@
+function home() {
+    pageId = "home";
+    document.getElementById('main').style.animation = "shrink 0.5s";
+    document.getElementById('home-sidebar').style.display = "block";
+    document.getElementById('keyboard-sidebar').style.display = "none";
+    document.getElementById('main-type').style.animation = "disappear 0.3s";
+    document.getElementById('main-type').style.animationFillMode = "forwards"; document.getElementById('main-type').style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
+    setTimeout(() => {
+        document.getElementById('main-home').style.display = "block";
+        document.getElementById('main-type').style.display = "none";
+        document.getElementById('main-home').style.display = "block";
+        document.getElementById('main-home').style.animation = "appear 0.3s";
+    }, 600)
+}
+
+
 function keyboard() {
     pageId = "main-type";
     load();
-    document.title = "Rosemary | Ellie and Matthias"
+    document.getElementById('main-type').style.display = "block";
+    document.getElementById('main-type').style.animation = "appear 0.3s";
+    document.getElementById('keyboard-sidebar').style.display = "block";
+    document.title = "Keyboard"
     document.getElementById('main').style.animation = "expand 0.7s";
     document.getElementById('main').style.animationFillMode = "forwards"; document.getElementById(pageId).style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
 }
@@ -9,8 +28,11 @@ function keyboard() {
 function load() {
     document.getElementById('main-home').style.display = "none";
     document.getElementById('home-sidebar').style.display = "none";
-    document.getElementById('main-type').style.display = "block";
-    document.getElementById('keyboard-sidebar').style.display = "block";
+}
+
+function unload() {
+    document.getElementById('main-home').style.display = "block";
+    document.getElementById('home-sidebar').style.display = "block";
 }
 
 // this one is jut to wait for the page to load
