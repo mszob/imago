@@ -5,6 +5,7 @@ function home() {
     document.getElementById('keyboard-sidebar').style.display = "none";
     document.getElementById('main-type').style.animation = "disappear 0.3s";
     document.getElementById('main-type').style.animationFillMode = "forwards"; document.getElementById('main-type').style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
+    document.title = "picturamundi.com"
     setTimeout(() => {
         document.getElementById('main-home').style.display = "block";
         document.getElementById('main-type').style.display = "none";
@@ -20,7 +21,7 @@ function keyboard() {
     document.getElementById('main-type').style.display = "block";
     document.getElementById('main-type').style.animation = "appear 0.3s";
     document.getElementById('keyboard-sidebar').style.display = "block";
-    document.title = "Keyboard"
+    document.title = "keyboard"
     document.getElementById('main').style.animation = "expand 0.7s";
     document.getElementById('main').style.animationFillMode = "forwards"; document.getElementById(pageId).style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
 }
@@ -62,13 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+// show logo on first visit
+
 document.addEventListener('DOMContentLoaded', () => {
-    if (!localStorage.noFirstVisit) {
+    if (localStorage.noFirstVisit != "1") {
         document.getElementById('logo').style.display = "block";
-        document.getElementById('home-box').style.animation = "home-box 4s";
+        document.getElementById('home-box').style.animation = "home-box 4.5s";
         localStorage.noFirstVisit = "1";
     }
 })
+
+// forget first visit
+
+function showLogo() {
+    localStorage.noFirstVisit = null;
+    location.reload();
+}
+
+// favicon adapts to browser theme
 
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 if (darkThemeMq.matches) {

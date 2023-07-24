@@ -96,7 +96,7 @@ a:hover {
 
 #logo {
     display: none;
-    animation: logo 3.4s;
+    animation: logo 4.2s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
@@ -390,7 +390,8 @@ main {
     font-weight: bold;
 }
 
-#theme-toggle {
+#theme-toggle,
+#show-logo {
     color: var(--fade);
     background-color: var(--trans);
     border: none;
