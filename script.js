@@ -1,67 +1,58 @@
-function home() {
-    pageId = "home";
-    document.getElementById('main').style.animation = "shrink 0.5s";
-    document.getElementById('home-sidebar').style.display = "block";
-    document.getElementById('keyboard-sidebar').style.display = "none";
-    document.getElementById('main-type').style.animation = "disappear 0.3s";
-    document.getElementById('main-type').style.animationFillMode = "forwards"; document.getElementById('main-type').style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
-    document.title = "picturamundi.com"
-    setTimeout(() => {
-        document.getElementById('main-home').style.display = "block";
-        document.getElementById('main-type').style.display = "none";
-        document.getElementById('main-home').style.display = "block";
-        document.getElementById('main-home').style.animation = "appear 0.3s";
-    }, 600)
-}
-
+// pages
 
 function keyboard() {
-    pageId = "main-type";
-    load();
-    document.getElementById('main-type').style.display = "block";
-    document.getElementById('main-type').style.animation = "appear 0.3s";
-    document.getElementById('keyboard-sidebar').style.display = "block";
-    document.title = "keyboard"
-    document.getElementById('main').style.animation = "expand 0.7s";
-    document.getElementById('main').style.animationFillMode = "forwards"; document.getElementById(pageId).style.mozAnimationFillMode = "forwards", msAnimationFillMode = "forwards", oAnimationFillMode = "forwards";
+    largePage();
+    document.getElementById('home').className = 'hidden';
+    document.getElementById('home-nav').className = 'hidden';
+    document.getElementById('keyboard').className = 'visible';
+    document.getElementById('keyboard-nav').className = 'visible';
+    document.title = "picturamundi | keyboard"
 }
 
-function load() {
-    document.getElementById('main-home').style.display = "none";
-    document.getElementById('home-sidebar').style.display = "none";
+function home() {
+    smallPage();
+    document.title = "picturamundi"
+    setTimeout(() => {
+        document.getElementById('home').className = 'visible';
+        document.getElementById('home-nav').className = 'visible';
+        document.getElementById('keyboard').className = 'hidden';
+        document.getElementById('keyboard-nav').className = 'hidden';
+    }, 350);
 }
 
-function unload() {
-    document.getElementById('main-home').style.display = "block";
-    document.getElementById('home-sidebar').style.display = "block";
+function smallPage() {
+    document.getElementById('main-col').className = "shrink";
+    document.getElementById('content').className = "shrink";
 }
 
-// this one is jut to wait for the page to load
+function largePage() {
+    document.getElementById('main-col').className = "expand";
+    document.getElementById('content').className = "expand";
+}
+
+// remember theme preference
+
 document.addEventListener('DOMContentLoaded', () => {
-    const themeStylesheet = document.getElementById('theme');
-    //    const faviconTheme = document.getElementById('favicon');
+    const body = document.querySelector('body')
     const storedTheme = localStorage.getItem('theme');
-    //    const storedFavicon = localStorage.getItem('favicon');
     if (storedTheme) {
-        themeStylesheet.href = storedTheme;
+        body.className = storedTheme;
     }
-    //    if(storedFavicon){
-    //       faviconTheme.href = storedFavicon;
-    //    }
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        if (themeStylesheet.href.includes('light')) {
-            themeStylesheet.href = 'dark.css';
-            //            faviconTheme.href = 'favicon/dark.svg';
-        }
-        else {
-            themeStylesheet.href = 'light.css';
-            //            faviconTheme.href = 'favicon/light.svg';
-        }
-        localStorage.setItem('theme', themeStylesheet.href)
-        //        localStorage.setItem('favicon',faviconTheme.href)
-    })
 })
+
+// toggle theme button
+
+function themeToggle() {
+    if (body.className.includes('light-theme')) {
+        body.className = "dark-theme";
+        document.getElementById('legend').className = "dark-img";
+    }
+    else {
+        body.className = "light-theme";
+        document.getElementById('legend').className = "light-img";
+    }
+    localStorage.setItem('theme', body.className)
+}
 
 // show logo on first visit
 
@@ -73,18 +64,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-// forget first visit
+// forget first visit and reload button
 
 function showLogo() {
     localStorage.noFirstVisit = null;
     location.reload();
 }
 
-// favicon adapts to browser theme
+// theme and favicon adapts to browser theme on load
 
-const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-if (darkThemeMq.matches) {
-    document.querySelector("link[rel='icon']").href = "images/favicon/pixil-frame-0.png";
-} else {
-    document.querySelector("link[rel='icon']").href = "images/favicon/pixil-frame-1.png";
-}
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("body").className = "dark-theme";
+        document.querySelector("link[rel='icon']").href = "favicon/dark.png";
+        document.getElementById('legend').className = "dark-img";
+    } else {
+        document.querySelector("body").className = "light-theme";
+        document.querySelector("link[rel='icon']").href = "favicon/light.png";
+        document.getElementById('legend').className = "light-img";
+    }
+})
+
+// theme and favicon adapts to browser theme on change
+
+window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', ({ matches }) => {
+        if (matches) {
+            document.querySelector("body").className = "dark-theme";
+            document.querySelector("link[rel='icon']").href = "favicon/dark.png";
+            document.getElementById('legend').className = "dark-img";
+        } else {
+            document.querySelector("body").className = "light-theme";
+            document.querySelector("link[rel='icon']").href = "favicon/light.png";
+            document.getElementById('legend').className = "light-img";
+        }
+    })
+
+    // custom back arrow
+
+    (function (window, location) {
+        history.replaceState(null, document.title, location.pathname + "#!/stealingyourhistory");
+        history.pushState(null, document.title, location.pathname);
+        window.addEventListener("popstate", function () {
+            if (location.hash === "#!/stealingyourhistory") {
+                history.replaceState(null, document.title, location.pathname);
+                setTimeout(function () {
+                    location.replace("index.html");
+                }, 0);
+            }
+        }, false);
+    }(window, location));

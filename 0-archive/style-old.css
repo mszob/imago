@@ -1,0 +1,586 @@
+:root {
+    --left-width: 190px;
+    --left-align: right;
+    --left-margin: 240px;
+    --content-width: 900px;
+    --table-border: 2px dotted var(--text2);
+    --large-font: 'CMU serif';
+}
+
+@font-face {
+    font-family: 'Myfont';
+    src: url('font/Myfont-Regular.eot');
+    src: url('font/Myfont-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/Myfont-Regular.woff2') format('woff2'),
+        url('font/Myfont-Regular.woff') format('woff'),
+        url('font/Myfont-Regular.ttf') format('truetype'),
+        url('font/Myfont-Regular.svg#Myfont-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* main {
+    animation: expand 1s;
+    animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+} */
+
+a:hover {
+    cursor: pointer;
+}
+
+#keyboard-sidebar {
+    display: none;
+}
+
+
+@keyframes expand {
+    0% {
+        width: 300px;
+        height: 510px;
+    }
+
+    30% {
+        width: 300px;
+        height: 510px;
+    }
+
+    100% {
+        width: 650px;
+        height: calc(100vh - 60px);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: 650px;
+        height: calc(100vh - 60px);
+    }
+
+    100% {
+        width: 300px;
+        height: 510px;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+#avatar {
+    filter: saturate(0) brightness(2);
+}
+
+#logo {
+    display: none;
+    animation: logo 4.2s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+
+#avatar {
+    position: absolute;
+    bottom: 12px;
+    left: 165px;
+}
+
+#avatar img {
+    width: 40px;
+    image-rendering: pixelated;
+}
+
+/*------------------------------------
+# DEFAULT ELEMENTS
+------------------------------------*/
+
+body {
+    margin: 0px;
+    background-color: var(--back);
+    color: var(--text);
+}
+
+*::selection {
+    background: var(--text);
+    color: var(--back);
+}
+
+html,
+a,
+button,
+pre {
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.2;
+    font-size: 15px;
+}
+
+p,
+ul,
+ol,
+table {
+    margin-left: 30px;
+    line-height: 1.5;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+table {
+    margin-right: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+    color: var(--text3);
+    font-family: var(--large-font);
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    border-bottom: 1px solid var(--fade);
+    margin-top: 40px;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 800;
+    text-align: left;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li::marker {
+    content: "- ";
+}
+
+code,
+pre {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color: var(--text);
+}
+
+hr {
+    border: 0px solid var(--fade);
+    border-bottom: 1px solid var(--fade);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+table,
+pre {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+table {
+    border-collapse: collapse;
+    line-height: 1.7;
+}
+
+th {
+    text-align: left;
+    font-weight: normal;
+    min-width: 60px;
+    font-family: courier, "Courier New", monospace;
+}
+
+th,
+td {
+    padding: 0px 15px;
+}
+
+
+/*---------------------------------------
+# OTHER TEXT STYLING
+---------------------------------------*/
+
+.no-margin {
+    margin-left: 0px;
+}
+
+.first,
+.first a {
+    font-family: courier, 'Courier New', monospace;
+    font-size: 1rem;
+    /* text-indent: -30px; */
+}
+
+#article .first a {
+    font-family: 'Courier New', courier, monospace;
+}
+
+.ascii-art {
+    font-family: 'Courier New', courier, monospace;
+}
+
+.ascii-art .theta {
+    font-family: "Lucida Console", "Andale Mono", "Menlo", "Courier New", monospace;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*---------------------------------------
+# UNIVERSAL FIELDS
+---------------------------------------*/
+
+/*
+## Content
+*/
+
+#content {
+    position: absolute;
+    width: var(--content-width);
+    left: 50%;
+    margin-left: -450px;
+}
+
+/*
+## Banner
+*/
+
+/* apply to both */
+
+header.banner {
+    height: fit-content;
+    position: relative;
+    margin: 110px 0px 80px 0px;
+}
+
+header.banner a {
+    font-size: 24px;
+}
+
+/* left */
+
+#banner-left {
+    text-align: right;
+    width: var(--left-width);
+    text-align: var(--left-align);
+}
+
+#banner-left a {
+    font-weight: 600;
+    font-family: var(--large-font);
+}
+
+#author {
+    position: absolute;
+    width: var(--left-width);
+    text-align: var(--left-align);
+    font-size: 14px;
+}
+
+/* right */
+
+main .banner {
+    position: relative;
+    transform: scale(-1, 1);
+    text-align: right;
+}
+
+main .banner * {
+    color: var(--fade);
+}
+
+/* 
+## Page
+ */
+
+main {
+    position: absolute;
+    width: calc(var(--content-width) - var(--left-margin));
+    left: var(--left-margin);
+}
+
+/*sidebar*/
+
+#sidebar {
+    height: 0px;
+}
+
+#pages,
+#headings {
+    width: var(--left-width);
+    text-align: var(--left-align);
+}
+
+#pages {
+    position: relative;
+    top: 8px;
+}
+
+#headings {
+    position: relative;
+    top: 80px;
+}
+
+#sidebar.home #headings a {
+    color: var(--fade);
+}
+
+#headings a {
+    font-weight: normal;
+}
+
+#headings a {
+    font-weight: normal;
+}
+
+#sidebar a.active {
+    font-weight: bold;
+}
+
+#sidebar.contact a.contact {
+    font-weight: bold;
+}
+
+#theme-toggle,
+#show-logo {
+    color: var(--fade);
+    background-color: var(--trans);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0px;
+}
+
+/*article*/
+
+#article a {
+    border-bottom: 0.9px solid var(--text);
+    padding-bottom: 1px;
+    font-family: courier, "courier new", monospace;
+}
+
+/*universal filters*/
+
+.invert {
+    filter: invert(1);
+}
+
+
+/*---------------------------------------
+# HOME
+---------------------------------------*/
+
+#home-box p {
+    margin: 0.6em 0em;
+}
+
+/*---------------------------------------
+# ANALOG
+---------------------------------------*/
+
+/*
+## Manuscript images
+*/
+
+.img-manuscript {
+    display: block;
+    margin: 20px auto 20px auto;
+    max-width: 90%;
+}
+
+#hi-buddy {
+    transform: rotate(-1deg);
+}
+
+#hello-there {
+    width: 200px;
+    transform: rotate(5deg);
+}
+
+/*
+## Inline script
+*/
+
+.s {
+    font-family: "Myfont", monospace;
+    font-size: 1.2em;
+}
+
+/*
+## table cell width
+*/
+
+.large-table {
+    width: calc(100% - 40px);
+}
+
+.small-table td {
+    width: 100px;
+    border-bottom: 0px solid var(--fade) !important;
+}
+
+/*
+## Script font in tables
+*/
+
+.code-table td+td {
+    font-family: "Myfont";
+    font-size: 1.1em;
+}
+
+/* table borders v1*/
+
+/* .six-col tr:nth-of-type(1) th,
+.six-col tr+tr th:nth-of-type(even),
+.six-col td:nth-of-type(even) {
+    border-right: var(--table-border);
+}
+
+.seven-col tr:nth-of-type(1) th,
+.seven-col tr+tr th:nth-of-type(odd),
+.seven-col td:nth-of-type(odd) {
+    border-right: var(--table-border);
+}
+
+tr:last-child {
+    border-bottom: var(--table-border);
+} */
+
+
+/* table borders v2 */
+
+thead tr:first-child {
+    background: radial-gradient(circle at bottom, var(--text2) 2px, transparent 0px) repeat-x;
+    background-size: 6px 1.5px;
+}
+
+tbody tr:last-child {
+    background: radial-gradient(circle at top, var(--text2) 2px, transparent 0px) repeat-x bottom;
+    background-size: 6px 1.5px;
+}
+
+tbody tr:first-child {
+    background: radial-gradient(circle at bottom, var(--text2) 2px, transparent 0px) repeat-x;
+    background-size: 6px 1.5px;
+}
+
+table {
+    background: radial-gradient(circle at right, var(--text2) 2px, transparent 0px) repeat-y;
+    background-size: 1.5px 6px;
+}
+
+.six-col td:nth-of-type(even),
+.six-col tr:first-child th,
+.six-col tr+tr th:nth-of-type(even) {
+    background: radial-gradient(circle at left, var(--text2) 2px, transparent 0px) repeat-y right;
+    background-size: 1.5px 6px;
+}
+
+.seven-col td:nth-of-type(odd),
+.seven-col tr:first-child th,
+.seven-col tr+tr th:nth-of-type(odd) {
+    background: radial-gradient(circle at left, var(--text2) 2px, transparent 0px) repeat-y right;
+    background-size: 1.5px 7px;
+}
+
+th:last-child,
+td:last-child {
+    background: radial-gradient(circle at left, var(--text2) 2px, transparent 0px) repeat-y right;
+    background-size: 1.5px 6px;
+}
+
+.small-table th:last-child,
+.small-table td:last-child {
+    background: radial-gradient(circle at left, var(--text2) 2px, transparent 0px) repeat-y right;
+    background-size: 1.5px 7px;
+}
+
+
+/*---------------------------------------
+# MOBILE
+---------------------------------------*/
+
+@keyframes logo {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes home-box {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
