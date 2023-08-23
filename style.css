@@ -102,6 +102,7 @@ body {
     height: 90vh;
     width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
     max-width: 90%;
+    overflow: scroll;
 }
 
 #content.shrink {
@@ -155,6 +156,7 @@ body {
     position: absolute;
     transition: width 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
     width: var(--main-col-large-width);
+    max-width: -webkit-fill-available;
     height: 100%;
     margin-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
 }
