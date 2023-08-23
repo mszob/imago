@@ -11,15 +11,34 @@ function keyboard() {
 }
 
 function home() {
+    const windowSize = window.matchMedia('(max-width: 475px)')
+    smallPage();
+    document.title = "picturamundi";
+    if (windowSize.matches) {
+        homeMobile();
+    } else {
+        setTimeout(() => {
+            homeMobile(); // home desktop is same as home mobile with some delays
+        }, 500);
+    }
+}
+
+function homeMobile() {
+    document.getElementById('sidebar').className = 'home';
+    document.getElementById('keyboard-nav').className = 'hidden';
+    document.getElementById('home-nav').className = 'visible';
+    document.getElementById('home').className = 'visible';
+    document.getElementById('keyboard').className = 'hidden';
+}
+
+function homeMobile() {
     smallPage();
     document.title = "picturamundi"
     document.getElementById('sidebar').className = 'home';
-    document.getElementById('home-nav').className = 'visible';
     document.getElementById('keyboard-nav').className = 'hidden';
-    setTimeout(() => {
-        document.getElementById('home').className = 'visible';
-        document.getElementById('keyboard').className = 'hidden';
-    }, 500);
+    document.getElementById('home-nav').className = 'visible';
+    document.getElementById('home').className = 'visible';
+    document.getElementById('keyboard').className = 'hidden';
 }
 
 function smallPage() {

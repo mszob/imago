@@ -1,5 +1,9 @@
 :root {
     --content-height: 17rem;
+    --content-height-mobile: 27.5rem
+        /* this needs to match the height of #content contents for transitions to be seamless */
+    ;
+    --content-width-mobile: 13rem;
     --sidebar-width: 14rem;
     --main-col-width: 14.5rem;
     --gutter-width: 2rem;
@@ -12,8 +16,6 @@
     --home-section-spacing: 2rem;
 
     --full-trans: ;
-    --second-half-trans: 0.3s ease-in-out 0.2s;
-    --first-half-trans: 0.1s ease-in-out 0.1s;
 }
 
 /* guides */
@@ -165,6 +167,10 @@ body {
     margin-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
+main {
+    padding-bottom: 4rem;
+}
+
 /* text */
 
 body,
@@ -267,10 +273,17 @@ img {
         --default-font-size: 15px;
     }
 
+    /* home */
+
     #content.shrink {
-        justify-content: center;
+        justify-content: baseline
+            /* Content is at top ('baseline') of #content, just as in .expanded. 
+               This ensure the transition between the two is seamless. */
+        ;
         align-items: center;
         flex-direction: column;
+        height: var(--content-height-mobile);
+        width: var(--content-width-mobile);
     }
 
     #sidebar {
@@ -298,5 +311,25 @@ img {
     #author-right {
         transform: scale(1, 1);
         text-align: center;
+    }
+
+    /* expand */
+
+    #content.expand {
+        display: flex;
+        justify-content: baseline;
+        width: 90%;
+    }
+
+    #main-col.expand {
+        transition: none;
+        position: absolute;
+        margin-left: 0rem;
+        width: inherit !important;
+        height: 100%;
+    }
+
+    #main-col.expand+#sidebar {
+        visibility: collapse;
     }
 }
