@@ -241,7 +241,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 475px) {
     :root {
         --default-font-size: 13px;
     }
@@ -255,6 +255,7 @@ img {
     #sidebar {
         text-align: center;
         position: relative;
+        margin-top: var(--home-section-spacing);
     }
 
     #sidebar #banner-left {
