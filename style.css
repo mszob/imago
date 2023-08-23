@@ -157,7 +157,11 @@ body {
     transition: width 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
     width: var(--main-col-large-width);
     max-width: -webkit-fill-available;
-    height: 100%;
+    max-width: -moz-available;
+    /* WebKit-based browsers will ignore this. */
+    max-width: -webkit-fill-available;
+    /* Mozilla-based browsers will ignore this. */
+    max-width: fill-available;
     margin-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
 }
 
