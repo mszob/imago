@@ -231,13 +231,20 @@ img {
 
 @media only screen and (max-width: 800px) {
     :root {
-        --default-font-size: 17px;
+        --default-font-size: 16px;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px),
+(max-height: 500px) {
     :root {
         --default-font-size: 16px;
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    :root {
+        --default-font-size: 14px;
     }
 }
 
