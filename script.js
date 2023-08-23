@@ -12,12 +12,12 @@ function keyboard() {
 function home() {
     smallPage();
     document.title = "picturamundi"
+    document.getElementById('home-nav').className = 'visible';
+    document.getElementById('keyboard-nav').className = 'hidden';
     setTimeout(() => {
         document.getElementById('home').className = 'visible';
-        document.getElementById('home-nav').className = 'visible';
         document.getElementById('keyboard').className = 'hidden';
-        document.getElementById('keyboard-nav').className = 'hidden';
-    }, 370);
+    }, 500);
 }
 
 function smallPage() {
