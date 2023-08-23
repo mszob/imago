@@ -102,7 +102,6 @@ body {
     height: 90vh;
     width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
     max-width: 90%;
-    overflow: scroll;
 }
 
 #content.shrink {
@@ -129,6 +128,9 @@ body {
     position: fixed;
     width: var(--sidebar-width);
     text-align: right;
+    max-height: 95vh;
+    overflow: scroll;
+    padding-right: 1rem;
 }
 
 #sidebar.home {
