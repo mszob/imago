@@ -2,16 +2,18 @@
 
 function keyboard() {
     largePage();
+    document.title = "picturamundi | keyboard"
+    document.getElementById('sidebar').className = '';
     document.getElementById('home').className = 'hidden';
     document.getElementById('home-nav').className = 'hidden';
     document.getElementById('keyboard').className = 'visible';
     document.getElementById('keyboard-nav').className = 'visible';
-    document.title = "picturamundi | keyboard"
 }
 
 function home() {
     smallPage();
     document.title = "picturamundi"
+    document.getElementById('sidebar').className = 'home';
     document.getElementById('home-nav').className = 'visible';
     document.getElementById('keyboard-nav').className = 'hidden';
     setTimeout(() => {
