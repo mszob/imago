@@ -1,12 +1,18 @@
 :root {
-    --content-height: 350px;
-    --main-col-width: 325px;
-    --sidebar-width: 200px;
-    --gutter-width: 30px;
-    --gutter-expanded-width: 60px;
-    --main-col-large-width: 750px;
+    --content-height: 22rem;
+    --sidebar-width: 14rem;
+    --main-col-width: 15rem;
+    --gutter-width: 2rem;
+    --gutter-expanded-width: 3.5rem;
+    --main-col-large-width: 50rem;
 
-    --default-font-size: 16px;
+    --default-font-size: 18px;
+
+    --h3-margin: 1rem 0rem;
+
+    --full-trans: ;
+    --second-half-trans: 0.3s ease-in-out 0.2s;
+    --first-half-trans: 0.1s ease-in-out 0.1s;
 }
 
 /* guides */
@@ -43,9 +49,31 @@ body.dark-theme {
     --theme-img-filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
 }
 
+html {
+    font-size: var(--default-font-size);
+}
+
+@media only screen and (max-width: 850px) {
+    :root {
+        --default-font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    :root {
+        --default-font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    :root {
+        --default-font-size: 10px;
+    }
+}
+
 html,
 body {
-    margin: 0px;
+    margin: 0rem;
     background-color: var(--background-color);
 }
 
@@ -86,6 +114,7 @@ body {
     transition: height 0.1s ease-in-out 0.1s, width 0.3s ease-in-out 0.3s;
     height: 90vh;
     width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
+    max-width: 90%;
 }
 
 #content.shrink {
@@ -96,8 +125,16 @@ body {
     width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-width));
 }
 
-.banner {
-    height: 100px;
+#banner-left.shrink,
+#banner-right.shrink {
+    transition: var(--first-half-trans);
+    height: 6rem;
+}
+
+#banner-left.expand,
+#banner-right.expand {
+    transition: var(--second-half-trans);
+    height: 6rem;
 }
 
 #sidebar {
@@ -107,13 +144,12 @@ body {
     text-align: right;
 }
 
-#sidebar nav section {
-    margin-bottom: 40px;
+#back {
+    margin: var(--h3-margin);
 }
 
-#sidebar.expanded nav section {
-    border-right: 1px solid var(--text-light);
-    padding-right: 10px;
+#sidebar nav section {
+    margin-bottom: 2rem;
 }
 
 #main-col {
@@ -159,31 +195,33 @@ button {
 
 #sidebar nav a,
 #sidebar #theme-toggle,
-.banner #name-right,
-.banner #author-right {
+#name-right,
+#author-right {
     color: var(--text-light);
 }
 
 .name {
-    font-size: 25px;
+    font-size: 1.6rem;
 }
 
-.banner #name-right,
-.banner #name-right a,
-.banner #author-right {
+#name-right,
+#name-right a,
+#author-right {
     transform: scale(-1, 1);
     text-align: right;
 }
 
 #home h3,
-#sidebar h3 {
+#sidebar h3,
+h3 {
     font-size: var(--default-font-size);
     font-weight: 500;
     text-decoration: underline;
+    margin: var(--h3-margin);
 }
 
 #home .hobby {
-    margin-bottom: 40px;
+    margin-bottom: 1.5rem;
 }
 
 #theme-toggle {

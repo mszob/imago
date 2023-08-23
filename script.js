@@ -1,4 +1,4 @@
-// pages
+// page loads
 
 function keyboard() {
     largePage();
@@ -17,28 +17,22 @@ function home() {
         document.getElementById('home-nav').className = 'visible';
         document.getElementById('keyboard').className = 'hidden';
         document.getElementById('keyboard-nav').className = 'hidden';
-    }, 350);
+    }, 370);
 }
 
 function smallPage() {
     document.getElementById('main-col').className = "shrink";
     document.getElementById('content').className = "shrink";
+    document.getElementById('banner-right').className = "shrink";
+    document.getElementById('banner-left').className = "shrink";
 }
 
 function largePage() {
     document.getElementById('main-col').className = "expand";
     document.getElementById('content').className = "expand";
+    document.getElementById('banner-right').className = "expand";
+    document.getElementById('banner-left').className = "expand";
 }
-
-// remember theme preference
-
-document.addEventListener('DOMContentLoaded', () => {
-    const body = document.querySelector('body')
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-        body.className = storedTheme;
-    }
-})
 
 // toggle theme button
 
@@ -100,17 +94,31 @@ window.matchMedia('(prefers-color-scheme: dark)')
         }
     })
 
-    // custom back arrow
+// remember theme preference
 
-    (function (window, location) {
-        history.replaceState(null, document.title, location.pathname + "#!/stealingyourhistory");
-        history.pushState(null, document.title, location.pathname);
-        window.addEventListener("popstate", function () {
-            if (location.hash === "#!/stealingyourhistory") {
-                history.replaceState(null, document.title, location.pathname);
-                setTimeout(function () {
-                    location.replace("index.html");
-                }, 0);
-            }
-        }, false);
-    }(window, location));
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector('body')
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+        body.className = storedTheme;
+    }
+})
+
+// custom back arrow
+
+// (function (window, location) {
+//     history.replaceState(null, document.title, location.pathname + "#!/stealingyourhistory");
+//     history.pushState(null, document.title, location.pathname);
+//     window.addEventListener("popstate", function () {
+//         if (location.hash === "#!/stealingyourhistory") {
+//             history.replaceState(null, document.title, location.pathname);
+//             setTimeout(function () {
+//                 location.replace("index.html");
+//             }, 0);
+//         }
+//     }, false);
+// }(window, location));
+
+window.onpopstate = function () {
+    home();
+}; history.pushState({}, '');
