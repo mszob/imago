@@ -149,27 +149,27 @@ body {
 #main-col {
     width: var(--main-col-width);
     height: var(--content-height);
-    max-width: calc(var(--content-max-width) - var(--sidebar-width) - (var(--gutter-expanded-width)));
+    max-width: var(--content-max-width);
     box-sizing: border-box;
 }
 
 #main-col.expand {
     position: absolute;
     transition: width 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
-    width: var(--main-col-large-width);
+    width: calc(var(--main-col-large-width) + var(--gutter-expanded-width) + var(--sidebar-width));
     /* max-width: -webkit-fill-available;
     max-width: -moz-available;
     max-width: -webkit-fill-available;
     max-width: fill-available; */
-    margin-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
+    padding-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
 }
 
 #main-col.shrink {
     position: absolute;
     transition: width 0.1s ease-in-out 0.1s, margin 0.3s ease-in-out 0.1s, height 0.3s ease-in-out 0.3s;
-    width: var(--main-col-width);
+    width: calc(var(--main-col-width) + var(--gutter-expanded-width) + var(--sidebar-width));
     height: var(--content-height);
-    margin-left: calc(var(--sidebar-width) + var(--gutter-width));
+    padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
 main {
@@ -312,7 +312,7 @@ img {
 
     #main-col.shrink {
         position: relative;
-        margin-left: 0px;
+        padding-left: 0px;
         text-align: center;
     }
 
@@ -334,7 +334,7 @@ img {
     #main-col.expand {
         transition: none;
         position: absolute;
-        margin-left: 0rem;
+        padding-left: 0rem;
         width: inherit !important;
         height: 100%;
     }
