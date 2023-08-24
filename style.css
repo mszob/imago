@@ -3,6 +3,7 @@
     --content-height-mobile: 27.5rem
         /* this needs to match the height of #content contents for transitions to be seamless */
     ;
+    --content-max-width: 90vw;
     --content-width-mobile: 13rem;
     --sidebar-width: 14rem;
     --main-col-width: 14.5rem;
@@ -101,7 +102,7 @@ body {
     transition: height 0.1s ease-in-out 0.1s, width 0.3s ease-in-out 0.3s;
     height: 90vh;
     width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
-    max-width: 90vw;
+    max-width: var(--content-max-width);
 }
 
 #content.shrink {
@@ -148,27 +149,27 @@ body {
 #main-col {
     width: var(--main-col-width);
     height: var(--content-height);
-    max-width: 90vw;
+    max-width: calc(var(--content-max-width) - var(--sidebar-width) - (var(--gutter-expanded-width)));
     box-sizing: border-box;
 }
 
 #main-col.expand {
     position: absolute;
     transition: width 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
-    width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
+    width: var(--main-col-large-width);
     /* max-width: -webkit-fill-available;
     max-width: -moz-available;
     max-width: -webkit-fill-available;
     max-width: fill-available; */
-    padding-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
+    margin-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
 }
 
 #main-col.shrink {
     position: absolute;
     transition: width 0.1s ease-in-out 0.1s, margin 0.3s ease-in-out 0.1s, height 0.3s ease-in-out 0.3s;
-    width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-width));
+    width: var(--main-col-width);
     height: var(--content-height);
-    padding-left: calc(var(--sidebar-width) + var(--gutter-width));
+    margin-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
 main {
