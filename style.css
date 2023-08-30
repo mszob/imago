@@ -194,7 +194,7 @@ img {
 
 /* small phones landscape */
 
-@media only screen and (max-height: 450px) {
+@media only screen and (max-height: 500px) {
     :root {
         --default-font-size: 14px;
     }
