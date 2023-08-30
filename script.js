@@ -32,11 +32,12 @@ function adaptLayout() {
     } else {
         content.style.height = mainCol.offsetHeight + 'px';
         content.style.minHeight = sidebar.offsetHeight + 'px';
+        sidebar.style.display = 'block';
         mainCol.style.textAlign = 'left';
         if (page == 'home') {
-
+            mainCol.style.position = 'fixed';
         } else {
-
+            mainCol.style.position = 'relative';
         }
     }
 }
