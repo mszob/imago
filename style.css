@@ -1,39 +1,28 @@
 :root {
-    --content-height: 17rem;
     --content-height-mobile: 27.5rem
         /* this needs to match the height of #content contents for transitions to be seamless */
     ;
+
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --sidebar-width: 14rem;
-    --main-col-width: 14.5rem;
-    --gutter-width: 2rem;
-    --gutter-expanded-width: 3.5rem;
-    --main-col-large-width: 45rem;
+    --content-width-sm: 30rem;
+    --content-width-md: 50rem;
+    --content-width-lg: 60rem;
 
-    --default-font-size: 18px;
+    --sidebar-width: 14rem;
+    --gutter-width: 2rem;
+
+    --default-font-size: 17px;
 
     --h3-margin: 1rem 0rem;
     --home-section-spacing: 2rem;
 
-    --full-trans: ;
+    --full-trans: rgba(0, 0, 0, 0);
 }
 
-/* guides */
-/* .banner #author-right */
-/* #sidebar,
-.banner,
-.banner #right-banner,
-.banner #left-banner,
-#main-col,
-main,
-article {
-    border: 1px solid rgba(127, 127, 127, 0.3);
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 2px;
-} */
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 /* COLORS */
 
@@ -63,14 +52,6 @@ body {
     background-color: var(--background-color);
 }
 
-/* .dark-img {
-    filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
-}
-
-.light-img {
-    filter: invert(0) saturate(1) hue-rotate(0deg) brightness(1);
-} */
-
 #legend {
     filter: var(--theme-img-filter);
 }
@@ -78,14 +59,10 @@ body {
 /* navigation */
 
 .hidden {
-    transition: 0.1s;
     display: none;
-    opacity: 0;
 }
 
 .visible {
-    transition: 0.1s;
-    opacity: 1;
     display: block;
 }
 
@@ -98,44 +75,18 @@ body {
     height: 100vh;
 }
 
-#content.expand {
-    transition: height 0.1s ease-in-out 0.1s, width 0.3s ease-in-out 0.3s;
-    height: 90vh;
-    width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-large-width));
-    max-width: var(--content-max-width);
-}
-
-#content.shrink {
+#content {
     display: flex;
-    justify-content: space-between;
-    transition: width 0.1s ease-in-out 0.1s, height 0.3s ease-in-out 0.3s;
-    height: var(--content-height);
-    width: calc(var(--sidebar-width) + var(--gutter-width) + var(--main-col-width));
-}
-
-#banner-left.shrink,
-#banner-right.shrink {
-    transition: var(--first-half-trans);
-    margin-bottom: calc(1.5 * var(--home-section-spacing));
-}
-
-#banner-left.expand,
-#banner-right.expand {
-    transition: var(--second-half-trans);
-    height: 6rem;
+    max-height: 90vh;
+    width: var(--content-width-sm);
+    max-width: 90vw;
 }
 
 #sidebar {
     position: fixed;
-    width: var(--sidebar-width);
     text-align: right;
-    max-height: 95vh;
-    overflow: auto;
-    padding-right: 1rem;
-}
-
-#sidebar.home {
-    position: relative;
+    height: fit-content;
+    width: var(--sidebar-width);
 }
 
 #back {
@@ -147,39 +98,29 @@ body {
 }
 
 #main-col {
-    width: var(--main-col-width);
-    height: var(--content-height);
-    max-width: var(--content-max-width);
-    box-sizing: border-box;
-}
-
-#main-col.expand {
-    position: absolute;
-    transition: width 0.3s ease-in-out 0.3s, margin 0.3s ease-in-out 0.3s;
-    width: calc(var(--main-col-large-width) + var(--gutter-expanded-width) + var(--sidebar-width));
-    /* max-width: -webkit-fill-available;
-    max-width: -moz-available;
-    max-width: -webkit-fill-available;
-    max-width: fill-available; */
-    padding-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
-}
-
-#main-col.shrink {
-    position: absolute;
-    transition: width 0.1s ease-in-out 0.1s, margin 0.3s ease-in-out 0.1s, height 0.3s ease-in-out 0.3s;
-    width: calc(var(--main-col-width) + var(--gutter-expanded-width) + var(--sidebar-width));
-    height: var(--content-height);
+    position: fixed;
+    height: fit-content;
     padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
-main {
-    padding-bottom: 4rem;
+#banner-right,
+#banner-left {
+    margin-bottom: calc(1.5 * var(--home-section-spacing));
+}
+
+/* initial load */
+
+main:not(#home-main),
+nav:not(#home-nav) {
+    display: none;
 }
 
 /* text */
 
 body,
-#theme-toggle {
+#theme-toggle,
+code,
+pre {
     font-family: 'Courier New', Courier, monospace;
     font-size: var(--default-font-size);
     color: var(--text-primary);
@@ -219,7 +160,7 @@ h3 {
     margin: var(--h3-margin);
 }
 
-#home .hobby {
+#home-main .hobby {
     margin-bottom: var(--home-section-spacing);
 }
 
@@ -232,18 +173,6 @@ h3 {
 
 img {
     max-width: 100%;
-}
-
-/* keyframes */
-
-@keyframes main-col-margin {
-    0% {
-        margin-left: calc(var(--sidebar-width) + var(--gutter-width));
-    }
-
-    100% {
-        margin-left: calc(var(--sidebar-width) + var(--gutter-expanded-width));
-    }
 }
 
 /* some folding phones portrait, mid phones landscape */
@@ -278,28 +207,17 @@ img {
         --default-font-size: 15px;
     }
 
-    /* home */
-
-    #content.shrink {
-        justify-content: baseline
-            /* Content is at top ('baseline') of #content, just as in .expanded. 
-               This ensure the transition between the two is seamless. */
-        ;
+    #content {
         align-items: center;
         flex-direction: column;
-        height: var(--content-height-mobile);
-        width: var(--content-width-mobile);
-    }
-
-    #content.expand {
-        width: 90vw;
     }
 
     #sidebar {
         text-align: center;
         position: relative;
-        margin-top: var(--home-section-spacing);
-        padding-right: 0rem;
+        padding-top: calc(0.5 * var(--home-section-spacing) - 15px)
+            /* this one's a little sloppy... 15px matches the top-margin of the first sidebar link */
+        ;
     }
 
     #sidebar #banner-left {
@@ -310,7 +228,7 @@ img {
         display: none;
     }
 
-    #main-col.shrink {
+    #main-col {
         position: relative;
         padding-left: 0px;
         text-align: center;
@@ -323,23 +241,4 @@ img {
         text-align: center;
     }
 
-    /* expand */
-
-    #content.expand {
-        display: flex;
-        justify-content: baseline;
-        width: 90%;
-    }
-
-    #main-col.expand {
-        transition: none;
-        position: absolute;
-        padding-left: 0rem;
-        width: inherit !important;
-        height: 100%;
-    }
-
-    #main-col.expand+#sidebar {
-        visibility: collapse;
-    }
 }

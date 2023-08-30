@@ -1,59 +1,107 @@
-// page loads
 
-function keyboard() {
-    largePage();
-    document.title = "picturamundi | keyboard"
-    document.getElementById('sidebar').className = '';
-    document.getElementById('home').className = 'hidden';
-    document.getElementById('home-nav').className = 'hidden';
-    document.getElementById('keyboard').className = 'visible';
-    document.getElementById('keyboard-nav').className = 'visible';
-}
+// initial load
 
-function home() {
-    const windowSize = window.matchMedia('(max-width: 475px)')
-    smallPage();
-    document.title = "picturamundi";
+window.addEventListener('DOMContentLoaded', function () {
+    globalThis.page = 'home';
+    globalThis.windowSize = window.matchMedia('(max-width: 475px)');
+    contentAutoSize();
+    //see 'initial load' for more styles
+});
+
+// page load
+
+function hidePages() {
+    document.getElementById(page + '-main').style.display = 'none';
+    document.getElementById(page + '-nav').style.display = 'none';
+    document.getElementById('main-col').style.position = 'relative'; //this gets overid by home()
     if (windowSize.matches) {
-        homeMobile();
-    } else {
-        setTimeout(() => {
-            homeMobile(); // home desktop is same as home mobile with some delays
-        }, 500);
+        document.getElementById('sidebar').style.display = 'none';
+        document.getElementById('main-col').style.textAlign = 'left';
     }
 }
 
-function homeMobile() {
-    document.getElementById('sidebar').className = 'home';
-    document.getElementById('keyboard-nav').className = 'hidden';
-    document.getElementById('home-nav').className = 'visible';
-    document.getElementById('home').className = 'visible';
-    document.getElementById('keyboard').className = 'hidden';
-}
-
-function homeMobile() {
-    smallPage();
-    document.title = "picturamundi"
-    document.getElementById('sidebar').className = 'home';
-    document.getElementById('keyboard-nav').className = 'hidden';
-    document.getElementById('home-nav').className = 'visible';
-    document.getElementById('home').className = 'visible';
-    document.getElementById('keyboard').className = 'hidden';
+function showPage() {
+    document.getElementById(page + '-main').style.display = 'block';
+    document.getElementById(page + '-nav').style.display = 'block';
+    contentAutoSize();
 }
 
 function smallPage() {
-    document.getElementById('main-col').className = "shrink";
-    document.getElementById('content').className = "shrink";
-    document.getElementById('banner-right').className = "shrink";
-    document.getElementById('banner-left').className = "shrink";
+    document.getElementById('content').style.width = 'var(--content-width-sm)';
+    content.style.transition = 'width 0s 0s, height 0s 0s'
+    document.getElementById('main-col').style.paddingBottom = "0rem"
+}
+
+function mediumPage() {
+    document.getElementById('content').style.width = 'var(--content-width-md)';
+    content.style.transition = 'height 0.1s 0s, width 0.1s 0.1s'
+    document.getElementById('main-col').style.paddingBottom = "0rem"
 }
 
 function largePage() {
-    document.getElementById('main-col').className = "expand";
-    document.getElementById('content').className = "expand";
-    document.getElementById('banner-right').className = "expand";
-    document.getElementById('banner-left').className = "expand";
+    var content = document.getElementById('content');
+    content.style.width = 'var(--content-width-lg)';
+    content.style.transition = 'height 0.5s 0s, width 0.2s 0.2s'
+    document.getElementById('main-col').style.paddingBottom = "4rem"
 }
+
+function contentAutoSize() {
+    var content = document.getElementById('content');
+    var mainCol = document.getElementById('main-col');
+    var sidebar = document.getElementById('sidebar');
+    content.style.height = mainCol.offsetHeight + 'px';
+    content.style.minHeight = sidebar.offsetHeight + 'px';
+    if (windowSize.matches) {
+        content.style.height = mainCol.offsetHeight + sidebar.offsetHeight + 'px';
+    }
+}
+
+
+// individual pages
+
+function home() { //initial load to home is not controlled by this function, see CSS
+    hidePages();
+    globalThis.page = 'home';
+    smallPage();
+    if (windowSize.matches) {
+        document.getElementById('main-col').style.textAlign = 'center';
+        document.getElementById('sidebar').style.display = 'block';
+        document.getElementById('main-col').style.position = 'relative';
+    } else {
+        document.getElementById('main-col').style.position = 'fixed';
+    }
+    showPage();
+}
+
+function dvorak() {
+    hidePages();
+    globalThis.page = 'dvorak';
+    mediumPage();
+    showPage();
+}
+
+function obsidian() {
+    hidePages();
+    globalThis.page = 'obsidian';
+    mediumPage();
+    showPage();
+}
+
+function keyboard() {
+    hidePages();
+    globalThis.page = 'keyboard';
+    largePage();
+    showPage();
+}
+
+
+// mobile
+
+const windowSize = window.matchMedia('(max-width: 475px)');
+if (windowSize.matches) {
+
+}
+
 
 // toggle theme button
 
