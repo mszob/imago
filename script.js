@@ -23,8 +23,8 @@ function adaptLayout() {
 
     if (mobile.matches) {
         mainCol.style.position = 'relative';
-        content.style.minHeight = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
         if (page == 'home') {
+            content.style.minHeight = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
         } else {
