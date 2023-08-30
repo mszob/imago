@@ -20,8 +20,10 @@ function adaptLayout() {
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
-    // document.getElementById('sidebar').style.backgroundColor = 'red';
+
     if (mobile.matches) {
+        mainCol.style.position = 'relative';
+        content.style.minHeight = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
         if (page == 'home') {
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
