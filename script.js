@@ -7,12 +7,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 // continual resize
 
-addEventListener("resize", (event) => {
+addEventListener('resize', (event) => {
     adaptLayout();
 });
 
 addEventListener('click', (event) => {
-    adaptLayout();
+
 });
 
 function adaptLayout() {
@@ -22,23 +22,32 @@ function adaptLayout() {
     var sidebar = document.getElementById('sidebar');
 
     if (mobile.matches) {
+        // content.className = 'mobile';
         mainCol.style.position = 'relative';
         if (page == 'home') {
+            // content.className = 'mobile home';
+            // mainCol.className = 'home';
+            // sidebar.className = 'home';
             content.style.minHeight = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
         } else {
+            // mainCol.className = 'not-home';
+            // sidebar.className = 'not-home';
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';
         }
     } else {
+        // content.className = 'not-mobile';
         content.style.height = mainCol.offsetHeight + 'px';
         content.style.minHeight = sidebar.offsetHeight + 'px';
         sidebar.style.display = 'block';
         mainCol.style.textAlign = 'left';
         if (page == 'home') {
+            // mainCol.className = 'home';
             mainCol.style.position = 'fixed';
         } else {
+            // mainCol.className = 'not-home';
             mainCol.style.position = 'relative';
         }
     }
@@ -49,12 +58,14 @@ function adaptLayout() {
 function hidePages() {
     document.getElementById(page + '-main').style.display = 'none';
     document.getElementById(page + '-nav').style.display = 'none';
-    document.getElementById('main-col').style.position = 'relative'; //this gets overid by home()
 }
+
+
 
 function showPage() {
     document.getElementById(page + '-main').style.display = 'block';
     document.getElementById(page + '-nav').style.display = 'block';
+    adaptLayout();
 }
 
 function smallPage() {
@@ -65,7 +76,7 @@ function smallPage() {
 
 function mediumPage() {
     document.getElementById('content').style.width = 'var(--content-width-md)';
-    content.style.transition = 'height 0.1s 0s, width 0.1s 0.1s'
+    content.style.transition = 'height 0.08s 0s, width 0.08s 0.08s'
     document.getElementById('main-col').style.paddingBottom = "0rem"
 }
 
