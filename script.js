@@ -17,6 +17,7 @@ addEventListener("deviceorientation", (event) => {
 
 function adaptLayout() {
     globalThis.mobile = window.matchMedia('(max-width: 500px)');
+    var wrapper = document.getElementById('content-wrapper');
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
@@ -32,18 +33,15 @@ function adaptLayout() {
     if (mobile.matches) {
         // content.className = 'mobile';
         // mainCol.style.position = 'relative';
-        if (page == 'home') {
+        if (page == 'home' || page == 'dvorak' || page == 'obsidian') {
             // content.className = 'mobile home';
             // mainCol.className = 'home';
             // sidebar.className = 'home';
-            document.body.style.position = 'fixed';
-            document.body.style.height = '100vh';
-            document.body.style.width = '100vw';
-            sidebar.style.display = 'block';
-            mainCol.style.textAlign = 'center';
-            sidebar.style.marginTop = mainCol.offsetHeight + 'px';
-            sidebar.style.zIndex = '0';
-            content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
+            // document.body.style.position = 'fixed';
+            // document.body.style.height = '100vh';
+            // document.body.style.width = '100vw';
+            wrapper.style.alignItems = 'flex-start';
+            content.style.marginTop = '30%';
             // setTimeout(() => {
             //     sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             //     content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
@@ -51,13 +49,24 @@ function adaptLayout() {
         } else {
             // mainCol.className = 'not-home';
             // sidebar.className = 'not-home';
-            document.body.style.position = '';
+            wrapper.style.alignItems = 'center';
+            content.style.marginTop = '';
+        }
+        if (page == 'home') {
+            sidebar.style.display = 'block';
+            mainCol.style.textAlign = 'center';
+            sidebar.style.marginTop = mainCol.offsetHeight + 'px';
+            content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
+        } else {
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';
             content.style.height = mainCol.offsetHeight + 'px';
         }
     } else {
         // content.className = 'not-mobile';
+        wrapper.style.alignItems = 'center';
+        content.style.marginTop = '';
+        //
         sidebar.style.display = 'block';
         sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
