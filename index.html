@@ -12,338 +12,335 @@
 
 <body id="body" class="">
 
-    <div id="wrapper">
+    <div id="content-wrapper">
 
-        <div id="content-wrapper">
+        <div id="content" class="">
 
-            <div id="content" class="">
+            <section id="main-col" class="">
 
-                <section id="main-col" class="">
+                <header id="banner-right" class="">
+                    <a onclick="home()">
+                        <div id="name-right" class="">Pictura Mundi</div>
+                        <div id="author-right" class="">Matthias Szobody</div>
+                    </a>
+                </header>
 
-                    <header id="banner-right" class="">
-                        <a onclick="home()">
-                            <div id="name-right" class="">Pictura Mundi</div>
-                            <div id="author-right" class="">Matthias Szobody</div>
-                        </a>
-                    </header>
-
-                    <main id="home-main">
-                        <article>
-                            <section class="hobby">
-                                <h3 onclick="adaptLayout();">Typing software</h3>
-                                <p>
-                                    <!-- <a onclick="largePage(), keyboard()">Keyboard firmware</a> -->
-                                    <a onclick="keyboard()">Keyboard firmware</a>
-                                </p>
-                                <p><a onclick="dvorak()">Dvorak International</a></p>
-                            </section>
-                            <section class="hobby">
-                                <h3>CSS Themes</h3>
-                                <p><a onclick="obsidian()">Obsidian</a>
-                                </p>
-                            </section>
-                        </article>
-                    </main>
-
-                    <main id="dvorak-main">
-                        <article>
-                            <p><code>Dvorak International</code> is a keyboard layout for macOS which makes it easier
-                                for Dvorak users to type certain diacritics. It does this by imitating the sams system
-                                of
-                                dead-keys which many QWERTY users know thanks to the
-                                <code>U.S. International - PC</code>
-                                layout.
+                <main id="home-main">
+                    <article>
+                        <section class="hobby">
+                            <h3 onclick="adaptLayout();">Typing software</h3>
+                            <p>
+                                <!-- <a onclick="largePage(), keyboard()">Keyboard firmware</a> -->
+                                <a onclick="keyboard()">Keyboard firmware</a>
                             </p>
-                            <!-- <ul>
+                            <p><a onclick="dvorak()">Dvorak International</a></p>
+                        </section>
+                        <section class="hobby">
+                            <h3>CSS Themes</h3>
+                            <p><a onclick="obsidian()">Obsidian</a>
+                            </p>
+                        </section>
+                    </article>
+                </main>
+
+                <main id="dvorak-main">
+                    <article>
+                        <p><code>Dvorak International</code> is a keyboard layout for macOS which makes it easier
+                            for Dvorak users to type certain diacritics. It does this by imitating the sams system
+                            of
+                            dead-keys which many QWERTY users know thanks to the
+                            <code>U.S. International - PC</code>
+                            layout.
+                        </p>
+                        <!-- <ul>
                             <li>Apostrophe for accute accent (é) and cedilla (ç)</li>
                             <li>Backtick for grave accent (è)</li>
                             <li>Caret/Circumflex symbol for circumflex accent (ê)</li>
                             <li>Double quotes for diaeresis (ë)</li>
                             <li>Tilde symbol for tilde diacritic, or "virgulilla" (ñ)</li>
                         </ul> -->
-                            <p>The layout is also QWERTY-command.</p>
-                            <a href="assets/dvorak-international-qwerty-command.zip" download>
-                                <div id="dvorak-download">
-                                    <pre class="button">
+                        <p>The layout is also QWERTY-command.</p>
+                        <a href="assets/dvorak-international-qwerty-command.zip" download>
+                            <div id="dvorak-download">
+                                <pre class="button">
 ,---------------------------------.
 |                                 |
 |  Download Dvorak International  |
 |                                 |
 `---------------------------------’</pre>
-                                </div>
-                            </a>
-                            <p>The .zip archive contains a .bundle file which needs to be placed in
-                                <code>/Library/Keyboard Layouts</code> directory.
-                            </p>
-                        </article>
-                    </main>
+                            </div>
+                        </a>
+                        <p>The .zip archive contains a .bundle file which needs to be placed in
+                            <code>/Library/Keyboard Layouts</code> directory.
+                        </p>
+                    </article>
+                </main>
 
-                    <main id="obsidian-main">
-                        <article>
-                            <p><code>Dvorak International</code> is a keyboard layout for macOS which makes it easier
-                                for Dvorak users to type certain diacritics. It does this by imitating the sams system
-                                of
-                                dead-keys which many QWERTY users know thanks to the
-                                <code>U.S. International - PC</code>
-                                layout.
-                            </p>
-                            <!-- <ul>
+                <main id="obsidian-main">
+                    <article>
+                        <p><code>Dvorak International</code> is a keyboard layout for macOS which makes it easier
+                            for Dvorak users to type certain diacritics. It does this by imitating the sams system
+                            of
+                            dead-keys which many QWERTY users know thanks to the
+                            <code>U.S. International - PC</code>
+                            layout.
+                        </p>
+                        <!-- <ul>
                             <li>Apostrophe for accute accent (é) and cedilla (ç)</li>
                             <li>Backtick for grave accent (è)</li>
                             <li>Caret/Circumflex symbol for circumflex accent (ê)</li>
                             <li>Double quotes for diaeresis (ë)</li>
                             <li>Tilde symbol for tilde diacritic, or "virgulilla" (ñ)</li>
                         </ul> -->
-                            <p>The layout is also QWERTY-command.</p>
-                            <a href="assets/dvorak-international-qwerty-command.zip" download>
-                                <div id="dvorak-download">
-                                    <pre>
+                        <p>The layout is also QWERTY-command.</p>
+                        <a href="assets/dvorak-international-qwerty-command.zip" download>
+                            <div id="dvorak-download">
+                                <pre>
 ,---------------------------------.
 |                                 |
 |  Download Dvorak International  |
 |                                 |
 `---------------------------------’
                                 </pre>
-                                </div>
-                            </a>
-                            <p>.ZIP archive contains a .bundle file which needs to be placed in
-                                <code>/Library/Keyboard Layouts</code> directory.
-                            </p>
-                        </article>
-                    </main>
-
-                    <main id="keyboard-main" class="">
-                        <article>
-                            <h3>hello there</h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
-                            suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
-                            cupiditate eaque quis vel?
-
-
-                            <a href="images/legend/legend.png" target="_blank"><img src="images/legend/legend.svg"
-                                    alt="" class="theme-img" id="legend"></a>
-
-
-                            Optio, pariatur. Quo corrupti optio hic voluptatibus placeat blanditiis deserunt fuga vitae
-                            earum, sapiente vero delectus explicabo ratione ut veniam repellendus fugiat quisquam nam
-                            vel
-                            soluta doloribus libero dignissimos velit!
-                            Corrupti cupiditate blanditiis saepe deserunt distinctio maiores, dicta aliquam delectus
-                            natus
-                            est. Natus tempore quasi eaque perspiciatis, veritatis odio dolorem expedita cupiditate
-                            eius!
-                            Quae veniam unde sequi quaerat. Perferendis, reiciendis.
-                            Reiciendis recusandae molestias consequuntur doloremque exercitationem blanditiis, inventore
-                            iste ex repellat, laborum quidem soluta veritatis esse maiores modi unde incidunt velit
-                            laudantium autem nobis similique beatae. Repudiandae nobis repellat vel!
-                            Doloribus ex eaque voluptatibus dolorem porro atque, cum, voluptas mollitia nobis ratione
-                            accusamus nulla laborum dolores saepe ipsa laboriosam, recusandae facere culpa hic facilis
-                            quos.
-                            Cupiditate nostrum adipisci soluta non.
-                            Harum magni suscipit reiciendis voluptas iste. Quod officiis fuga quae necessitatibus dolor
-                            non
-                            culpa tenetur, tempore, ipsum qui atque dolores nihil officia repellat. Exercitationem,
-                            repellat
-                            obcaecati? Sit delectus facere quasi.
-                            Aspernatur sunt eum voluptates quidem accusantium deserunt. Repellat voluptate a officiis
-                            asperiores eum, suscipit quis nisi, ratione obcaecati itaque nostrum distinctio illum eius
-                            animi
-                            aperiam cupiditate maxime voluptatum sed accusantium?
-                            Nostrum delectus ducimus ab maiores officia quis hic sint magni iure rerum non totam
-                            perspiciatis, laudantium cum perferendis earum incidunt praesentium quam obcaecati. Numquam
-                            fugiat assumenda placeat culpa, natus autem?
-                            Ab possimus aliquid beatae ipsam cumque voluptatum accusantium iure itaque magni repellat,
-                            repudiandae quam eaque blanditiis. Libero magnam unde magni quaerat fuga laborum commodi
-                            aliquid
-                            beatae, laboriosam, sequi deleniti ab?
-                            Reprehenderit id odit, qui sint libero dolor ad aperiam blanditiis aliquam iure et,
-                            perspiciatis
-                            similique consectetur dolorum non necessitatibus cupiditate quas nesciunt fugit repellat
-                            enim?
-                            Dolorum cum vitae eum illum?
-                            Voluptates, non alias sint asperiores possimus ipsam molestiae tempore quam veritatis illum
-                            nobis quisquam velit laudantium, architecto porro! Temporibus ab fugit molestias sapiente
-                            doloribus accusamus, itaque eum velit labore unde?
-                            Eius laudantium, excepturi rem dignissimos, quis aspernatur rerum suscipit, culpa quibusdam
-                            amet
-                            neque eum. Omnis nam quia fuga enim veritatis dicta beatae, asperiores quos rem hic
-                            assumenda
-                            iusto at cupiditate.
-                            Recusandae impedit fugit aliquam eveniet autem culpa hic perferendis necessitatibus error
-                            beatae, eaque, nobis quo vel in amet. Eaque mollitia expedita ratione distinctio quisquam
-                            ipsum
-                            voluptate officiis sunt vero error.
-                            Dignissimos officiis ex quisquam tempore quaerat deleniti error expedita rerum quis sed iure
-                            ipsam, alias quia, beatae illum tenetur adipisci iusto fugit aut quos laborum repudiandae.
-                            Dolore unde adipisci vel!
-                            Repudiandae, culpa totam, vero quaerat dolorum suscipit id inventore cupiditate dignissimos
-                            asperiores itaque, laborum ad consequatur. Sequi dolores enim mollitia porro rem sint iusto,
-                            dolorum rerum sit voluptate voluptas debitis?
-                            Dignissimos quisquam harum, unde sunt, odit ullam numquam optio suscipit, temporibus
-                            voluptatem
-                            quo quam eum veniam soluta beatae culpa. Dolor et similique expedita reiciendis consequuntur
-                            quae, illo quidem ipsam quo.
-                            Harum facilis, nostrum quisquam ipsum minima minus incidunt omnis at debitis rerum possimus,
-                            distinctio nisi, iste accusantium nulla. Neque dolorem eaque accusamus non pariatur
-                            repellendus,
-                            excepturi sed tempore reiciendis! Esse.
-                            Sint reiciendis error aliquid dolor. Velit assumenda ad sapiente saepe et odio non minima a
-                            accusamus! Eius architecto quia voluptas libero hic. Praesentium qui omnis quae, provident
-                            laboriosam voluptates harum.
-                            Accusamus, laborum beatae? Ipsam facere impedit ad aliquid aliquam recusandae eaque harum
-                            natus
-                            voluptatum officiis ratione velit magni officia cum eum quidem omnis earum, exercitationem
-                            obcaecati in praesentium ipsa libero.
-                            Architecto veritatis ducimus eos. Assumenda quis maxime eveniet possimus eius ratione amet,
-                            reprehenderit, harum ducimus dicta aliquid obcaecati doloribus? Nam ullam, labore officia
-                            ducimus ipsum quae cumque voluptatum repellat perferendis.
-                            Dolores rem facere voluptate delectus! Dolorum asperiores ducimus adipisci fuga iste eaque
-                            doloremque rem in, esse laborum? Animi sequi repellat quasi quae deserunt asperiores,
-                            adipisci
-                            eos ratione porro dolorem reprehenderit?
-                            Ratione maiores, nihil est distinctio deleniti excepturi dignissimos magni officia delectus
-                            expedita, quidem et nesciunt nulla saepe odit quas hic! Quod quidem sunt eaque aliquam fuga
-                            dolore repellat enim deserunt.
-                            Aperiam id quia, consequuntur quae natus maxime, necessitatibus corporis a ipsam architecto
-                            rem
-                            totam perferendis ab eaque assumenda omnis, cumque rerum ullam error sint eum veritatis
-                            impedit
-                            dolorem incidunt? Sint?
-                            Veritatis, saepe, non veniam quia deleniti tempora corporis repudiandae maxime odio, aut
-                            obcaecati eos explicabo dolore ipsum! Laudantium, magnam est, blanditiis quo ullam optio
-                            quod,
-                            sed velit ratione quos tempora.
-                            Placeat saepe eius, quasi deserunt aperiam, dolorem cum a, alias eum consectetur ipsa.
-                            Consequatur distinctio, quae vero nostrum expedita quia asperiores repellat eos impedit eius
-                            saepe iste ipsam amet recusandae.
-                            Sunt numquam amet est obcaecati dolore exercitationem iure quae sint fugiat, praesentium
-                            aspernatur eius in similique culpa quisquam illo quis asperiores, quos fugit ducimus
-                            reiciendis
-                            nemo sapiente odit ratione? Fuga!
-                            Sit eveniet fugit dolorum. Natus totam laborum sint tenetur. Corrupti fugiat quod unde
-                            voluptatem veniam eos non, facilis laboriosam illum molestias nesciunt labore quam impedit
-                            rerum
-                            nam aperiam est? Placeat!
-                            Quibusdam, nobis natus fuga facilis vitae aspernatur. Tenetur vero assumenda ipsa neque
-                            minima
-                            nobis nemo, consequuntur fuga nulla vel eum molestiae doloremque tempore, accusantium rerum
-                            velit officiis deserunt. Alias, quam.
-                            Ipsum iure delectus harum autem quidem culpa, deserunt sunt cupiditate laudantium quia sequi
-                            earum molestias maiores dolor iusto quis, architecto quibusdam amet provident. Dolorem,
-                            eveniet
-                            modi architecto incidunt soluta aut?
-                            Non, doloremque est! Modi voluptatum iure, a doloremque officia aliquid esse cumque itaque,
-                            autem, omnis delectus. Debitis provident ad, architecto rem quidem optio doloremque.
-                            Temporibus
-                            error repellendus sapiente ad placeat.
-                            Accusantium cum, veniam itaque praesentium omnis sit in neque temporibus vitae minima
-                            delectus
-                            laboriosam repellat voluptate atque at, quod est facere eligendi ipsa quae consequatur
-                            numquam
-                            dolorem voluptatum. Soluta, voluptas!
-                            Debitis autem magnam aliquam, id architecto dolore doloribus voluptatem quo asperiores quos
-                            officiis distinctio dignissimos tempore repellat totam nam non quibusdam repudiandae quis
-                            ducimus voluptatum! Possimus mollitia molestias perferendis numquam.
-                            Culpa tempore commodi accusantium, omnis doloribus pariatur perspiciatis ad a tempora, iste
-                            iure
-                            optio, natus qui rem minus vitae aspernatur possimus debitis corporis! Veniam, eligendi fuga
-                            optio quibusdam molestiae ducimus.
-                            Id accusamus asperiores quasi quo? Delectus nostrum veniam aliquam obcaecati. Fuga
-                            blanditiis
-                            dolorem exercitationem placeat, consectetur quod ab ipsam pariatur? Aspernatur dolor hic
-                            debitis
-                            quaerat nihil earum repellat excepturi iusto!
-                            Sunt veritatis dicta fugit rem mollitia nisi sequi fugiat necessitatibus quia quod cumque
-                            animi
-                            consequuntur optio, ipsa laborum sed enim illum provident harum, molestias blanditiis ad
-                            inventore minus cupiditate. Soluta!
-                            Eos iste consequatur, dicta vitae, dolor quibusdam cumque doloremque omnis, repellat
-                            necessitatibus voluptates. Iure debitis rem vel modi perspiciatis quisquam consequuntur
-                            esse,
-                            iste magnam nam minus ab? Odit, fugiat voluptatem.
-                            Natus officia adipisci totam at ad molestiae, qui et delectus quae quia praesentium
-                            accusamus
-                            molestias, magni, tempore iure debitis placeat. Recusandae accusamus aut autem ducimus
-                            fugiat
-                            nam officia magnam eos!
-                            Ipsa, eveniet hic veniam in tempore quam necessitatibus laboriosam numquam odio? Reiciendis
-                            unde
-                            quibusdam ipsam praesentium corporis temporibus repudiandae perspiciatis, nostrum dolorem
-                            odit,
-                            ab sint debitis, earum optio quis iure.
-                            Aut suscipit, similique fuga inventore sit assumenda dolorum ex molestias labore numquam
-                            laborum
-                            animi, unde porro eaque quidem voluptatum beatae eos vero repellendus sapiente, eveniet
-                            iste.
-                            Sit soluta quod perspiciatis?
-                            Veritatis dolorem porro tempore, quidem omnis illum veniam nulla fugiat molestias ut sint
-                            hic
-                            dolor consequuntur accusamus dolores quisquam excepturi eveniet, dolorum mollitia tenetur!
-                            Earum
-                            dignissimos nesciunt mollitia dolorem? Sequi?
-                        </article>
-                    </main>
-
-                </section>
-
-
-                <aside id="sidebar">
-
-                    <header class="" id="banner-left">
-                        <a onclick="home()">
-                            <div id="name-left" class="name">Pictura Mundi
-
                             </div>
-                            <div id="author-left" class="author">Matthias Szobody</div>
                         </a>
-                    </header>
+                        <p>.ZIP archive contains a .bundle file which needs to be placed in
+                            <code>/Library/Keyboard Layouts</code> directory.
+                        </p>
+                    </article>
+                </main>
 
-                    <nav id="home-nav">
-                        <section id="headings">
-                            <p id="website-link"><a target="_blank"
-                                    href="https://www.keebtalk.com/u/picturamundi">picturamundi.com</a></p>
-                            <p><a href="https://reddit.com/user/picturamundi/" target="_blank">/u/picturamundi</a></p>
-                            <p><a href="https://twitter.com/picturamundi" target="_blank">@picturamundi</a></p>
-                        </section>
-                        <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
-                    </nav>
-
-                    <nav id="keyboard-nav">
-                        <section>
-                            <div id="back"><a onclick="home()">&lt;------ Back</a></div>
-                        </section>
-                        <section id="headings">
-                            <h3>On this page</h3>
-                            <p><a href="#this-is-my-handwriting-game">Introduction</a></p>
-                            <p><a href="#alphabet">Alphabet</a></p>
-                            <p><a href="#manuscript">Manuscript</a></p>
-                        </section>
-                        <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
-                    </nav>
-
-                    <nav id="dvorak-nav">
-                        <section>
-                            <div id="back"><a onclick="home()">&lt;------ Back</a></div>
-                        </section>
-                        <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
-                    </nav>
-
-                    <nav id="obsidian-nav">
-                        <section>
-                            <div id="back"><a onclick="home()">&lt;------ Back</a></div>
-                        </section>
-                        <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
-                    </nav>
+                <main id="keyboard-main" class="">
+                    <article>
+                        <h3>hello there</h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
+                        suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
+                        cupiditate eaque quis vel?
 
 
-                </aside>
+                        <a href="images/legend/legend.png" target="_blank"><img src="images/legend/legend.svg" alt=""
+                                class="theme-img" id="legend"></a>
 
 
-            </div>
-            <!-- content -->
+                        Optio, pariatur. Quo corrupti optio hic voluptatibus placeat blanditiis deserunt fuga vitae
+                        earum, sapiente vero delectus explicabo ratione ut veniam repellendus fugiat quisquam nam
+                        vel
+                        soluta doloribus libero dignissimos velit!
+                        Corrupti cupiditate blanditiis saepe deserunt distinctio maiores, dicta aliquam delectus
+                        natus
+                        est. Natus tempore quasi eaque perspiciatis, veritatis odio dolorem expedita cupiditate
+                        eius!
+                        Quae veniam unde sequi quaerat. Perferendis, reiciendis.
+                        Reiciendis recusandae molestias consequuntur doloremque exercitationem blanditiis, inventore
+                        iste ex repellat, laborum quidem soluta veritatis esse maiores modi unde incidunt velit
+                        laudantium autem nobis similique beatae. Repudiandae nobis repellat vel!
+                        Doloribus ex eaque voluptatibus dolorem porro atque, cum, voluptas mollitia nobis ratione
+                        accusamus nulla laborum dolores saepe ipsa laboriosam, recusandae facere culpa hic facilis
+                        quos.
+                        Cupiditate nostrum adipisci soluta non.
+                        Harum magni suscipit reiciendis voluptas iste. Quod officiis fuga quae necessitatibus dolor
+                        non
+                        culpa tenetur, tempore, ipsum qui atque dolores nihil officia repellat. Exercitationem,
+                        repellat
+                        obcaecati? Sit delectus facere quasi.
+                        Aspernatur sunt eum voluptates quidem accusantium deserunt. Repellat voluptate a officiis
+                        asperiores eum, suscipit quis nisi, ratione obcaecati itaque nostrum distinctio illum eius
+                        animi
+                        aperiam cupiditate maxime voluptatum sed accusantium?
+                        Nostrum delectus ducimus ab maiores officia quis hic sint magni iure rerum non totam
+                        perspiciatis, laudantium cum perferendis earum incidunt praesentium quam obcaecati. Numquam
+                        fugiat assumenda placeat culpa, natus autem?
+                        Ab possimus aliquid beatae ipsam cumque voluptatum accusantium iure itaque magni repellat,
+                        repudiandae quam eaque blanditiis. Libero magnam unde magni quaerat fuga laborum commodi
+                        aliquid
+                        beatae, laboriosam, sequi deleniti ab?
+                        Reprehenderit id odit, qui sint libero dolor ad aperiam blanditiis aliquam iure et,
+                        perspiciatis
+                        similique consectetur dolorum non necessitatibus cupiditate quas nesciunt fugit repellat
+                        enim?
+                        Dolorum cum vitae eum illum?
+                        Voluptates, non alias sint asperiores possimus ipsam molestiae tempore quam veritatis illum
+                        nobis quisquam velit laudantium, architecto porro! Temporibus ab fugit molestias sapiente
+                        doloribus accusamus, itaque eum velit labore unde?
+                        Eius laudantium, excepturi rem dignissimos, quis aspernatur rerum suscipit, culpa quibusdam
+                        amet
+                        neque eum. Omnis nam quia fuga enim veritatis dicta beatae, asperiores quos rem hic
+                        assumenda
+                        iusto at cupiditate.
+                        Recusandae impedit fugit aliquam eveniet autem culpa hic perferendis necessitatibus error
+                        beatae, eaque, nobis quo vel in amet. Eaque mollitia expedita ratione distinctio quisquam
+                        ipsum
+                        voluptate officiis sunt vero error.
+                        Dignissimos officiis ex quisquam tempore quaerat deleniti error expedita rerum quis sed iure
+                        ipsam, alias quia, beatae illum tenetur adipisci iusto fugit aut quos laborum repudiandae.
+                        Dolore unde adipisci vel!
+                        Repudiandae, culpa totam, vero quaerat dolorum suscipit id inventore cupiditate dignissimos
+                        asperiores itaque, laborum ad consequatur. Sequi dolores enim mollitia porro rem sint iusto,
+                        dolorum rerum sit voluptate voluptas debitis?
+                        Dignissimos quisquam harum, unde sunt, odit ullam numquam optio suscipit, temporibus
+                        voluptatem
+                        quo quam eum veniam soluta beatae culpa. Dolor et similique expedita reiciendis consequuntur
+                        quae, illo quidem ipsam quo.
+                        Harum facilis, nostrum quisquam ipsum minima minus incidunt omnis at debitis rerum possimus,
+                        distinctio nisi, iste accusantium nulla. Neque dolorem eaque accusamus non pariatur
+                        repellendus,
+                        excepturi sed tempore reiciendis! Esse.
+                        Sint reiciendis error aliquid dolor. Velit assumenda ad sapiente saepe et odio non minima a
+                        accusamus! Eius architecto quia voluptas libero hic. Praesentium qui omnis quae, provident
+                        laboriosam voluptates harum.
+                        Accusamus, laborum beatae? Ipsam facere impedit ad aliquid aliquam recusandae eaque harum
+                        natus
+                        voluptatum officiis ratione velit magni officia cum eum quidem omnis earum, exercitationem
+                        obcaecati in praesentium ipsa libero.
+                        Architecto veritatis ducimus eos. Assumenda quis maxime eveniet possimus eius ratione amet,
+                        reprehenderit, harum ducimus dicta aliquid obcaecati doloribus? Nam ullam, labore officia
+                        ducimus ipsum quae cumque voluptatum repellat perferendis.
+                        Dolores rem facere voluptate delectus! Dolorum asperiores ducimus adipisci fuga iste eaque
+                        doloremque rem in, esse laborum? Animi sequi repellat quasi quae deserunt asperiores,
+                        adipisci
+                        eos ratione porro dolorem reprehenderit?
+                        Ratione maiores, nihil est distinctio deleniti excepturi dignissimos magni officia delectus
+                        expedita, quidem et nesciunt nulla saepe odit quas hic! Quod quidem sunt eaque aliquam fuga
+                        dolore repellat enim deserunt.
+                        Aperiam id quia, consequuntur quae natus maxime, necessitatibus corporis a ipsam architecto
+                        rem
+                        totam perferendis ab eaque assumenda omnis, cumque rerum ullam error sint eum veritatis
+                        impedit
+                        dolorem incidunt? Sint?
+                        Veritatis, saepe, non veniam quia deleniti tempora corporis repudiandae maxime odio, aut
+                        obcaecati eos explicabo dolore ipsum! Laudantium, magnam est, blanditiis quo ullam optio
+                        quod,
+                        sed velit ratione quos tempora.
+                        Placeat saepe eius, quasi deserunt aperiam, dolorem cum a, alias eum consectetur ipsa.
+                        Consequatur distinctio, quae vero nostrum expedita quia asperiores repellat eos impedit eius
+                        saepe iste ipsam amet recusandae.
+                        Sunt numquam amet est obcaecati dolore exercitationem iure quae sint fugiat, praesentium
+                        aspernatur eius in similique culpa quisquam illo quis asperiores, quos fugit ducimus
+                        reiciendis
+                        nemo sapiente odit ratione? Fuga!
+                        Sit eveniet fugit dolorum. Natus totam laborum sint tenetur. Corrupti fugiat quod unde
+                        voluptatem veniam eos non, facilis laboriosam illum molestias nesciunt labore quam impedit
+                        rerum
+                        nam aperiam est? Placeat!
+                        Quibusdam, nobis natus fuga facilis vitae aspernatur. Tenetur vero assumenda ipsa neque
+                        minima
+                        nobis nemo, consequuntur fuga nulla vel eum molestiae doloremque tempore, accusantium rerum
+                        velit officiis deserunt. Alias, quam.
+                        Ipsum iure delectus harum autem quidem culpa, deserunt sunt cupiditate laudantium quia sequi
+                        earum molestias maiores dolor iusto quis, architecto quibusdam amet provident. Dolorem,
+                        eveniet
+                        modi architecto incidunt soluta aut?
+                        Non, doloremque est! Modi voluptatum iure, a doloremque officia aliquid esse cumque itaque,
+                        autem, omnis delectus. Debitis provident ad, architecto rem quidem optio doloremque.
+                        Temporibus
+                        error repellendus sapiente ad placeat.
+                        Accusantium cum, veniam itaque praesentium omnis sit in neque temporibus vitae minima
+                        delectus
+                        laboriosam repellat voluptate atque at, quod est facere eligendi ipsa quae consequatur
+                        numquam
+                        dolorem voluptatum. Soluta, voluptas!
+                        Debitis autem magnam aliquam, id architecto dolore doloribus voluptatem quo asperiores quos
+                        officiis distinctio dignissimos tempore repellat totam nam non quibusdam repudiandae quis
+                        ducimus voluptatum! Possimus mollitia molestias perferendis numquam.
+                        Culpa tempore commodi accusantium, omnis doloribus pariatur perspiciatis ad a tempora, iste
+                        iure
+                        optio, natus qui rem minus vitae aspernatur possimus debitis corporis! Veniam, eligendi fuga
+                        optio quibusdam molestiae ducimus.
+                        Id accusamus asperiores quasi quo? Delectus nostrum veniam aliquam obcaecati. Fuga
+                        blanditiis
+                        dolorem exercitationem placeat, consectetur quod ab ipsam pariatur? Aspernatur dolor hic
+                        debitis
+                        quaerat nihil earum repellat excepturi iusto!
+                        Sunt veritatis dicta fugit rem mollitia nisi sequi fugiat necessitatibus quia quod cumque
+                        animi
+                        consequuntur optio, ipsa laborum sed enim illum provident harum, molestias blanditiis ad
+                        inventore minus cupiditate. Soluta!
+                        Eos iste consequatur, dicta vitae, dolor quibusdam cumque doloremque omnis, repellat
+                        necessitatibus voluptates. Iure debitis rem vel modi perspiciatis quisquam consequuntur
+                        esse,
+                        iste magnam nam minus ab? Odit, fugiat voluptatem.
+                        Natus officia adipisci totam at ad molestiae, qui et delectus quae quia praesentium
+                        accusamus
+                        molestias, magni, tempore iure debitis placeat. Recusandae accusamus aut autem ducimus
+                        fugiat
+                        nam officia magnam eos!
+                        Ipsa, eveniet hic veniam in tempore quam necessitatibus laboriosam numquam odio? Reiciendis
+                        unde
+                        quibusdam ipsam praesentium corporis temporibus repudiandae perspiciatis, nostrum dolorem
+                        odit,
+                        ab sint debitis, earum optio quis iure.
+                        Aut suscipit, similique fuga inventore sit assumenda dolorum ex molestias labore numquam
+                        laborum
+                        animi, unde porro eaque quidem voluptatum beatae eos vero repellendus sapiente, eveniet
+                        iste.
+                        Sit soluta quod perspiciatis?
+                        Veritatis dolorem porro tempore, quidem omnis illum veniam nulla fugiat molestias ut sint
+                        hic
+                        dolor consequuntur accusamus dolores quisquam excepturi eveniet, dolorum mollitia tenetur!
+                        Earum
+                        dignissimos nesciunt mollitia dolorem? Sequi?
+                    </article>
+                </main>
+
+            </section>
+
+
+            <aside id="sidebar">
+
+                <header class="" id="banner-left">
+                    <a onclick="home()">
+                        <div id="name-left" class="name">Pictura Mundi
+
+                        </div>
+                        <div id="author-left" class="author">Matthias Szobody</div>
+                    </a>
+                </header>
+
+                <nav id="home-nav">
+                    <section id="headings">
+                        <p id="website-link"><a target="_blank"
+                                href="https://www.keebtalk.com/u/picturamundi">picturamundi.com</a></p>
+                        <p><a href="https://reddit.com/user/picturamundi/" target="_blank">/u/picturamundi</a></p>
+                        <p><a href="https://twitter.com/picturamundi" target="_blank">@picturamundi</a></p>
+                    </section>
+                    <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
+                </nav>
+
+                <nav id="keyboard-nav">
+                    <section>
+                        <div id="back"><a onclick="home()">&lt;------ Back</a></div>
+                    </section>
+                    <section id="headings">
+                        <h3>On this page</h3>
+                        <p><a href="#this-is-my-handwriting-game">Introduction</a></p>
+                        <p><a href="#alphabet">Alphabet</a></p>
+                        <p><a href="#manuscript">Manuscript</a></p>
+                    </section>
+                    <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
+                </nav>
+
+                <nav id="dvorak-nav">
+                    <section>
+                        <div id="back"><a onclick="home()">&lt;------ Back</a></div>
+                    </section>
+                    <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
+                </nav>
+
+                <nav id="obsidian-nav">
+                    <section>
+                        <div id="back"><a onclick="home()">&lt;------ Back</a></div>
+                    </section>
+                    <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
+                </nav>
+
+
+            </aside>
+
+
         </div>
-        <!-- content-wrapper -->
+        <!-- content -->
     </div>
+    <!-- content-wrapper -->
 
 </body>
 
