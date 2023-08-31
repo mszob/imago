@@ -11,12 +11,12 @@ addEventListener('resize', (event) => {
     adaptLayout();
 });
 
-addEventListener('click', (event) => {
-
+addEventListener("deviceorientation", (event) => {
+    adaptLayout();
 });
 
 function adaptLayout() {
-    var mobile = window.matchMedia('(max-width: 500px)');
+    globalThis.mobile = window.matchMedia('(max-width: 500px)');
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
@@ -24,16 +24,18 @@ function adaptLayout() {
     if (mobile.matches) {
         // content.className = 'mobile';
         mainCol.style.position = 'relative';
+        content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
         if (page == 'home') {
             // content.className = 'mobile home';
             // mainCol.className = 'home';
             // sidebar.className = 'home';
-            content.style.minHeight = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
+            content.style.height = "fit-content"
         } else {
             // mainCol.className = 'not-home';
             // sidebar.className = 'not-home';
+            content.style.height = mainCol.offsetHeight + 'px';
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';
         }
@@ -72,19 +74,32 @@ function smallPage() {
     document.getElementById('content').style.width = 'var(--content-width-sm)';
     content.style.transition = 'width 0s 0s, height 0s 0s'
     document.getElementById('main-col').style.paddingBottom = "0rem"
+    if (mobile.matches) {
+        content.style.transition = 'height 0s 0s, width 0s 0s'
+    } else {
+        content.style.transition = 'height 0.1s 0.2s, width 0.2s 0s'
+    }
 }
 
 function mediumPage() {
     document.getElementById('content').style.width = 'var(--content-width-md)';
-    content.style.transition = 'height 0.08s 0s, width 0.08s 0.08s'
     document.getElementById('main-col').style.paddingBottom = "0rem"
+    transition();
 }
 
 function largePage() {
     var content = document.getElementById('content');
     content.style.width = 'var(--content-width-lg)';
-    content.style.transition = 'height 0.5s 0s, width 0.2s 0.2s'
     document.getElementById('main-col').style.paddingBottom = "4rem"
+    transition();
+}
+
+function transition() {
+    if (mobile.matches) {
+        content.style.transition = 'height 0s 0s, width 0s 0s'
+    } else {
+        content.style.transition = 'height 0.2s 0s, width 0.1s 0.2s'
+    }
 }
 
 

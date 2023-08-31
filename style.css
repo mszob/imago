@@ -77,9 +77,9 @@ body {
 
 #content {
     display: flex;
-    max-height: 90vh;
     width: var(--content-width-sm);
     max-width: 90vw;
+    max-height: 90vh;
 }
 
 #sidebar {
