@@ -21,6 +21,8 @@ function adaptLayout() {
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
 
+    sidebar.style.position = 'fixed';
+
     if (page == 'home') {
         mainCol.style.position = 'fixed';
     } else {
@@ -30,27 +32,33 @@ function adaptLayout() {
     if (mobile.matches) {
         // content.className = 'mobile';
         // mainCol.style.position = 'relative';
-        content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
         if (page == 'home') {
             // content.className = 'mobile home';
             // mainCol.className = 'home';
             // sidebar.className = 'home';
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
-            content.style.height = "fit-content";
+            sidebar.style.marginTop = mainCol.offsetHeight + 'px';
+            sidebar.style.zIndex = '0';
+            content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
+            // setTimeout(() => {
+            //     sidebar.style.marginTop = mainCol.offsetHeight + 'px';
+            //     content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
+            // }, 70);
         } else {
             // mainCol.className = 'not-home';
             // sidebar.className = 'not-home';
-            content.style.height = mainCol.offsetHeight + 'px';
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';
+            content.style.height = mainCol.offsetHeight + 'px';
         }
     } else {
         // content.className = 'not-mobile';
-        content.style.height = mainCol.offsetHeight + 'px';
-        content.style.minHeight = sidebar.offsetHeight + 'px';
         sidebar.style.display = 'block';
+        sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
+        content.style.minHeight = sidebar.offsetHeight + 'px';
+        content.style.height = mainCol.offsetHeight + 'px';
         // if (page == 'home') {
         //     // mainCol.className = 'home';
         //     mainCol.style.position = 'fixed';

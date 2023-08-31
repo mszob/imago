@@ -27,15 +27,15 @@
 /* COLORS */
 
 body.light-theme {
-    transition: 0.15s;
-    --background-color: white;
+    transition: color 0.15s linear, background 0.15s;
+    --background-color: rgb(255, 255, 255);
     --text-primary: black;
     --text-light: rgba(125, 125, 125, 0.7);
     --theme-img-filter: none;
 }
 
 body.dark-theme {
-    transition: 0.15s;
+    transition: color 0.15s linear, background 0.15s;
     --background-color: rgb(25, 25, 25);
     --text-primary: white;
     --text-light: rgba(125, 125, 125, 0.7);
