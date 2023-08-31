@@ -45,10 +45,20 @@ body.dark-theme {
 html,
 body {
     font-size: var(--default-font-size);
+    margin: 0rem;
     background-color: var(--background-color);
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
+}
+
+#wrapper {
+    position: absolute;
+    top: 0.5px;
+    left: 0;
+    right: 0;
+    bottom: 0.5px;
+    overflow-x: hidden;
+    /* or any other value */
+    overflow-y: auto;
+    /* or any other value */
 }
 
 #legend {
