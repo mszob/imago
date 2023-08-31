@@ -42,12 +42,9 @@ body.dark-theme {
     --theme-img-filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
 }
 
-html {
-    font-size: var(--default-font-size);
-}
-
 html,
 body {
+    font-size: var(--default-font-size);
     margin: 0rem;
     background-color: var(--background-color);
 }
@@ -72,14 +69,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100vh - 100px);
+    margin: 50px 0px;
 }
 
 #content {
     display: flex;
     width: var(--content-width-sm);
     max-width: 90vw;
-    max-height: 90%;
+    max-height: 100%;
 }
 
 #sidebar {
@@ -201,7 +199,7 @@ img {
 
 @media only screen and (max-width: 800px) {
     :root {
-        --default-font-size: 16px;
+        --default-font-size: 15px;
     }
 }
 
@@ -210,7 +208,7 @@ img {
 @media only screen and (max-width: 600px),
 (max-height: 500px) {
     :root {
-        --default-font-size: 16px;
+        --default-font-size: 14px;
     }
 }
 
@@ -226,7 +224,7 @@ img {
 
 @media only screen and (max-width: 475px) {
     :root {
-        --default-font-size: 15px;
+        --default-font-size: 13px;
     }
 
     #content {
