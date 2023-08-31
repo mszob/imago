@@ -36,6 +36,9 @@ function adaptLayout() {
             // content.className = 'mobile home';
             // mainCol.className = 'home';
             // sidebar.className = 'home';
+            document.body.style.position = 'fixed';
+            document.body.style.height = '100vh';
+            document.body.style.width = '100vw';
             sidebar.style.display = 'block';
             mainCol.style.textAlign = 'center';
             sidebar.style.marginTop = mainCol.offsetHeight + 'px';
@@ -48,6 +51,7 @@ function adaptLayout() {
         } else {
             // mainCol.className = 'not-home';
             // sidebar.className = 'not-home';
+            document.body.style.position = '';
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';
             content.style.height = mainCol.offsetHeight + 'px';
