@@ -41,7 +41,7 @@ function adaptLayout() {
             // document.body.style.height = '100vh';
             // document.body.style.width = '100vw';
             wrapper.style.alignItems = 'flex-start';
-            content.style.marginTop = '30%';
+            content.style.marginTop = '20vh';
             // setTimeout(() => {
             //     sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             //     content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
