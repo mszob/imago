@@ -51,6 +51,8 @@ body {
 
 #legend {
     filter: var(--theme-img-filter);
+    width: 80%;
+    padding: 0rem 10% 3rem 10%;
 }
 
 /* navigation */
@@ -135,6 +137,10 @@ pre {
     color: var(--text-primary);
 }
 
+p {
+    line-height: 1.5;
+}
+
 a,
 button {
     cursor: pointer;
@@ -143,8 +149,8 @@ button {
 }
 
 pre.button {
-    font-family: Courier, monospace;
-    /* color: var(--text-light); */
+    /* font-family: Courier, monospace; */
+    color: var(--text-light);
     text-align: center;
 }
 

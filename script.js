@@ -26,8 +26,10 @@ function adaptLayout() {
 
     if (page == 'home') {
         mainCol.style.position = 'fixed';
+        document.getElementById('avatar').style.display = 'visible'; // only visible on first load
     } else {
         mainCol.style.position = 'relative';
+        document.getElementById('avatar').style.display = 'none';
     }
 
     if (mobile.matches) {
@@ -41,7 +43,7 @@ function adaptLayout() {
             // document.body.style.height = '100vh';
             // document.body.style.width = '100vw';
             wrapper.style.alignItems = 'flex-start';
-            content.style.marginTop = '18vh';
+            content.style.marginTop = '17vh';
             // setTimeout(() => {
             //     sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             //     content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
