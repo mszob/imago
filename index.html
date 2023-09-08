@@ -45,9 +45,9 @@
                             <h3 onclick="adaptLayout();">Border body-fixed</h3>
                             <p>
                                 <!-- <a onclick="largePage(), keyboard()">Keyboard firmware</a> -->
-                                <a onclick="keyboard()">Keyboard firmware</a>
+                                <a onclick="keyboard()">30% keyboard firmware</a>
                             </p>
-                            <p><a onclick="dvorak()">Dvorak International</a></p>
+                            <p><a onclick="dvorak()">MacOS keyboard layouts</a></p>
                         </section>
                         <section class="hobby">
                             <h3>CSS Themes</h3>
@@ -59,6 +59,22 @@
 
                 <main id="dvorak-main">
                     <article>
+                        <p>The following keyboard layouts offer practical functionality to Dvorak typists on macOS, as
+                            well as users of small keyboards.</p>
+                        <p>Each individual layout can be downloaded as a .zip archive which contains a .bundle file.
+                            This file needs to be placed in the <code>/Library/Keyboard Layouts</code> directory in
+                            macOS.
+                        </p>
+                        <pre class="button">
++---------------------------------+
+|                                 |
+|      Download all layouts       |
+|                                 |
++---------------------------------+</pre>
+                        <p>Alternatively, all layouts can be downloaded simultaneously above.</p>
+
+
+                        <h2 id="dvorak-international">Dvorak International</h2>
                         <p><code>Dvorak International</code> is a keyboard layout for macOS which makes it easier
                             for Dvorak users to type the following diacritics.
 
@@ -75,7 +91,6 @@
                             <li>Double quotes for diaeresis (ë)</li>
                             <li>Tilde symbol for tilde diacritic, or "virgulilla" (ñ)</li>
                         </ul> -->
-                        <p>The layout is also QWERTY-command.</p>
                         <a href="assets/dvorak-international-qwerty-command.zip" download>
                             <div id="dvorak-download">
                                 <pre class="button">
@@ -86,9 +101,37 @@
 +---------------------------------+</pre>
                             </div>
                         </a>
-                        <p>The .zip archive contains a .bundle file which needs to be placed in
-                            <code>/Library/Keyboard Layouts</code> directory.
+                        <p>The layout is also QWERTY-command.</p>
+
+                        <h2 id="30-international">30% International</h2>
+                        <p>This layout is based on the U.S. International layout but is modified for small keyboards
+                            (e.g. 30% or 40%). Is uses the semi-colon as a dead key
+                            for the circumflex accent, rather than the caret symbol, as the latter is not as accessible
+                            with small form-factors.</p>
+                        <div id="dvorak-download">
+                            <pre class="button">
++---------------------------------+
+|                                 |
+|   Download 30% International    |
+|                                 |
++---------------------------------+</pre>
+                        </div>
+                        <p>This layout is based on QWERTY since it is meant to be used with an external keyboard; any
+                            any alternate layouts will are used directly on the external keyboard's controller.
                         </p>
+
+                        <h2 id="dvorak-to-qwerty">Dvorak to QWERTY</h2>
+                        <p>This layout allows an external Dvorak keyboard to be used as a QWERTY keyboard even if a
+                            QWERTY layout is not included in the external keyboard's firmware.</p>
+                        <pre class="button">
++---------------------------------+
+|                                 |
+|    Download Dvorak to QWERTY    |
+|                                 |
++---------------------------------+</pre>
+                        <p>The layout does this by
+                            simply mapping a QWERTY key's position to the QWERTY letter which occupies the position of
+                            that same key in the Dvorak layout.</p>
                     </article>
                 </main>
 
@@ -380,7 +423,7 @@
                         <div id="back"><a onclick="home()">&lt;------ Back</a></div>
                     </section>
                     <section id="headings">
-                        <h3>On this page</h3>
+                        <h3>30% keyboard firmware</h3>
                         <p><a href="#this-is-my-handwriting-game">Introduction</a></p>
                         <p><a href="#alphabet">Alphabet</a></p>
                         <p><a href="#manuscript">Manuscript</a></p>
@@ -391,6 +434,12 @@
                 <nav id="dvorak-nav">
                     <section>
                         <div id="back"><a onclick="home()">&lt;------ Back</a></div>
+                    </section>
+                    <section id="headings">
+                        <h3>MacOS keyboard layouts</h3>
+                        <p><a href="#dvorak-international">Dvorak International</a></p>
+                        <p><a href="#30-international">30% International</a></p>
+                        <p><a href="#dvorak-to-qwerty">Dvorak to QWERTY</a></p>
                     </section>
                     <p><button id="theme-toggle" onclick="themeToggle()">[Theme]</button></p>
                 </nav>

@@ -32,6 +32,7 @@ body.light-theme {
     --text-primary: black;
     --text-light: rgba(125, 125, 125, 0.7);
     --theme-img-filter: none;
+    --theme-img-filter-reverse: invert(1);
 }
 
 body.dark-theme {
@@ -40,6 +41,7 @@ body.dark-theme {
     --text-primary: white;
     --text-light: rgba(125, 125, 125, 0.7);
     --theme-img-filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
+    --theme-img-filter-reverse: none;
 }
 
 html,
@@ -51,8 +53,13 @@ body {
 
 #legend {
     filter: var(--theme-img-filter);
-    width: 80%;
+    max-width: 80%;
     padding: 0rem 10% 3rem 10%;
+}
+
+img.small {
+    filter: var(--theme-img-filter-reverse);
+    width: 500px;
 }
 
 /* navigation */
