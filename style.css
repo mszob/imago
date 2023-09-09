@@ -108,7 +108,7 @@ img.small {
     position: fixed;
     height: fit-content;
     max-width: 100%;
-    overflow: scroll;
+    /* overflow: scroll; */
     padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
