@@ -107,6 +107,8 @@ img.small {
 #main-col {
     position: fixed;
     height: fit-content;
+    max-width: 100%;
+    overflow: scroll;
     padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
@@ -122,15 +124,11 @@ nav:not(#home-nav) {
     display: none;
 }
 
-/* adaptive layout */
 
-/* #content.mobile #main-col {
-    position: relative;
+div.large-table {
+    max-width: 100%;
+    overflow-x: scroll;
 }
-
-#content.mobile.home {
-    min-height: var(--);
-} */
 
 
 /* text */
@@ -182,6 +180,14 @@ code {
 #author-right {
     transform: scale(-1, 1);
     text-align: right;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-family: courier, monospace;
+    font-weight: 500;
+    margin-top: 4rem;
+    border-bottom: 1px solid var(--text-light);
 }
 
 #home h3,
