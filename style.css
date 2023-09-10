@@ -20,6 +20,21 @@
     --full-trans: rgba(0, 0, 0, 0);
 }
 
+@font-face {
+    font-family: 'pictura';
+    src: url('assets/font/Pictura-Regular.eot');
+    src: url('assets/font/Pictura-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/font/Pictura-Regular.woff2') format('woff2'),
+        url('assets/font/Pictura-Regular.woff') format('woff'),
+        url('assets/font/Pictura-Regular.ttf') format('truetype'),
+        url('assets/font/Pictura-Regular.svg#Pictura-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 * {
     font-family: 'Courier New', Courier, monospace;
 }
@@ -117,19 +132,41 @@ img.small {
     margin-bottom: calc(1.5 * var(--home-section-spacing));
 }
 
+/* tables */
+
+div.large-table {
+    max-width: 100%;
+    overflow-x: scroll;
+    margin: 3rem 0rem;
+}
+
+div.script table.tg tbody tr td,
+div.simple-script table.tg tbody tr td+td {
+    font-family: 'pictura';
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+div.simple-script table.tg tbody tr td+td {
+    font-size: 3rem;
+}
+
+.script tr:nth-child(1) td:nth-child(-n + 2),
+.script tr:nth-child(4) td:nth-child(-n + 2),
+.script tr:nth-child(8) td:nth-child(-n + 2),
+.script tr:nth-child(3) td:nth-child(-n + 1),
+.script tr:nth-child(9) td:nth-child(-n + 1),
+.script tr:nth-child(11) td:nth-child(-n + 1) {
+    font-family: 'Courier New', 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+}
+
 /* initial load */
 
 main:not(#home-main),
 nav:not(#home-nav) {
     display: none;
 }
-
-
-div.large-table {
-    max-width: 100%;
-    overflow-x: scroll;
-}
-
 
 /* text */
 

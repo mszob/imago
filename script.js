@@ -199,11 +199,11 @@ function showLogo() {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.querySelector("body").className = "dark-theme";
-        document.querySelector("link[rel='icon']").href = "favicon/dark.png";
+        document.querySelector("link[rel='icon']").href = "assets/favicon/dark.png";
         document.getElementById('legend').className = "dark-img";
     } else {
         document.querySelector("body").className = "light-theme";
-        document.querySelector("link[rel='icon']").href = "favicon/light.png";
+        document.querySelector("link[rel='icon']").href = "assets/favicon/light.png";
         document.getElementById('legend').className = "light-img";
     }
 })
@@ -214,11 +214,11 @@ window.matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', ({ matches }) => {
         if (matches) {
             document.querySelector("body").className = "dark-theme";
-            document.querySelector("link[rel='icon']").href = "favicon/dark.png";
+            document.querySelector("link[rel='icon']").href = "assets/favicon/dark.png";
             document.getElementById('legend').className = "dark-img";
         } else {
             document.querySelector("body").className = "light-theme";
-            document.querySelector("link[rel='icon']").href = "favicon/light.png";
+            document.querySelector("link[rel='icon']").href = "assets/favicon/light.png";
             document.getElementById('legend').className = "light-img";
         }
     })
