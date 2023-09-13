@@ -20,6 +20,17 @@
     --full-trans: rgba(0, 0, 0, 0);
 }
 
+/* guides */
+
+/* #main-col,
+aside,
+nav,
+header,
+main {
+    padding: 10px;
+    border: 1px solid var(--text-light);
+} */
+
 @font-face {
     font-family: 'pictura';
     src: url('assets/font/Pictura-Regular.eot');
@@ -34,10 +45,6 @@
 }
 
 
-
-* {
-    font-family: 'Courier New', Courier, monospace;
-}
 
 /* COLORS */
 
@@ -179,7 +186,7 @@ pre {
     color: var(--text-primary);
 }
 
-p {
+* {
     line-height: 1.5;
 }
 
@@ -188,6 +195,10 @@ button {
     cursor: pointer;
     text-decoration: none;
     color: var(--text-primary);
+}
+
+main a {
+    border-bottom: 1px solid var(--text-light);
 }
 
 pre.button {
@@ -231,9 +242,12 @@ h2 {
 #sidebar h3,
 h3 {
     font-size: var(--default-font-size);
+    font-family: courier, monospace;
     font-weight: 500;
-    text-decoration: underline;
+    text-transform: uppercase;
+    /* text-decoration: underline; */
     margin: var(--h3-margin);
+    /* border-bottom: 1px solid var(--text-light); */
 }
 
 #home-main .hobby {

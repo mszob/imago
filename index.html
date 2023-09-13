@@ -42,17 +42,27 @@
                 <main id="home-main">
                     <article>
                         <section class="hobby">
-                            <h3 onclick="adaptLayout();">Border body-fixed</h3>
-                            <p>
-                                <!-- <a onclick="largePage(), keyboard()">Keyboard firmware</a> -->
-                                <a onclick="keyboard()">30% keyboard firmware</a>
-                            </p>
-                            <p><a onclick="dvorak()">MacOS keyboard layouts</a></p>
+                            <h3><a href="https://www.toyotawar.com">Opération Manta board game</a></h3>
+                            <!-- <p>
+                                <a href="https://www.toyotawar.com">Opération Manta on Steam</a>
+                            </p> -->
                         </section>
                         <section class="hobby">
-                            <h3>CSS Themes</h3>
-                            <p><a onclick="obsidian()">Obsidian</a>
+                            <h3>Typing software</h3>
+                            <p><a href="https://github.com/picturamundi/keyboard-layouts" target="_blank">Custom MacOS
+                                    layouts</a></p>
+
+                            <p>
+                                <!-- <a onclick="largePage(), keyboard()">Keyboard firmware</a> -->
+                                <!-- <a onclick="keyboard()">30% keyboard firmware</a> -->
+                                <a href="https://github.com/picturamundi/zmk-config" target="_blank">30%
+                                    firmware</a>
                             </p>
+                        </section>
+                        <section class="hobby">
+                            <h3><a onclick="obsidian()">Pen and ink script</a></h3>
+                            <!-- <p><a onclick="obsidian()">Custom script</a>
+                            </p> -->
                         </section>
                     </article>
                 </main>
@@ -61,8 +71,12 @@
                     <article>
                         <p>The following keyboard layouts offer practical functionality to Dvorak typists and users of
                             small keyboards on macOS.</p>
+                        <h2>Installation</h2>
                         <p>Each individual layout can be downloaded as a .zip archive which contains a .bundle file.
-                            This file needs to be placed in the <code>/Library/Keyboard Layouts</code> directory.
+                            This file needs to be placed in the <code>/Library/Keyboard Layouts</code> directory, then
+                            installed in System Settings > Keyboard > Keyboard layouts. Click on the <code>+</code>
+                            button to add a new input source, then locate custom layouts in the <code>Others</code>
+                            category.
                         </p>
                         <pre class="button">
 +---------------------------------+
@@ -136,7 +150,14 @@
                 <main id="obsidian-main">
                     <article>
 
-                        <h2>Organizing consonants</h2>
+                        <p>I use this custom English script to explore aspects of writing which I find interesting. I
+                            try to make it 1] a bit more phonetic than standard English spelling, 2] fun to write in
+                            cursive!
+                        </p>
+
+                        <p>It is a work in progress.</p>
+
+                        <h2>Consonant sounds</h2>
 
                         <p>The table below summarizes how the script approaches organizing consonants.</p>
 
@@ -293,7 +314,7 @@
                             <table class="tg">
                                 <thead>
                                     <tr>
-                                        <th class="tg-8jgo" colspan="2" rowspan="2">29 consonants</th>
+                                        <th class="tg-8jgo" colspan="2" rowspan="2">Consonant sounds</th>
                                         <th class="tg-0pky" colspan="2">base letter</th>
                                         <th class="tg-0pky" colspan="2">related</th>
                                         <th class="tg-0pky" colspan="2">compound</th>
@@ -441,10 +462,10 @@
                             }
                         </style>
 
-                        <p>Sounds are organized into three families based on the general area where they are
+                        <p>1. Sounds are organized into three families based on the general area where they are
                             pronounced
                             in the mouth (Y axis).</p>
-                        <p>Within the families, sounds are organized in series based on three factors of
+                        <p>2. Within the families, sounds are organized in series based on three factors of
                             similarity (Z axis):</p>
                         <ul>
                             <li>Unvoiced and voiced variation on the same sound (e.g. t/d)</li>
@@ -456,10 +477,9 @@
 
                         <h2>Writing consonants</h2>
 
-                        <p>The 29 consonant sounds are graphically represented according to the above classification,
-                            with general character shape indicating location in the mouth, each individual character
-                            indicating a series of similar sounds, and diacritics distinguishing each sound in the
-                            series.</p>
+                        <p>The general character shape of written consonant sounds indicates location in the mouth; each
+                            individual charactes indicates a series of similar sounds; and diacritics distinguish each
+                            sound in the series.</p>
 
                         <div class="large-table simple-script">
                             <table class="tg">
@@ -504,14 +524,14 @@
                         </div>
 
                         <p>When written, the 29 consonants follow this basic pattern. One exception for practicality:
-                            the voiced diacritic is unnecessary for voiced consonants with no unvoiced counterpart (m,
-                            n, l, r, ŋ).</p>
+                            it is not necessary to write the voiced diacritic for voiced consonants with no unvoiced
+                            counterpart (m, n, l, r, ŋ).</p>
 
                         <div class="large-table script">
                             <table class="tg">
                                 <thead>
                                     <tr>
-                                        <th class="tg-8jgo" colspan="2" rowspan="2">11 characters</th>
+                                        <th class="tg-8jgo" colspan="2" rowspan="2">Writing consonants</th>
                                         <th class="tg-0pky" colspan="2">base letter</th>
                                         <th class="tg-0pky" colspan="2">related</th>
                                         <th class="tg-0pky" colspan="2">compound</th>
@@ -636,6 +656,13 @@
                             </table>
                         </div>
 
+                        <h2>Vowels</h2>
+
+                        <p>Vowels are a mess. Come back later!</p>
+
+                        <h2>Cursive manuscript</h2>
+                        <p>Coming soon…</p>
+
                     </article>
                 </main>
 
@@ -645,31 +672,31 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/0.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/0.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/1.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/1-2.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/2.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/3-4.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/3.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/5-6.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/4.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/0.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/5.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/0.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nihil fugiat, facilis iusto
                             suscipit consectetur facere tempora ab aperiam hic! Ea eos quaerat animi sapiente minima
                             cupiditate eaque quis vel?</p>
-                        <img src="assets/images/legend/light/6.png" alt="" class="theme-img" id="legend">
+                        <img src="assets/images/legend/0.svg" alt="" class="theme-img" id="legend">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta illum nam corrupti, commodi
                             blanditiis iusto atque corporis voluptate voluptatibus expedita itaque, nisi voluptatem
                             delectus perferendis quod eaque, eligendi exercitationem eos!
