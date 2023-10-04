@@ -127,7 +127,7 @@ function transition() {
     if (mobile.matches) {
         content.style.transition = 'height 0s 0s, width 0s 0s'
     } else {
-        content.style.transition = 'height 0.2s 0s, width 0.1s 0.2s'
+        content.style.transition = 'height 0.4s 0.2s, width 0.2s 0s'
     }
 }
 

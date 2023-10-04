@@ -257,6 +257,7 @@ h3 {
 #theme-toggle {
     border: none;
     background: none;
+    margin-top: calc(0.5 * var(--home-section-spacing));
 }
 
 /* images? */
