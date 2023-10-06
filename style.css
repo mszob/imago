@@ -5,11 +5,11 @@
 
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --content-width-sm: 30rem;
-    --content-width-md: 50rem;
+    --content-width-sm: 35rem;
+    --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 14rem;
+    --sidebar-width: 15rem;
     --gutter-width: 2rem;
 
     --default-font-size: 17px;
@@ -19,6 +19,19 @@
 
     --full-trans: rgba(0, 0, 0, 0);
 }
+
+.keebtalk-link:hover::before {
+    content: "keebtalk.com/"
+}
+
+.twitter-link:hover::before {
+    content: "twitter.com/"
+}
+
+.reddit-link:hover::before {
+    content: "reddit.com/"
+}
+
 
 /* guides */
 
@@ -257,7 +270,7 @@ h3 {
 #theme-toggle {
     border: none;
     background: none;
-    margin-top: calc(0.5 * var(--home-section-spacing));
+    margin-top: calc(1 * var(--home-section-spacing));
 }
 
 /* images? */
