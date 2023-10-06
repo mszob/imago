@@ -16,7 +16,7 @@ addEventListener("deviceorientation", (event) => {
 });
 
 function adaptLayout() {
-    globalThis.mobile = window.matchMedia('(max-width: 500px)');
+    globalThis.mobile = window.matchMedia('(max-width: 540px)');
     var wrapper = document.getElementById('content-wrapper');
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');

@@ -20,18 +20,30 @@
     --full-trans: rgba(0, 0, 0, 0);
 }
 
-.keebtalk-link:hover::before {
-    content: "keebtalk.com/"
+.keebtalk-link::before {
+    content: "keebtalk.com/";
 }
 
-.twitter-link:hover::before {
-    content: "twitter.com/"
+.twitter-link::before {
+    content: "twitter.com/";
 }
 
+.reddit-link::before {
+    content: "reddit.com/";
+}
+
+.keebtalk-link::before,
+.twitter-link::before,
+.reddit-link::before {
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.keebtalk-link:hover::before,
+.twitter-link:hover::before,
 .reddit-link:hover::before {
-    content: "reddit.com/"
+    opacity: 1;
 }
-
 
 /* guides */
 
@@ -306,7 +318,7 @@ img {
 
 /* anything that is not phone portrait */
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 540px) {
     .mobile {
         display: none;
     }
@@ -314,7 +326,7 @@ img {
 
 /* most phones portrait */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 540px) {
     :root {
         --default-font-size: 13px;
     }
