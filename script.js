@@ -92,7 +92,6 @@ function hidePages() {
 }
 
 
-
 function showPage() {
     document.getElementById(page + '-main').style.display = 'block';
     document.getElementById(page + '-nav').style.display = 'block';
@@ -168,24 +167,24 @@ function keyboard() {
 function themeToggle() {
     if (body.className.includes('light-theme')) {
         body.className = "dark-theme";
-        document.getElementById('legend').className = "dark-img";
+        // document.getElementById('legend').className = "dark-img";
     }
     else {
         body.className = "light-theme";
-        document.getElementById('legend').className = "light-img";
+        // document.getElementById('legend').className = "light-img";
     }
     localStorage.setItem('theme', body.className)
 }
 
 // show logo on first visit
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.noFirstVisit != "1") {
-        document.getElementById('logo').style.display = "block";
-        document.getElementById('home-box').style.animation = "home-box 4.5s";
-        localStorage.noFirstVisit = "1";
-    }
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     if (localStorage.noFirstVisit != "1") {
+//         document.getElementById('logo').style.display = "block";
+//         document.getElementById('home-box').style.animation = "home-box 4.5s";
+//         localStorage.noFirstVisit = "1";
+//     }
+// })
 
 // forget first visit and reload button
 
@@ -197,14 +196,21 @@ function showLogo() {
 // theme and favicon adapts to browser theme on load
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("body").className = "dark-theme";
-        document.querySelector("link[rel='icon']").href = "assets/favicon/dark.png";
-        document.getElementById('legend').className = "dark-img";
-    } else {
-        document.querySelector("body").className = "light-theme";
-        document.querySelector("link[rel='icon']").href = "assets/favicon/light.png";
-        document.getElementById('legend').className = "light-img";
+    const body = document.querySelector('body')
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+        document.getElementById('body').className = localStorage.getItem('theme');
+    }
+    else {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.querySelector("body").className = "dark-theme";
+            document.querySelector("link[rel='icon']").href = "assets/favicon/dark.png";
+            // document.getElementById('legend').className = "dark-img";
+        } else {
+            document.querySelector("body").className = "light-theme";
+            document.querySelector("link[rel='icon']").href = "assets/favicon/light.png";
+            document.getElementById('legend').className = "light-img";
+        }
     }
 })
 
