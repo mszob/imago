@@ -26,7 +26,7 @@ function adaptLayout() {
 
     if (page == 'home') {
         mainCol.style.position = 'fixed';
-        document.getElementById('avatar').style.display = 'visible'; // only visible on first load
+        // document.getElementById('avatar').style.display = 'visible'; // only visible on first load
     } else {
         mainCol.style.position = 'relative';
         document.getElementById('avatar').style.display = 'none';
