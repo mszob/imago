@@ -80,11 +80,10 @@ window.addEventListener("hashchange", function () {
 
 function route() {
 
-    // var hash = this.href.substring(this.href.lastIndexOf('/') + 1);
-    var functionName = this.href.substring(this.href.lastIndexOf('/') + 1);
+    var hash = window.location.hash;
 
     // Remove the "#" symbol from the hash
-    // var functionName = hash.substring(1);
+    var functionName = hash.substring(1);
 
     // Call the corresponding JavaScript function
     if (typeof window[functionName] === "function") {
@@ -131,7 +130,6 @@ function largePage() {
 function home() { //initial load to home is not controlled by this function, see CSS
     document.getElementById('content').style.transition = "height 0.2s 0.2s, width 0.2s 0s";
     hidePages();
-    history.pushState('home', 'home', '/home');
     globalThis.page = 'home';
     smallPage();
     showPage();
@@ -148,7 +146,6 @@ function script() {
     hidePages();
     mediumPage();
     globalThis.page = 'script';
-    history.pushState('script', 'script', '/script');
     showPage();
 }
 
