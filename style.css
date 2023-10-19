@@ -48,6 +48,18 @@ main {
 
 /* COLORS */
 
+/* selection */
+
+::selection {
+    color: var(--background-color);
+    background-color: var(--text-primary);
+}
+
+::-moz-selection {
+    color: var(--background-color);
+    background-color: var(--text-primary);
+}
+
 body.light-theme {
     transition: color 0.15s linear, background 0.15s;
     --background-color: rgb(255, 255, 255);
@@ -109,6 +121,7 @@ img.small {
     width: var(--content-width-sm);
     max-width: 90vw;
     max-height: 90vh;
+    /* here! */
 }
 
 #sidebar {
@@ -220,7 +233,7 @@ code {
 
 #name-left,
 #name-right {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 #name-right,

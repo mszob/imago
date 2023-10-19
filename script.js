@@ -59,6 +59,7 @@ function adaptLayout() {
         sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
         content.style.minHeight = sidebar.offsetHeight + 'px';
+        // content.style.maxHeight = sidebar.offsetHeight + 'px'; // ACTIVATE THIS TO FIX BANNER
         content.style.height = mainCol.offsetHeight + 'px';
     }
 }
