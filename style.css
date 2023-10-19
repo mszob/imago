@@ -21,15 +21,15 @@
 }
 
 .keebtalk-link::before {
-    content: "keebtalk.com/";
+    content: "keebtalk: ";
 }
 
 .twitter-link::before {
-    content: "twitter.com/";
+    content: "twitter: ";
 }
 
 .reddit-link::before {
-    content: "reddit.com/";
+    content: "reddit: ";
 }
 
 .keebtalk-link::before,
