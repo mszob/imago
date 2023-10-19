@@ -1,8 +1,11 @@
 // initial load
 
+
 window.addEventListener('DOMContentLoaded', function () {
     globalThis.page = 'home';
     adaptLayout();
+    route();
+    document.getElementById('content').style.transition = "height 0s"; // prevent animations on load
 });
 
 // continual resize
@@ -64,6 +67,32 @@ function adaptLayout() {
     }
 }
 
+
+
+// page load test
+
+window.addEventListener("hashchange", function () {
+    // back to animation
+    document.getElementById('content').style.transition = "height 0.2s 0.2s, width 0.2s 0s";
+    // Get the hash fragment from the URL
+    route();
+});
+
+function route() {
+
+    var hash = window.location.hash;
+
+    // Remove the "#" symbol from the hash
+    var functionName = hash.substring(1);
+
+    // Call the corresponding JavaScript function
+    if (typeof window[functionName] === "function") {
+        window[functionName]();
+    } else {
+        console.log("Function not found");
+    }
+}
+
 // punctual page load
 
 function hidePages() {
@@ -80,40 +109,26 @@ function showPage() {
 
 function smallPage() {
     document.getElementById('content').style.width = 'var(--content-width-sm)';
-    content.style.transition = 'width 0s 0s, height 0s 0s'
     document.getElementById('main-col').style.paddingBottom = "0rem"
-    if (mobile.matches) {
-        content.style.transition = 'height 0s 0s, width 0s 0s'
-    } else {
-        content.style.transition = 'height 0.1s 0.2s, width 0.2s 0s'
-    }
 }
 
 function mediumPage() {
     document.getElementById('content').style.width = 'var(--content-width-md)';
     document.getElementById('main-col').style.paddingBottom = "0rem"
-    transition();
 }
 
 function largePage() {
     var content = document.getElementById('content');
     content.style.width = 'var(--content-width-lg)';
     document.getElementById('main-col').style.paddingBottom = "4rem"
-    transition();
 }
 
-function transition() {
-    if (mobile.matches) {
-        content.style.transition = 'height 0s 0s, width 0s 0s'
-    } else {
-        content.style.transition = 'height 0.4s 0.2s, width 0.2s 0s'
-    }
-}
 
 
 // individual pages
 
 function home() { //initial load to home is not controlled by this function, see CSS
+    document.getElementById('content').style.transition = "height 0.2s 0.2s, width 0.2s 0s";
     hidePages();
     globalThis.page = 'home';
     smallPage();

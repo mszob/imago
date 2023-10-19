@@ -119,7 +119,7 @@ img.small {
 #content {
     display: flex;
     width: var(--content-width-sm);
-    max-width: 90vw;
+    max-width: 85vw;
     max-height: 90vh;
     /* here! */
 }
@@ -338,6 +338,10 @@ img {
     .mobile {
         display: none;
     }
+
+    #content {
+        transition: height 0.2s 0.2s, width 0.2s 0s;
+    }
 }
 
 /* most phones portrait */
@@ -345,6 +349,10 @@ img {
 @media only screen and (max-width: 540px) {
     :root {
         --default-font-size: 13px;
+    }
+
+    #content {
+        transition: height 0s 0s, width 0s 0s;
     }
 
     .keebtalk-link::before,
