@@ -80,10 +80,11 @@ window.addEventListener("hashchange", function () {
 
 function route() {
 
-    var hash = window.location.hash;
+    // var hash = this.href.substring(this.href.lastIndexOf('/') + 1);
+    var functionName = this.href.substring(this.href.lastIndexOf('/') + 1);
 
     // Remove the "#" symbol from the hash
-    var functionName = hash.substring(1);
+    // var functionName = hash.substring(1);
 
     // Call the corresponding JavaScript function
     if (typeof window[functionName] === "function") {
