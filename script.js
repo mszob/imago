@@ -238,4 +238,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onpopstate = function () {
     home();
-}; history.pushState({}, '');
+}; history.pushState({}, '/home');
