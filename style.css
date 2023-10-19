@@ -20,31 +20,6 @@
     --full-trans: rgba(0, 0, 0, 0);
 }
 
-.keebtalk-link::before {
-    content: "keebtalk: ";
-}
-
-.twitter-link::before {
-    content: "twitter: ";
-}
-
-.reddit-link::before {
-    content: "reddit: ";
-}
-
-.keebtalk-link::before,
-.twitter-link::before,
-.reddit-link::before {
-    opacity: 0;
-    transition: opacity 0.15s;
-}
-
-.keebtalk-link:hover::before,
-.twitter-link:hover::before,
-.reddit-link:hover::before {
-    opacity: 1;
-}
-
 /* guides */
 
 /* #main-col,
@@ -291,6 +266,34 @@ img {
     max-width: 100%;
 }
 
+/* social links */
+
+.keebtalk-link::before {
+    content: "keebtalk: ";
+}
+
+.twitter-link::before {
+    content: "twitter: ";
+}
+
+.reddit-link::before {
+    content: "reddit: ";
+}
+
+.keebtalk-link::before,
+.twitter-link::before,
+.reddit-link::before {
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.keebtalk-link:hover::before,
+.twitter-link:hover::before,
+.reddit-link:hover::before {
+    opacity: 1;
+}
+
+
 /* some folding phones portrait, mid phones landscape */
 
 @media only screen and (max-width: 800px) {
@@ -331,6 +334,16 @@ img {
         --default-font-size: 13px;
     }
 
+    .keebtalk-link::before,
+    .twitter-link::before,
+    .reddit-link::before {
+        display: none;
+    }
+
+    /* nav:not(#home-nav) {
+        display: none !important;
+    } */
+
     .desktop {
         display: none;
     }
@@ -359,7 +372,6 @@ img {
     #main-col {
         position: relative;
         padding-left: 0px;
-        text-align: center;
     }
 
     #name-right,

@@ -26,37 +26,15 @@ function adaptLayout() {
 
     if (page == 'home') {
         mainCol.style.position = 'fixed';
-        // document.getElementById('avatar').style.display = 'visible'; // only visible on first load
     } else {
         mainCol.style.position = 'relative';
-        document.getElementById('avatar').style.display = 'none';
     }
 
     if (mobile.matches) {
-        // content.className = 'mobile';
-        // mainCol.style.position = 'relative';
-        if (page == 'home' || page == 'dvorak' || page == 'obsidian') {
-            // content.className = 'mobile home';
-            // mainCol.className = 'home';
-            // sidebar.className = 'home';
-            // document.body.style.position = 'fixed';
-            // document.body.style.height = '100vh';
-            // document.body.style.width = '100vw';
-            wrapper.style.alignItems = 'flex-start';
-            content.style.marginTop = '17vh';
-            // setTimeout(() => {
-            //     sidebar.style.marginTop = mainCol.offsetHeight + 'px';
-            //     content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
-            // }, 70);
-        } else {
-            // mainCol.className = 'not-home';
-            // sidebar.className = 'not-home';
-            wrapper.style.alignItems = 'center';
-            content.style.marginTop = '';
-        }
+        document.getElementById('home-main').style.textAlign = 'center';
+
         if (page == 'home') {
             sidebar.style.display = 'block';
-            mainCol.style.textAlign = 'center';
             sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
         } else {
@@ -64,23 +42,24 @@ function adaptLayout() {
             mainCol.style.textAlign = 'left';
             content.style.height = mainCol.offsetHeight + 'px';
         }
+
+        if (page == 'home' || page == 'dvorak' || page == 'script') {
+            wrapper.style.alignItems = 'flex-start';
+            content.style.marginTop = '17vh';
+        } else {
+            wrapper.style.alignItems = 'center';
+            content.style.marginTop = '';
+        }
+
     } else {
-        // content.className = 'not-mobile';
+        document.getElementById('home-main').style.textAlign = 'left';
         wrapper.style.alignItems = 'center';
         content.style.marginTop = '';
-        //
         sidebar.style.display = 'block';
         sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
         content.style.minHeight = sidebar.offsetHeight + 'px';
         content.style.height = mainCol.offsetHeight + 'px';
-        // if (page == 'home') {
-        //     // mainCol.className = 'home';
-        //     mainCol.style.position = 'fixed';
-        // } else {
-        //     // mainCol.className = 'not-home';
-        //     mainCol.style.position = 'relative';
-        // }
     }
 }
 
@@ -147,10 +126,10 @@ function dvorak() {
     showPage();
 }
 
-function obsidian() {
+function script() {
     hidePages();
-    globalThis.page = 'obsidian';
     mediumPage();
+    globalThis.page = 'script';
     showPage();
 }
 
