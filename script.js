@@ -2,7 +2,7 @@
 
 
 window.addEventListener('DOMContentLoaded', function () {
-    globalThis.mobile = window.matchMedia('(max-width: 540px)');
+    globalThis.mobile = window.matchMedia('(max-width: 570px)');
     globalThis.page = 'home';
     adaptLayout();
     route();
@@ -58,7 +58,7 @@ function adaptLayout() {
 
         if (page == 'home' || page == 'reflection' || page == 'script') {
             wrapper.style.alignItems = 'flex-start';
-            content.style.marginTop = '17vh';
+            content.style.marginTop = '15vh';
         } else {
             wrapper.style.alignItems = 'center';
             content.style.marginTop = '';

@@ -352,7 +352,7 @@ img {
 @media only screen and (max-width: 600px),
 (max-height: 500px) {
     :root {
-        --default-font-size: 14px;
+        --default-font-size: 15px;
     }
 }
 
@@ -366,11 +366,14 @@ img {
 
 /* anything that is not phone portrait */
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 570px) {
     .mobile {
         display: none;
     }
+}
 
+/* no idea why, but the theme button position seems to trigger with a 1px offset, when it comes to min-width */
+@media only screen and (min-width: 571px) {
     #home-nav #theme-toggle {
         position: absolute;
         margin-bottom: calc(var(--home-section-spacing) - 1px);
@@ -379,9 +382,9 @@ img {
 
 /* most phones portrait */
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 570px) {
     :root {
-        --default-font-size: 13px;
+        --default-font-size: 14px;
     }
 
     #content {
@@ -417,6 +420,7 @@ img {
 
     #theme-toggle {
         margin-top: calc(0.5 * var(--home-section-spacing));
+        padding: 0px 1rem;
     }
 
     .keebtalk-link {
