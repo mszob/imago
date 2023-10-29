@@ -15,9 +15,10 @@
     --default-font-size: 17px;
 
     --h3-margin: 1rem 0rem;
-    --home-section-spacing: 2rem;
+    --home-section-spacing: 1.85rem;
 
     --full-trans: rgba(0, 0, 0, 0);
+    --par-margin: 0.8rem;
 }
 
 /* guides */
@@ -60,22 +61,36 @@ main {
     background-color: var(--text-primary);
 }
 
+#banner-left,
+#banner-right,
+#sidebar,
+#home-main {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body.light-theme {
-    transition: color 0.15s linear, background 0.15s;
+    transition: color 0.3s linear, background 0.3s;
     --background-color: rgb(255, 255, 255);
     --text-primary: black;
     --text-light: rgba(125, 125, 125, 0.7);
     --theme-img-filter: none;
     --theme-img-filter-reverse: invert(1);
+    --theme-img: invert(1) brightness(1.07);
+    --blend-img: darken;
 }
 
 body.dark-theme {
-    transition: color 0.15s linear, background 0.15s;
+    transition: color 0.3s linear, background 0.3s;
     --background-color: rgb(25, 25, 25);
     --text-primary: white;
     --text-light: rgba(125, 125, 125, 0.7);
     --theme-img-filter: invert(1) saturate(1.5) hue-rotate(180deg) brightness(0.95);
     --theme-img-filter-reverse: none;
+    --theme-img: invert(0);
+    --blend-img: lighten;
 }
 
 html,
@@ -83,12 +98,6 @@ body {
     font-size: var(--default-font-size);
     margin: 0rem;
     background-color: var(--background-color);
-}
-
-#legend {
-    filter: var(--theme-img-filter);
-    max-width: 80%;
-    padding: 0rem 10% 3rem 10%;
 }
 
 img.small {
@@ -125,7 +134,7 @@ img.small {
 }
 
 #sidebar {
-    position: fixed;
+    position: relative;
     text-align: right;
     height: fit-content;
     width: var(--sidebar-width);
@@ -140,7 +149,7 @@ img.small {
 }
 
 #main-col {
-    position: fixed;
+    position: relative;
     height: fit-content;
     max-width: 100%;
     /* overflow: scroll; */
@@ -199,6 +208,19 @@ pre {
     color: var(--text-primary);
 }
 
+p {
+    margin-top: var(--par-margin);
+    margin-bottom: var(--par-margin);
+}
+
+pre.note {
+    text-wrap: wrap;
+    border: 1px solid var(--text-light);
+    padding: 2rem;
+    margin: 2rem 0rem;
+    border-radius: 0.2rem;
+}
+
 * {
     line-height: 1.3;
 }
@@ -220,8 +242,8 @@ pre.button {
     text-align: center;
 }
 
-code {
-    border-bottom: 1px dashed var(--text-primary);
+p code {
+    color: var(--text-light);
 }
 
 #sidebar nav a,
@@ -267,16 +289,26 @@ h3 {
     margin-bottom: var(--home-section-spacing);
 }
 
+#home-main .hobby .toggle a {
+    color: var(--text-light);
+}
+
 #theme-toggle {
+    bottom: 0px;
+    right: 0px;
     border: none;
     background: none;
-    margin-top: calc(1 * var(--home-section-spacing));
 }
 
 /* images? */
 
 img {
     max-width: 100%;
+}
+
+.theme-img {
+    filter: var(--theme-img) contrast(1);
+    mix-blend-mode: var(--blend-img);
 }
 
 /* social links */
@@ -297,7 +329,7 @@ img {
 .twitter-link::before,
 .reddit-link::before {
     opacity: 0;
-    transition: opacity 0.15s;
+    transition: opacity 0.3s;
 }
 
 .keebtalk-link:hover::before,
@@ -339,8 +371,9 @@ img {
         display: none;
     }
 
-    #content {
-        transition: height 0.2s 0.2s, width 0.2s 0s;
+    #home-nav #theme-toggle {
+        position: absolute;
+        margin-bottom: calc(var(--home-section-spacing) - 1px);
     }
 }
 
@@ -380,6 +413,14 @@ img {
         padding-top: calc(0.5 * var(--home-section-spacing) - 15px)
             /* this one's a little sloppy... 15px matches the top-margin of the first sidebar link */
         ;
+    }
+
+    #theme-toggle {
+        margin-top: calc(0.5 * var(--home-section-spacing));
+    }
+
+    .keebtalk-link {
+        display: none;
     }
 
     #sidebar #banner-left {

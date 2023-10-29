@@ -2,6 +2,7 @@
 
 
 window.addEventListener('DOMContentLoaded', function () {
+    globalThis.mobile = window.matchMedia('(max-width: 540px)');
     globalThis.page = 'home';
     adaptLayout();
     route();
@@ -18,12 +19,20 @@ addEventListener("deviceorientation", (event) => {
     adaptLayout();
 });
 
+addEventListener('click', (event) => {
+    document.getElementById('content').style.transition = "height 0.3s 0s";
+    adaptLayout();
+});
+
 function adaptLayout() {
-    globalThis.mobile = window.matchMedia('(max-width: 540px)');
+
     var wrapper = document.getElementById('content-wrapper');
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
+    var writing = document.getElementById('writing-toggle');
+    var typing = document.getElementById('typing-toggle');
+
 
     sidebar.style.position = 'fixed';
 
@@ -35,6 +44,7 @@ function adaptLayout() {
 
     if (mobile.matches) {
         document.getElementById('home-main').style.textAlign = 'center';
+        sidebar.style.height = 'fit-content';
 
         if (page == 'home') {
             sidebar.style.display = 'block';
@@ -46,7 +56,7 @@ function adaptLayout() {
             content.style.height = mainCol.offsetHeight + 'px';
         }
 
-        if (page == 'home' || page == 'dvorak' || page == 'script') {
+        if (page == 'home' || page == 'reflection' || page == 'script') {
             wrapper.style.alignItems = 'flex-start';
             content.style.marginTop = '17vh';
         } else {
@@ -65,15 +75,54 @@ function adaptLayout() {
         // content.style.maxHeight = sidebar.offsetHeight + 'px'; // ACTIVATE THIS TO FIX BANNER
         content.style.height = mainCol.offsetHeight + 'px';
     }
+
+    // find the original height of main-Col (no expanded sections)
+    // main-Col height must be calculated after auto resizing (all the above function content) in order to preserver smooth animations
+    if (page == 'home') {
+        if (!mobile.matches) {
+            if (document.getElementById('writing-toggle').classList.contains('hidden')) {
+                if (document.getElementById('typing-toggle').classList.contains('hidden')) {
+                    globalThis.homeHeight = mainCol.offsetHeight + 'px';
+                    // ^ saves the home main-col height to a variable, which can then be used to set sidebar height even when main-col height changes
+                } else {
+                    globalThis.homeHeight = mainCol.offsetHeight - typing.offsetHeight - 14 + 'px';
+                    // no idea why I need to manually adjust with random pixel values, but oh well
+                }
+            } else {
+                if (document.getElementById('typing-toggle').classList.contains('hidden')) {
+                    globalThis.homeHeight = mainCol.offsetHeight - writing.offsetHeight - 14 + 'px';
+                } else {
+                    globalThis.homeHeight = mainCol.offsetHeight - writing.offsetHeight - typing.offsetHeight - 28 + 'px';
+                }
+            }
+        }
+    }
+
+    if (!mobile.matches) {
+        if (page == 'home') {
+            sidebar.style.height = homeHeight;
+        }
+    } else {
+    }
 }
 
+// home toggles
 
+function writingToggle() {
+    var writing = document.getElementById('writing-toggle')
+    writing.classList.toggle('hidden');
+}
+
+function typingToggle() {
+    var typing = document.getElementById('typing-toggle')
+    typing.classList.toggle('hidden');
+}
 
 // page load test
 
 window.addEventListener("hashchange", function () {
     // back to animation
-    document.getElementById('content').style.transition = "height 0.2s 0.2s, width 0.2s 0s";
+    document.getElementById('content').style.transition = "height 0.7s 0.2s, width 0.2s 0s";
     // Get the hash fragment from the URL
     route();
 });
@@ -85,7 +134,7 @@ function route() {
     // Remove the "#" symbol from the hash
     var functionName = hash.substring(1);
 
-    // Call the corresponding JavaScript function
+    // Call the corresponding function
     if (typeof window[functionName] === "function") {
         window[functionName]();
     } else {
@@ -99,7 +148,6 @@ function hidePages() {
     document.getElementById(page + '-main').style.display = 'none';
     document.getElementById(page + '-nav').style.display = 'none';
 }
-
 
 function showPage() {
     document.getElementById(page + '-main').style.display = 'block';
@@ -124,34 +172,26 @@ function largePage() {
 }
 
 
-
 // individual pages
 
 function home() { //initial load to home is not controlled by this function, see CSS
-    document.getElementById('content').style.transition = "height 0.2s 0.2s, width 0.2s 0s";
+    document.getElementById('content').style.transition = "height 0.4s 0.1s, width 0.2s 0s";
     hidePages();
     globalThis.page = 'home';
     smallPage();
     showPage();
 }
 
-function dvorak() {
-    hidePages();
-    globalThis.page = 'dvorak';
-    mediumPage();
-    showPage();
-}
-
 function script() {
     hidePages();
-    mediumPage();
+    largePage();
     globalThis.page = 'script';
     showPage();
 }
 
-function keyboard() {
+function reflection() {
     hidePages();
-    globalThis.page = 'keyboard';
+    globalThis.page = 'reflection';
     largePage();
     showPage();
 }
@@ -198,13 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     else {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.querySelector("body").className = "dark-theme";
-            document.querySelector("link[rel='icon']").href = "assets/favicon/dark.png";
-            // document.getElementById('legend').className = "dark-img";
+            body.className = 'dark-theme';
         } else {
-            document.querySelector("body").className = "light-theme";
-            document.querySelector("link[rel='icon']").href = "assets/favicon/light.png";
-            document.getElementById('legend').className = "light-img";
+            body.className = 'light-theme';
         }
     }
 })

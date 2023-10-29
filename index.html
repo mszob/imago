@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#191919">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#191919">
     <meta name="msapplication-TileColor" content="#191919">
     <meta name="theme-color" content="#191919">
 </head>
@@ -41,27 +41,199 @@
                         </section>
 
                         <section class="hobby">
+                            <p><a onclick="typingToggle()">typing tools</a></p>
+
+                            <section class="hidden toggle" id="typing-toggle">
+                                <p><a href="https://github.com/picturamundi/zmk-config" target="_blank">36-key
+                                        firmware</a>
+                                </p>
+                                <p><a href="https://github.com/picturamundi/keyboard-layouts" target="_blank">custom
+                                        typing layouts</a></p>
+                            </section>
+                        </section>
+
+                        <!-- <section class="hobby">
                             <p><a href="https://github.com/picturamundi/zmk-config" target="_blank">36-key firmware</a>
                             </p>
                             <p><a href="https://github.com/picturamundi/keyboard-layouts" target="_blank">custom
                                     typing layouts</a></p>
+                        </section> -->
+
+                        <section class="hobby">
+                            <p><a onclick="writingToggle()">writing tools</p>
+                            <section class="hidden toggle" id="writing-toggle">
+                                <p><a href="#script">ink script</a></p>
+
+                                <p><a href="#reflection">reflection notes</a></p>
+                            </section>
+                        </section>
+
+                        <!-- <section class="hobby">
+                            <p><a onclick="" href="#script">ink script</a></p>
                         </section>
 
                         <section class="hobby">
-                            <p><a onclick="" href="#script">ink script</a></p>
-                        </section>
+                            <p><a href="https://facultejeancalvin.academia.edu/MatthiasSzobody"
+                                    target="_blank">reflection notes</a></p>
+                        </section> -->
 
                         <section class="hobby">
                             <p><a href="https://facultejeancalvin.academia.edu/MatthiasSzobody"
                                     target="_blank">theology</a></p>
                         </section>
 
+                    </article>
+                </main>
 
+                <main id="reflection-main">
+                    <article>
+
+                        <h1>Reflection Notes</h1>
+
+                        <p>Here I try to describe a simple writing habit that I gradually formed over a couple of years
+                            as an exercise in grief. Since then, this practice has become surprisingly clarifying in a
+                            variety of other ways as well.</p>
+                        <p>The habit has been to let how I write grow as an extension of the personal reflection
+                            process. “How I write” means content of course, but also format, and perhaps most important,
+                            relationships: the relationship of different entries to each other, the relationship between
+                            the writing and other media it references, and the shifting shape of the collective whole.
+                        </p>
+                        <p>All of the above constitutes an organic thing that accompanies me through the reflection
+                            process.</p>
+                        <p>Below, I’ll first outline the simple practice, which can be used with a variety of media,
+                            digital or otherwise. Then, I’ll briefly explain one way that I implement it using a
+                            specific medium — software.</p>
+                        <h2 id="i-personal-notes">I. Personal notes</h2>
+                        <p>In some limited ways, my habit resembles note-taking approaches like Zettelkasten. However,
+                            unlike Zettelkasten, the goal is not &quot;thinking.&quot; A better word would maybe be
+                            &quot;reflection.&quot;</p>
+                        <!--I like how the word "reflection" carries connotations of patience, repetition, and eco. And reflection, like a mirror, is open to any reality that gets put in front of it.-->
+                        <p>It starts with a simple note.</p>
+                        <h3 id="making-a-note">Making a Note</h3>
+                        <p>A note is a simple, crystal-clear expression of something that matters. It can be a feeling.
+                            A memory. A realization.</p>
+                        <p>Often, the felling of needing to write a note is the feeling that a gift was just given to
+                            me, and I need a fitting place to put it.</p>
+                        <p>Notes are not a place to brainstorm, to practice stream-of-consciousness writing, or to
+                            &quot;journal.&quot; Sometimes writing in those ways is helpful too, but I rarely hold onto
+                            the result. If something long-form is helpful, it will usually yield a simple note, maybe
+                            two or three. I can string these notes together, each one referencing the previous and next
+                            one in the series, but each one standing alone in its own right as well.</p>
+                        <p>I always put the date on a note, and I keep them in chronological order. A note means
+                            something in its place. It might be named something like
+                            <code>2023-06-07-avenue-jules-ferry</code>.
+                        </p>
+                        <p>The value of a note usually becomes apparent with time. Perhaps half of the notes I write
+                            will last, taking on more significance when they do.</p>
+                        <p>Limiting myself to writing notes that are short, simple, and few, is already an exercise in
+                            reflection. But it&#39;s only the beginning.</p>
+                        <h3 id="making-stories">Making Stories</h3>
+                        <p>As small constellations of notes appear, stories will being to emerge from them. This is
+                            where the reflection process really begins to be fertile.</p>
+                        <p>“Stories” are the patterns of recognition that appear once I&#39;m confronted with a given
+                            number of my own written reflections. It can be the striking irony between this set of notes
+                            and that set of notes; a theme that no one note could express, but which a concert of them
+                            witnesses to beyond a doubt…</p>
+                        <p>The feeling of recognizing a “story” emerge is often the euphoric feeling that I finally have
+                            a voice. It does not seem to be my voice, but a voice that is emerging for me, and in order
+                            to show even me.</p>
+                        <p>What I avoid at all costs is subsuming notes <em>under</em> stories in a hierarchical manner,
+                            for example, by creating a story folder and placing notes <em>inside</em> of it. A story is
+                            instead a “lens” through which the notes <em>can</em> be viewed as having this or that
+                            meaning to them. But I need to be able to come back to them and notice a new, different
+                            story emerge, without free notes having become fossilized into a structure.</p>
+                        <p>As a result, a story must not be a folder. Concretely, a story is a series of links to other
+                            notes, accompanied by as much or as little commentary as I find helpful.</p>
+                        <p>This right here is the heart of the reflective process. It&#39;s a way to tell what
+                            you&#39;ve experienced back to yourself, but <em>to tell it in a way that has meaning</em>.
+                            I find it matters very little if the meaning is encouraging or tragic, if patterns that
+                            emerge are of progress or patterns of utter loss. The story is enough.</p>
+                        <p>Stories only work because I don&#39;t start with them. I can almost never sit down and simply
+                            start “journaling” a story of mine. Instead, I start with no structure at all, no sense of
+                            overarching meaning or direction. I can be lost, if that&#39;s what I truly am, I can be
+                            hurt and confused. The only thing I need to begin is honesty. Honesty enough to be clear.
+                            That&#39;s enough, and that&#39;s a note.</p>
+                        <p>I&#39;ve found that if I can take that first step, then time will slowly do the rest. I might
+                            even forget about them for a few months. But if I come back, and I am confronted with them,
+                            then eventually, stories begin telling themselves back to me. And hearing the story is the
+                            beginning of healing.</p>
+                        <hr>
+                        <p>For whatever it&#39;s worth, here is the trace that this reflective process has left for me:
+                        </p>
+                        <ul>
+                            <li>Over the course of two years, I have edited and saved a total of about 150 short, brief
+                                notes.</li>
+                            <li>I&#39;ve told 8 stories.</li>
+                            <li>Notes tend to have somewhere between 100 and 500 words, but a few are as short as 3 and
+                                as long as 2000.</li>
+                            <li>Stories tend to reference about 10-20 notes.</li>
+                            <li>Some notes are captured in no stories at all, still floating freely. Some have found
+                                their place within as much as half of the stories, seen differently in each.</li>
+                        </ul>
+                        <h2 id="ii-software">II. Software</h2>
+                        <h3 id="files-local-plain-text">Files: local plain text</h3>
+                        <p>I use local plain text to create my notes and stories. This medium has turned out to be
+                            perfectly suited for this kind of reflection, as well as quite enjoyable.</p>
+                        <p>First, it has the simplicity of writing by hand. None of the compatibility concerns that come
+                            with Rich Text, no opinionated software with unnecessary interfaces and buttons. Like paper,
+                            the screen is a blank space.</p>
+                        <p>I write in Markdown, meaning that, much as with a pen, I write my own formatting by hand in
+                            simple, visually intelligible, intuitive markup.</p>
+                        <pre class="note">
+# 2023-10-27-note-title
+                            
+Here is a thought… an *emphatic* thought.</pre>
+                        <p>More than with any other personal files, it matters to me that my notes and stories be local,
+                            that is, entirely within my possession, and that they be in an open format. They sit within
+                            a 203 kilobyte folder, an average of 900 bytes per note.</p>
+                        <p>There are a few pieces of software which are particularly suited for viewing these files and
+                            putting them in relationship to each other.</p>
+                        <h3 id="apps-markdown-wikis">Apps: markdown wikis</h3>
+                        <p>The key feature which markdown editors bring to the table is not so much the ability to
+                            render notes as HTML — Markdown is visually intelligible without rendering, a uniquely cool
+                            feature — nor necessarily the ability to style the rendering with CSS, although that can be
+                            good fun.</p>
+                        <p>For our purposes, markdown editors bring the crucial ability to connect notes to each other
+                            using hyperlinks. Linking is an inherent ability of Markdown, which is based on HTML, but
+                            you need a Markdown editor that understand HTML for links to be interactive. Without such a
+                            program, Markdown notes would be closer to paper notes, and links would be like index
+                            references that tell you what to manually search for.</p>
+                        <pre class="note">
+A story note contains wikilinks such as [[this one]]. Links refer to various notes, e.g. [[2021-12-11-holy-holy-holy]].
+</pre>
+                        <p>The result is something which resembles a personal wiki of interconnected notes. However,
+                            unlike most wikis, the goal is not to connect information, and certainly not in a
+                            hierarchical or topical manner. Instead, the web which appears over time reveals the
+                            topography of the reflective process.</p>
+                        <p><img class="theme-img" src="assets/images/obsidian-graph.png" alt=""></p>
+                        <p>The above graph is an inadequate representation of reflection, since it doesn&#39;t display
+                            the crucial time dimension. But it gives a dim idea of the sense-making process.</p>
+                        <p>Large central nodes are stories. Some notes are epiphanies connected to so many stories that
+                            they are nearly meta-stories themselves.</p>
+                        <hr>
+                        <p>The app I have most enjoyed using is <a href="https://nota.md/download">nota.md</a>. It is
+                            functional and refreshingly simple.</p>
+                        <p>Another app I have enjoyed using is <a href="">obsidian.md</a>. Despite its less soothing
+                            interface and overwhelming feature list, a key advantage of Obsidian is that it will allow
+                            you to link to local files which are not themselves plain text.</p>
+                        <p>Sometimes I find it very helpful to be able to reference all kinds of media on my machine
+                            when I&#39;m writing, like photos or music. While Nota doesn&#39;t know what to do with
+                            links like <code>[[2017-foyer.png]]</code>, Obsidian will pull up the linked file for me.
+                            Items from throughout my local documents, forgotten images from deep inside certain folder
+                            structures, are soon pulled into the slowly forming web of meaning. It can be exhilarating.
+                        </p>
+                        <p>Because Nota and Obsidian are apps that browse the same local files, I can switch back and
+                            forth between them depending on the kind of writing tools and environment I want in a given
+                            moment.</p>
+                        <hr>
+                        <p>More could be said, but I think this is what matters.</p>
                     </article>
                 </main>
 
                 <main id="script-main">
                     <article>
+
+                        <h1>Ink Script</h1>
 
                         <p>I use this custom English script to explore aspects of writing which I find interesting. I
                             try to make it 1] a bit more phonetic than standard English spelling, 2] fun to write in
@@ -575,7 +747,6 @@
 
                         <h2>Cursive manuscript</h2>
                         <p>Coming soon…</p>
-
                     </article>
                 </main>
 
@@ -594,19 +765,24 @@
 
                 <nav id="home-nav">
                     <section id="headings">
-                        <p id="website-link"><a target="_blank"
-                                href="https://www.keebtalk.com/u/picturamundi">picturamundi.com</a></p>
                         <p><a class="reddit-link" href="https://reddit.com/user/picturamundi/"
                                 target="_blank">u/picturamundi</a></p>
-                        <p><a class="twitter-link" href="https://twitter.com/picturamundi"
+                        <p><a class="twitter-link" href="https://twitter.com/picturamundi/with_replies"
                                 target="_blank">@picturamundi</a></p>
                         <p><a class="keebtalk-link" href="https://www.keebtalk.com/u/picturamundi"
                                 target="_blank">picturamundi</a></p>
                     </section>
-                    <p><button id="theme-toggle" onclick="themeToggle()">[theme]</button></p>
+                    <button id="theme-toggle" onclick="themeToggle()">[theme]</button>
                 </nav>
 
                 <nav id="script-nav">
+                    <section>
+                        <div id="back"><a href="#home">&lt;------ back</a></div>
+                    </section>
+                    <p><button id="theme-toggle" onclick="themeToggle()">[theme]</button></p>
+                </nav>
+
+                <nav id="reflection-nav">
                     <section>
                         <div id="back"><a href="#home">&lt;------ back</a></div>
                     </section>
