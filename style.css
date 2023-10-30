@@ -32,6 +32,12 @@ main {
     border: 1px solid var(--text-light);
 } */
 
+hr {
+    margin: 2rem;
+    border: none;
+    border-bottom: 1px solid var(--text-light);
+}
+
 @font-face {
     font-family: 'pictura';
     src: url('assets/font/Pictura-Regular.eot');
