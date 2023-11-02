@@ -38,8 +38,10 @@ function adaptLayout() {
 
     if (page == 'home') {
         mainCol.style.position = 'fixed';
+        document.getElementById('link-right').style.color = 'var(--text-primary)';
     } else {
         mainCol.style.position = 'relative';
+        document.getElementById('link-right').style.color = 'var(--text-light)';
     }
 
     if (mobile.matches) {
@@ -118,11 +120,14 @@ function typingToggle() {
     typing.classList.toggle('hidden');
 }
 
-// page load test
+
+// address-based page load
 
 window.addEventListener("hashchange", function () {
+
     // back to animation
     document.getElementById('content').style.transition = "height 0.7s 0.2s, width 0.2s 0s";
+
     // Get the hash fragment from the URL
     route();
 });
@@ -141,6 +146,15 @@ function route() {
         console.log("Function not found");
     }
 }
+
+
+// scroll to headings
+
+function scrollToHeading(headingId) {
+    const heading = document.getElementById(headingId);
+    heading.scrollIntoView({ behavior: 'smooth' });
+}
+
 
 // punctual page load
 

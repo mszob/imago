@@ -37,7 +37,8 @@
                 <main id="home-main">
                     <article>
                         <section class="hobby">
-                            <p><a href="https://www.toyotawar.com" target="_blank">opération manta board game</a></p>
+                            <p><a href="https://picturamundi.github.io/www-operation-manta" target="_blank">play
+                                    opération manta</a></p>
                         </section>
 
                         <section class="hobby">
@@ -60,7 +61,7 @@
                         </section> -->
 
                         <section class="hobby">
-                            <p><a onclick="writingToggle()">writing tools</p>
+                            <p><a onclick="writingToggle()">writing habits</p>
                             <section class="hidden toggle" id="writing-toggle">
                                 <p><a href="#script">ink script</a></p>
 
@@ -87,9 +88,6 @@
 
                 <main id="reflection-main">
                     <article>
-
-                        <h1>Reflection Notes</h1>
-
                         <p>Here I try to describe a simple writing habit that I gradually formed over a couple of years
                             as an exercise in grief. Since then, this practice has become surprisingly clarifying in a
                             variety of other ways as well.</p>
@@ -103,7 +101,7 @@
                         <p>I’ll first describe the simple practice, which can be used with a variety of media,
                             digital or otherwise. Then, I’ll briefly explain one way that I implement it using a
                             specific medium — software.</p>
-                        <h2 id="i-personal-notes">I. Personal notes</h2>
+                        <h2 id="notes">I. Personal notes</h2>
                         <p>In some limited ways, my habit resembles note-taking approaches like Zettelkasten. However,
                             unlike Zettelkasten, the goal is not &quot;thinking.&quot; A better word would maybe be
                             &quot;reflection.&quot;</p>
@@ -175,7 +173,7 @@
                             <li>Some notes are captured in no stories at all, still floating freely. Some have found
                                 their place within as much as half of the stories, seen differently in each.</li>
                         </ul>
-                        <h2 id="ii-software">II. Software</h2>
+                        <h2 id="software">II. Software</h2>
                         <h3 id="files-local-plain-text">Files: local plain text</h3>
                         <p>I use local plain text to create my notes and stories. This medium has turned out to be
                             perfectly suited for this kind of reflection, as well as very enjoyable.</p>
@@ -245,8 +243,6 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                 <main id="script-main">
                     <article>
 
-                        <h1>Ink Script</h1>
-
                         <p>I use this custom English script to explore aspects of writing which I find interesting. I
                             try to make it 1] a bit more phonetic than standard English spelling, 2] fun to write in
                             cursive!
@@ -254,9 +250,22 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
 
                         <p>It is a work in progress.</p>
 
-                        <h2>Consonant sounds</h2>
+                        <h2 id="consonant-sounds">consonant sounds</h2>
 
                         <p>The table below summarizes how the script approaches organizing consonants.</p>
+
+                        <p>1. Sounds are organized into three families based on the general area where they are
+                            pronounced
+                            in the mouth (Y axis).</p>
+                        <p>2. Within the families, sounds are organized in series based on three factors of
+                            similarity (X axis):</p>
+                        <ul>
+                            <li>Unvoiced and voiced variation on the same sound (e.g. t/d)</li>
+                            <li>Similar pronunciation across at least two components (e.g. both t/d pair and θ/đ pair
+                                are pronounced with the tip of the tongue at the front of the mouth)</li>
+                            <li>Isolated and compound occurrences of the same sound (tʃ/dʒ pair contains t/d sounds)
+                            </li>
+                        </ul>
 
                         <style type="text/css">
                             .tg {
@@ -300,121 +309,14 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                                 vertical-align: top
                             }
                         </style>
-                        <!--                         
-                        <table class="tg">
-                            <thead>
-                                <tr>
-                                    <th class="tg-8jgo" colspan="2">consonants: lips</th>
-                                    <th class="tg-0pky" colspan="2">bilabial</th>
-                                    <th class="tg-0pky">labiodental</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">base</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">p</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">f</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky">b</td>
-                                    <td class="tg-0pky">m</td>
-                                    <td class="tg-0pky">v</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">related</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">w</td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">compound</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">cw</td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">gw</td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table class="tg">
-                            <thead>
-                                <tr>
-                                    <th class="tg-8jgo" colspan="2">consonants: ridge</th>
-                                    <th class="tg-0pky" colspan="4">alveolar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">base</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky">t</td>
-                                    <td class="tg-0pky">s</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky">d</td>
-                                    <td class="tg-0pky">z</td>
-                                    <td class="tg-0pky">n</td>
-                                    <td class="tg-0pky">l</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">related</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">θ</span></td>
-                                    <td class="tg-0pky">ʃ</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">đ</span></td>
-                                    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">ʒ</span></td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky" rowspan="2">compound</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">t</span>ʃ</td>
-                                    <td class="tg-0pky">cw</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-0pky">voiced</td>
-                                    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">d</span>ʒ</td>
-                                    <td class="tg-0pky">gw</td>
-                                    <td class="tg-0pky"></td>
-                                    <td class="tg-0pky"></td>
-                                </tr>
-                            </tbody>
-                        </table> -->
                         <div class="large-table">
                             <table class="tg">
                                 <thead>
                                     <tr>
                                         <th class="tg-8jgo" colspan="2" rowspan="2">Consonant sounds</th>
-                                        <th class="tg-0pky" colspan="2">base letter</th>
-                                        <th class="tg-0pky" colspan="2">related</th>
-                                        <th class="tg-0pky" colspan="2">compound</th>
+                                        <th class="tg-0pky" colspan="2">a. base letter</th>
+                                        <th class="tg-0pky" colspan="2">b. related</th>
+                                        <th class="tg-0pky" colspan="2">c. compound</th>
                                     </tr>
                                     <tr>
                                         <th class="tg-0pky">unvoiced</th>
@@ -427,7 +329,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="tg-0pky" rowspan="3">lips</td>
+                                        <td class="tg-0pky" rowspan="3">1. lips</td>
                                         <td class="tg-0pky" rowspan="2">bilabial</td>
                                         <td class="tg-0pky">p</td>
                                         <td class="tg-0pky">b</td>
@@ -454,7 +356,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                                         <td class="tg-0pky"></td>
                                     </tr>
                                     <tr>
-                                        <td class="tg-0pky" rowspan="4">ridge</td>
+                                        <td class="tg-0pky" rowspan="4">2. ridge</td>
                                         <td class="tg-0pky" rowspan="4">alveolar</td>
                                         <td class="tg-0pky">t</td>
                                         <td class="tg-0pky">d</td>
@@ -488,7 +390,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                                         <td class="tg-0pky"></td>
                                     </tr>
                                     <tr>
-                                        <td class="tg-0pky" rowspan="5">back</td>
+                                        <td class="tg-0pky" rowspan="5">3. back</td>
                                         <td class="tg-0pky">palatal</td>
                                         <td class="tg-0pky"></td>
                                         <td class="tg-0pky">r</td>
@@ -559,24 +461,14 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                             }
                         </style>
 
-                        <p>1. Sounds are organized into three families based on the general area where they are
-                            pronounced
-                            in the mouth (Y axis).</p>
-                        <p>2. Within the families, sounds are organized in series based on three factors of
-                            similarity (Z axis):</p>
-                        <ul>
-                            <li>Unvoiced and voiced variation on the same sound (e.g. t/d)</li>
-                            <li>Similar pronunciation across at least two components (e.g. both t/d pair and θ/đ pair
-                                are pronounced with the tip of the tongue at the front of the mouth)</li>
-                            <li>Isolated and compound occurrences of the same sound (tʃ/dʒ pair contains t/d sounds)
-                            </li>
-                        </ul>
 
-                        <h2>Writing consonants</h2>
 
-                        <p>The general character shape of written consonant sounds indicates location in the mouth; each
+                        <h2 id="writing-consonants">Writing consonants</h2>
+
+                        <p>The general character shape of written consonant sounds indicates location in the mouth (Y
+                            axis); each
                             individual character indicates a series of similar sounds; and diacritics distinguish each
-                            sound in the series.</p>
+                            sound in the series (X axis).</p>
 
                         <div class="large-table simple-script">
                             <table class="tg">
@@ -753,11 +645,11 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                             </table>
                         </div>
 
-                        <h2>Vowels</h2>
+                        <h2 id="vowels">Vowels</h2>
 
                         <p>Vowels are a mess. Come back later!</p>
 
-                        <h2>Cursive manuscript</h2>
+                        <h2 id="cursive">Cursive manuscript</h2>
                         <p>Coming soon…</p>
                     </article>
                 </main>
@@ -767,7 +659,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
             <aside id="sidebar">
 
                 <header class="" id="banner-left">
-                    <a href="#home">
+                    <a href="#home" id="link-right">
                         <div id="name-left" class="name">pictura mundi
 
                         </div>
@@ -784,21 +676,39 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                         <p><a class="keebtalk-link" href="https://www.keebtalk.com/u/picturamundi"
                                 target="_blank">picturamundi</a></p>
                     </section>
-                    <p><button id="theme-toggle" onclick="themeToggle()">[theme]</button></p>
+                    <p><button id="theme-toggle" onclick="themeToggle()">{theme}</button></p>
                 </nav>
 
                 <nav id="script-nav">
                     <section>
-                        <div id="back"><a href="#home">&lt;------ back</a></div>
+                        <h1>ink script</h1>
+                        <div id="back"><a href="#home">&lt;---- back</a></div>
                     </section>
-                    <p><button id="theme-toggle" onclick="themeToggle()">[theme]</button></p>
+                    <section>
+                        <h2>outline</h2>
+                        <p><a onclick="scrollToHeading('consonant-sounds')">consonants: sounds</a></p>
+                        <p><a onclick="scrollToHeading('writing-consonants')">consonants: shapes</a></p>
+                        <p><a onclick="scrollToHeading('vowels')">vowels</a></p>
+                        <p><a onclick="scrollToHeading('cursive')">cursive</a></p>
+                    </section>
+                    <section>
+                        <p><button id="theme-toggle" onclick="themeToggle()">{theme}</button></p>
+                    </section>
                 </nav>
 
                 <nav id="reflection-nav">
                     <section>
-                        <div id="back"><a href="#home">&lt;------ back</a></div>
+                        <h1>reflection notes</h1>
+                        <div id="back"><a href="#home">&lt;---------- back</a></div>
                     </section>
-                    <p><button id="theme-toggle" onclick="themeToggle()">[theme]</button></p>
+                    <section>
+                        <h2>outline</h2>
+                        <p><a onclick="scrollToHeading('notes')">personal notes</a></p>
+                        <p><a onclick="scrollToHeading('software')">software</a></p>
+                    </section>
+                    <section>
+                        <p><button id="theme-toggle" onclick="themeToggle()">{theme}</button></p>
+                    </section>
                 </nav>
 
             </aside>

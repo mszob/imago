@@ -151,7 +151,7 @@ img.small {
 }
 
 #sidebar nav section {
-    margin-bottom: var(--home-section-spacing);
+    margin-bottom: calc(2 * var(--home-section-spacing));
 }
 
 #main-col {
@@ -214,6 +214,34 @@ pre {
     color: var(--text-primary);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: var(--default-font-size);
+    font-family: Courier, monospace;
+    font-weight: 500;
+}
+
+h1 {}
+
+h2 {
+    margin-top: 4rem;
+    border-bottom: 1px solid var(--text-light);
+}
+
+h3 {
+    font-size: var(--default-font-size);
+    font-family: courier, monospace;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* text-decoration: underline; */
+    margin: var(--h3-margin);
+    /* border-bottom: 1px solid var(--text-light); */
+}
+
 p {
     margin-top: var(--par-margin);
     margin-bottom: var(--par-margin);
@@ -261,7 +289,7 @@ p code {
 
 #name-left,
 #name-right {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
 }
 
 #name-right,
@@ -269,26 +297,6 @@ p code {
 #author-right {
     transform: scale(-1, 1);
     text-align: right;
-}
-
-h2 {
-    font-size: 1.2rem;
-    font-family: courier, monospace;
-    font-weight: 500;
-    margin-top: 4rem;
-    border-bottom: 1px solid var(--text-light);
-}
-
-#home h3,
-#sidebar h3,
-h3 {
-    font-size: var(--default-font-size);
-    font-family: courier, monospace;
-    font-weight: 500;
-    text-transform: uppercase;
-    /* text-decoration: underline; */
-    margin: var(--h3-margin);
-    /* border-bottom: 1px solid var(--text-light); */
 }
 
 #home-main .hobby {
@@ -303,7 +311,13 @@ h3 {
     bottom: 0px;
     right: 0px;
     border: none;
+    padding: 0px;
     background: none;
+}
+
+#sidebar nav h2 {
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
 }
 
 /* images? */
@@ -422,6 +436,10 @@ img {
         padding-top: calc(0.5 * var(--home-section-spacing) - 15px)
             /* this one's a little sloppy... 15px matches the top-margin of the first sidebar link */
         ;
+    }
+
+    #sidebar nav section {
+        margin-bottom: var(--home-section-spacing);
     }
 
     #theme-toggle {
