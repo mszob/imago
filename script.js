@@ -3,7 +3,7 @@
 
 window.addEventListener('DOMContentLoaded', function () {
     globalThis.mobileWidth = window.matchMedia('(max-width: 650px)');
-    globalThis.mobileHeight = window.matchMedia('(max-height: 575px)');
+    globalThis.mobileHeight = window.matchMedia('(max-height: 600px)');
     globalThis.page = 'home';
     adaptLayout();
     route();
