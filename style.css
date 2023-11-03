@@ -278,7 +278,7 @@ p {
     margin-bottom: var(--par-margin);
 }
 
-pre.note {
+div.note {
     text-wrap: wrap !important;
     border: 1px solid var(--text-light);
     padding: 2rem;
