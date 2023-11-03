@@ -232,9 +232,6 @@ pre {
     color: var(--text-primary);
 }
 
-pre {
-    text-wrap: wrap;
-}
 
 h1,
 h2,
@@ -282,11 +279,12 @@ p {
 }
 
 pre.note {
-    text-wrap: wrap;
+    text-wrap: wrap !important;
     border: 1px solid var(--text-light);
     padding: 2rem;
     margin: 2rem 0rem;
     border-radius: 0.2rem;
+    overflow-x: scroll;
 }
 
 * {
