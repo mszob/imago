@@ -53,8 +53,10 @@ function adaptLayout() {
 
         if (page == 'home') {
             sidebar.style.display = 'block';
-            sidebar.style.marginTop = mainCol.offsetHeight + 'px';
+            // sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
+            mainCol.style.position = 'relative';
+            sidebar.style.position = 'relative';
         } else {
             sidebar.style.display = 'none';
             mainCol.style.textAlign = 'left';

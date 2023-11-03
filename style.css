@@ -146,8 +146,8 @@ img.small {
     text-align: right;
     height: fit-content;
     width: var(--sidebar-width);
-    overflow: scroll;
-    padding-right: 1rem;
+    padding-bottom: 1rem;
+    /* overflow: scroll; */
 }
 
 #sidebar,
@@ -404,17 +404,12 @@ img {
     }
 }
 
-/* small phones landscape */
 
-@media only screen and (max-height: 500px) {
-    :root {
-        --default-font-size: 14px;
-    }
-}
 
-/* anything that is not phone portrait */
+/* anything that is not phone */
 
-@media only screen and (min-width: 570px) {
+@media only screen and (min-width: 570px),
+screen and (min-height: 573px) {
     .mobile {
         display: none;
     }
@@ -422,15 +417,19 @@ img {
     #content-wrapper {
         padding: 1rem;
     }
+
+    /* #sidebar {
+        padding-right: 1rem;
+    } */
 }
 
 /* no idea why, but the theme button position seems to trigger with a 1px offset, when it comes to min-width */
-@media only screen and (min-width: 571px) {
+/* @media only screen and (min-width: 571px) {
     #home-nav #theme-toggle {
         position: absolute;
         margin-bottom: calc(var(--home-section-spacing) - 1px);
     }
-}
+} */
 
 /* most phones portrait */
 
