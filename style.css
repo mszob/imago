@@ -466,6 +466,13 @@ and (max-height: 600px) {
     }
 }
 
+@media only screen and (max-height: 325px) {
+    #home-nav #toggle-wrapper {
+        position: relative;
+    }
+}
+
+
 
 /* no idea why, but the theme button position seems to trigger with a 1px offset, when it comes to min-width */
 /* @media only screen and (min-width: 571px) {
