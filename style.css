@@ -315,9 +315,11 @@ p code {
     background: none;
 }
 
-#sidebar nav h2 {
+aside#sidebar nav h2,
+aside#sidebar nav section h2 a {
     font-family: 'Courier New', Courier, monospace;
     border: none;
+    color: var(--text-primary);
 }
 
 /* images? */
