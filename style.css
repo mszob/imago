@@ -63,7 +63,6 @@ hr {
 }
 
 
-
 /* COLORS */
 
 /* selection */
@@ -155,7 +154,7 @@ img.small {
     text-align: right;
     height: fit-content;
     width: var(--sidebar-width);
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
     /* overflow: scroll; */
 }
 
@@ -416,8 +415,32 @@ img {
 
 /* anything that is not phone */
 
-@media only screen and (min-width: 650px),
+/* @media only screen and (min-width: 650px),
 only screen and (min-height: 600px) {
+
+    .mobile {
+        display: none;
+    }
+
+    #content-wrapper {
+        padding: 1rem;
+        height: calc(100vh - 2rem);
+    }
+
+    #main-col {
+        max-width: calc(85vw - (var(--sidebar-width) + var(--gutter-width)));
+    }
+} */
+
+@media only screen and (min-width: 650px) and (min-height: 600px) {
+
+    #toggle-wrapper {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: var(--home-section-spacing);
+    }
+
     .mobile {
         display: none;
     }
@@ -431,9 +454,7 @@ only screen and (min-height: 600px) {
         max-width: calc(85vw - (var(--sidebar-width) + var(--gutter-width)));
     }
 
-    /* #sidebar {
-        padding-right: 1rem;
-    } */
+
 }
 
 /* short screens */
@@ -464,14 +485,11 @@ and (max-height: 600px) {
     #content {
         margin-top: 10vh !important;
     }
-}
 
-@media only screen and (max-height: 450px) {
     :root {
         --home-section-spacing: 1.5rem;
     }
 }
-
 
 /* no idea why, but the theme button position seems to trigger with a 1px offset, when it comes to min-width */
 /* @media only screen and (min-width: 571px) {
