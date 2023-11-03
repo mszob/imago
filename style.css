@@ -23,6 +23,11 @@
     --par-margin: 0.8rem;
 }
 
+*,
+html * {
+    max-width: 100vw;
+}
+
 /* guides */
 
 /* #main-col,
