@@ -5,11 +5,13 @@
 
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --content-width-sm: 35rem;
+    --content-width-sm: 27rem;
+    /* content-width-sm needs to match the width of sidebar+gutter+main-col */
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 15rem;
+    --sidebar-width: 12.5rem;
+    /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
     --default-font-size: 17px;
@@ -167,6 +169,11 @@ img.small {
     margin-bottom: calc(1.5 * var(--home-section-spacing));
 }
 
+#name-left,
+#name-right {
+    letter-spacing: -0.5px;
+}
+
 /* tables */
 
 div.large-table {
@@ -225,11 +232,23 @@ h6 {
     font-weight: 500;
 }
 
-h1 {}
+h1 {
+    border-bottom: 1px solid var(--text-light);
+}
+
+#main-col h1 {
+    transform: scale(-1, 1);
+    text-align: right;
+    color: var(--text-light);
+}
+
+#sidebar h1 {
+    margin-left: 8px;
+}
 
 h2 {
     margin-top: 4rem;
-    border-bottom: 1px solid var(--text-light);
+    /* border-bottom: 1px solid var(--text-light); */
 }
 
 h3 {
@@ -335,7 +354,7 @@ img {
 
 /* social links */
 
-.keebtalk-link::before {
+/* .keebtalk-link::before {
     content: "keebtalk: ";
 }
 
@@ -358,7 +377,7 @@ img {
 .twitter-link:hover::before,
 .reddit-link:hover::before {
     opacity: 1;
-}
+} */
 
 
 /* some folding phones portrait, mid phones landscape */
@@ -471,6 +490,12 @@ img {
     #author-right {
         transform: scale(1, 1);
         text-align: center;
+    }
+
+    #main-col h1 {
+        transform: scale(1, 1);
+        text-align: left;
+        color: var(--text-primary);
     }
 
 }

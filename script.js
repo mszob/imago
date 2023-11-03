@@ -39,9 +39,11 @@ function adaptLayout() {
     if (page == 'home') {
         mainCol.style.position = 'fixed';
         document.getElementById('link-right').style.color = 'var(--text-primary)';
+        mainCol.style.width = 'var(--sidebar-width)';
     } else {
         mainCol.style.position = 'relative';
         document.getElementById('link-right').style.color = 'var(--text-light)';
+        mainCol.style.width = '';
     }
 
     if (mobile.matches) {
