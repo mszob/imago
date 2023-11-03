@@ -146,6 +146,13 @@ img.small {
     text-align: right;
     height: fit-content;
     width: var(--sidebar-width);
+    overflow: scroll;
+    padding-right: 1rem;
+}
+
+#sidebar,
+#main-col {
+    max-height: 100vh;
 }
 
 #back {
@@ -410,6 +417,10 @@ img {
 @media only screen and (min-width: 570px) {
     .mobile {
         display: none;
+    }
+
+    #content-wrapper {
+        padding: 1rem;
     }
 }
 

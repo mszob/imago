@@ -72,6 +72,7 @@ function adaptLayout() {
         document.getElementById('home-main').style.textAlign = 'left';
         wrapper.style.alignItems = 'center';
         content.style.marginTop = '';
+        sidebar.style.height = '';
         sidebar.style.display = 'block';
         sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
