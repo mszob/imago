@@ -5,12 +5,12 @@
 
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --content-width-sm: 27rem;
+    --content-width-sm: 30rem;
     /* content-width-sm needs to match the width of sidebar+gutter+main-col */
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 13rem;
+    --sidebar-width: 14rem;
     /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
@@ -258,7 +258,7 @@ h1 {
 }
 
 #sidebar h1 {
-    margin-left: 8px;
+    margin-left: 24px;
 }
 
 h2 {
@@ -368,33 +368,6 @@ img {
     mix-blend-mode: var(--blend-img);
 }
 
-/* social links */
-
-/* .keebtalk-link::before {
-    content: "keebtalk: ";
-}
-
-.twitter-link::before {
-    content: "twitter: ";
-}
-
-.reddit-link::before {
-    content: "reddit: ";
-}
-
-.keebtalk-link::before,
-.twitter-link::before,
-.reddit-link::before {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.keebtalk-link:hover::before,
-.twitter-link:hover::before,
-.reddit-link:hover::before {
-    opacity: 1;
-} */
-
 
 /* some folding phones portrait, mid phones landscape */
 
@@ -432,14 +405,44 @@ only screen and (min-height: 600px) {
     }
 } */
 
-@media only screen and (min-width: 650px) and (min-height: 600px) {
-
-    #toggle-wrapper {
+@media only screen and (min-width: 651px) and (min-height: 600px) {
+    #home-nav #toggle-wrapper {
         position: absolute;
         bottom: 0;
         right: 0;
         margin-bottom: var(--home-section-spacing);
     }
+
+    .keebtalk-link::before {
+        content: "keebtalk: ";
+    }
+
+    .twitter-link::before {
+        content: "twitter: ";
+    }
+
+    .reddit-link::before {
+        content: "reddit: ";
+    }
+
+    .keebtalk-link::before,
+    .twitter-link::before,
+    .reddit-link::before {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .keebtalk-link:hover::before,
+    .twitter-link:hover::before,
+    .reddit-link:hover::before {
+        opacity: 1;
+    }
+
+}
+
+@media only screen and (min-width: 650px) and (min-height: 600px) {
+
+    /* social links */
 
     .mobile {
         display: none;
