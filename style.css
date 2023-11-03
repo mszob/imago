@@ -166,7 +166,6 @@ img.small {
 #main-col {
     position: relative;
     height: fit-content;
-    max-width: 100%;
     /* overflow: scroll; */
     padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
@@ -408,14 +407,18 @@ img {
 
 /* anything that is not phone */
 
-@media only screen and (min-width: 570px),
-screen and (min-height: 573px) {
+@media only screen and (min-width: 650px),
+only screen and (min-height: 575px) {
     .mobile {
         display: none;
     }
 
     #content-wrapper {
         padding: 1rem;
+    }
+
+    #main-col {
+        max-width: calc(85vw - (var(--sidebar-width) + var(--gutter-width)));
     }
 
     /* #sidebar {
@@ -433,8 +436,8 @@ screen and (min-height: 573px) {
 
 /* most phones portrait */
 
-@media only screen and (max-width: 570px),
-screen and (max-height: 575px) {
+@media only screen and (max-width: 650px),
+only screen and (max-height: 575px) {
     :root {
         --default-font-size: 14px;
     }
@@ -494,6 +497,7 @@ screen and (max-height: 575px) {
     #main-col {
         position: relative;
         padding-left: 0px;
+        max-width: 85vw;
     }
 
     #name-right,
