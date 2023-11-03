@@ -2,7 +2,8 @@
 
 
 window.addEventListener('DOMContentLoaded', function () {
-    globalThis.mobile = window.matchMedia('(max-width: 570px)');
+    globalThis.mobileWidth = window.matchMedia('(max-width: 570px)');
+    globalThis.mobileHeight = window.matchMedia('(max-height: 575px)');
     globalThis.page = 'home';
     adaptLayout();
     route();
@@ -46,7 +47,7 @@ function adaptLayout() {
         mainCol.style.width = '';
     }
 
-    if (mobile.matches) {
+    if (mobileHeight.matches || mobileWidth.matches) {
         document.getElementById('home-main').style.textAlign = 'center';
         sidebar.style.height = 'fit-content';
 
@@ -84,7 +85,7 @@ function adaptLayout() {
     // find the original height of main-Col (no expanded sections)
     // main-Col height must be calculated after auto resizing (all the above function content) in order to preserver smooth animations
     if (page == 'home') {
-        if (!mobile.matches) {
+        if (!mobileHeight.matches || !mobileWidth.matches) {
             if (document.getElementById('writing-toggle').classList.contains('hidden')) {
                 if (document.getElementById('typing-toggle').classList.contains('hidden')) {
                     globalThis.homeHeight = mainCol.offsetHeight + 'px';
@@ -103,7 +104,7 @@ function adaptLayout() {
         }
     }
 
-    if (!mobile.matches) {
+    if (!mobileHeight.matches || !mobileWidth.matches) {
         if (page == 'home') {
             sidebar.style.height = homeHeight;
         }

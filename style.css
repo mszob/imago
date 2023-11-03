@@ -434,7 +434,8 @@ img {
 
 /* most phones portrait */
 
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 570px),
+screen and (max-height: 575px) {
     :root {
         --default-font-size: 14px;
     }
@@ -443,11 +444,11 @@ img {
         transition: height 0s 0s, width 0s 0s;
     }
 
-    .keebtalk-link::before,
+    /* .keebtalk-link::before,
     .twitter-link::before,
     .reddit-link::before {
         display: none;
-    }
+    } */
 
     /* nav:not(#home-nav) {
         display: none !important;
