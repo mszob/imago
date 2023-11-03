@@ -232,6 +232,10 @@ pre {
     color: var(--text-primary);
 }
 
+pre {
+    text-wrap: wrap;
+}
+
 h1,
 h2,
 h3,
