@@ -278,13 +278,13 @@ p {
     margin-bottom: var(--par-margin);
 }
 
-div.note {
-    text-wrap: wrap !important;
+pre.note {
+    white-space: pre-wrap;
     border: 1px solid var(--text-light);
     padding: 2rem;
     margin: 2rem 0rem;
     border-radius: 0.2rem;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
 }
 
 * {
