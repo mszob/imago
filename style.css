@@ -10,7 +10,7 @@
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 12.5rem;
+    --sidebar-width: 13rem;
     /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
@@ -182,7 +182,7 @@ img.small {
 
 #name-left,
 #name-right {
-    letter-spacing: -0.5px;
+    letter-spacing: 0px;
 }
 
 /* tables */
@@ -283,7 +283,7 @@ pre.note {
     border: 1px solid var(--text-light);
     padding: 2rem;
     margin: 2rem 0rem;
-    border-radius: 0.2rem;
+    border-radius: 0.1rem;
     /* overflow-x: scroll; */
 }
 
