@@ -23,6 +23,10 @@
     --par-margin: 0.8rem;
 }
 
+main:not(#home-main) {
+    padding-bottom: 2rem;
+}
+
 *,
 html * {
     max-width: 100vw;
