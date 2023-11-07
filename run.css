@@ -270,13 +270,20 @@ body .runner-canvas {
 }
 
 body .controller {
-  /* background: rgba(247, 247, 247, .1); */
-  height: 100vh;
-  left: 0;
-  /* position: absolute; */
-  top: 0;
-  width: 100vw;
+  position: fixed;
+  top: 42vh;
+  height: 58vh;
+  background-color: red;
+  width: 100%;
   z-index: 1;
+}
+
+@media only screen and (max-width: 650px),
+only screen and (max-height: 600px) {
+  body .controller {
+    top: 30vh;
+    height: 70vh;
+  }
 }
 
 #offline-resources {

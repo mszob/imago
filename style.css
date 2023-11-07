@@ -56,9 +56,15 @@ main {
 
 .dark-theme #avatar {
     filter: invert(1);
+    mix-blend-mode: lighten;
+}
+
+.light-theme #avatar {
+    mix-blend-mode: darken;
 }
 
 #avatar {
+    image-rendering: pixelated;
     width: 100%;
     bottom: 1rem;
     right: 2rem;
