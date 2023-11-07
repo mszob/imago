@@ -487,10 +487,10 @@
                 this.playing = true;
                 this.activated = true;
                 // fade chester out on game start, then delete
-                document.getElementById("chester-wrapper").style.opacity = "0";
-                setTimeout(function () {
-                    document.getElementById("chester-wrapper").style.display = "none";
-                }, 2000);
+                // document.getElementById("chester-wrapper").style.opacity = "0";
+                // setTimeout(function () {
+                // document.getElementById("chester-wrapper").style.display = "none";
+                // }, 2000);
                 this.chesterNone;
             } else if (this.crashed) {
                 this.restart();
@@ -776,6 +776,13 @@
          * Game over state.
          */
         gameOver: function () {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                // setTimeout(function () {
+                document.getElementById("body").className = storedTheme;
+                // }, 0);
+            }
+
             this.playSound(this.soundFx.HIT);
             vibrate(200);
 
