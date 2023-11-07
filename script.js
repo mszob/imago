@@ -251,18 +251,14 @@ function game() {
         document.getElementById("main-col").style.maxWidth = "85vw";
         document.getElementById("content").style.position = "fixed";
     }
-}
-
-// if page has been resized since page load, then the game will disappear for some reason
-// so in that case, the page must be reloaded for game to reappear
-function gameReload() {
+    // if page has been resized since page load, then the game will disappear for some reason
+    // so in that case, the page must be reloaded for game to reappear
     if (resize == true) {
         setTimeout(function () {
             location.reload();
         }, 500);
     }
 }
-
 
 // toggle theme button
 
