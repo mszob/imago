@@ -15,10 +15,10 @@ window.addEventListener('DOMContentLoaded', function () {
 addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
-    if (page == "game" && Runner.instance_.activated == true) { // this only partially works for avoiding resize issues
+    if (page == "game") { // this only partially works for avoiding resize issues, && Runner.instance_.activated == true
         setTimeout(function () {
             location.reload()
-        }, 100);
+        }, 200);
     }
 });
 
@@ -246,6 +246,10 @@ function game() {
     globalThis.page = 'game';
     fitContent();
     showPage();
+    if (mobileHeight.matches || mobileWidth.matches) { // game width seems to adapt to explicit main-col width, so we force a main-col width
+        document.getElementById("main-col").style.width = "600px";
+        document.getElementById("main-col").style.maxWidth = "85vw";
+    }
 }
 
 // if page has been resized since page load, then the game will disappear for some reason

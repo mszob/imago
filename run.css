@@ -281,6 +281,7 @@ body .controller {
 @media only screen and (max-width: 650px),
 only screen and (max-height: 600px) {
   body .controller {
+    background-color: red;
     left: 0;
     top: 30vh;
     height: 70vh;
