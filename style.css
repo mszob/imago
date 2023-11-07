@@ -43,6 +43,28 @@ main {
     border: 1px solid var(--text-light);
 } */
 
+#easter-egg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    opacity: 0.5;
+}
+
+.dark-theme #avatar {
+    filter: invert(1);
+}
+
+#avatar {
+    width: 100%;
+    bottom: 1rem;
+    right: 2rem;
+}
+
+
 hr {
     margin: 2rem;
     border: none;
@@ -514,7 +536,7 @@ only screen and (max-height: 600px) {
         position: fixed;
         bottom: 0;
         width: var(--sidebar-width);
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     #content {

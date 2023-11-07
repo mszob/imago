@@ -15,6 +15,11 @@ window.addEventListener('DOMContentLoaded', function () {
 addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
+    if (page == "game" && Runner.instance_.activated == true) { // this only partially works for avoiding resize issues
+        setTimeout(function () {
+            location.reload()
+        }, 100);
+    }
 });
 
 addEventListener("deviceorientation", (event) => {
@@ -48,10 +53,12 @@ function adaptLayout() {
         document.querySelectorAll('main:not(#home-main)').forEach(element => {
             element.style.display = 'none';
         });
+        document.getElementById('avatar').style.display = 'block';
         document.querySelectorAll('nav:not(#home-nav)').forEach(element => {
             element.style.display = 'none';
         });
     } else {
+        document.getElementById('avatar').style.display = 'none';
         mainCol.style.position = 'relative';
         document.getElementById('link-right').style.color = 'var(--text-light)';
         mainCol.style.width = '';
@@ -73,7 +80,7 @@ function adaptLayout() {
             content.style.height = mainCol.offsetHeight + 'px';
         }
 
-        if (page == 'home' || page == 'reflection' || page == 'script') {
+        if (page == 'home' || page == 'game' || page == 'reflection' || page == 'script') {
             wrapper.style.alignItems = 'flex-start';
             content.style.marginTop = '15vh';
         } else {
@@ -222,8 +229,8 @@ function home() { //initial load to home is not controlled by this function, see
 
 function script() {
     hidePages();
-    largePage();
     globalThis.page = 'script';
+    fitContent();
     showPage();
 }
 
@@ -234,9 +241,16 @@ function reflection() {
     showPage();
 }
 
+function game() {
+    hidePages();
+    globalThis.page = 'game';
+    fitContent();
+    showPage();
+}
+
 // if page has been resized since page load, then the game will disappear for some reason
 // so in that case, the page must be reloaded for game to reappear
-function reflectionReload() {
+function gameReload() {
     if (resize == true) {
         setTimeout(function () {
             location.reload();

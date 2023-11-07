@@ -2264,7 +2264,7 @@
                 // document.getElementById("dishes").style.filter = "invert(100%) sepia(1)";
                 // document.getElementById("message").style.visibility = "none";
             } else {
-                if (Runner.instance_.activated == true && page == "reflection") {
+                if (Runner.instance_.activated == true && page == "game") {
                     document.getElementById("body").className = "light-theme";
                     // document.getElementById("game").className = "light-theme";
                     // document.getElementById("main-frame-error").style.filter = "invert(0%) sepia(0)";
