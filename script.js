@@ -40,6 +40,7 @@ function adaptLayout() {
     if (page == 'home') {
         mainCol.style.position = 'fixed';
         document.getElementById('link-right').style.color = 'var(--text-primary)';
+        content.style.width = 'var(--content-width-sm)';
         mainCol.style.width = 'var(--sidebar-width)';
         document.querySelectorAll('main:not(#home-main)').forEach(element => {
             element.style.display = 'none';
