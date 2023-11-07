@@ -66,6 +66,10 @@ only screen and (max-height: 600px) {
     }
 }
 
+#space {
+    background-color: red;
+}
+
 #easter-egg {
     position: fixed;
     bottom: 0;

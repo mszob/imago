@@ -1,10 +1,5 @@
-function sendSpaceKey() {
-    var event = new KeyboardEvent('keydown', { key: ' ' });
-    document.dispatchEvent(event);
-}
 
-// var button = document.getElementById('space');
-// button.addEventListener('click', sendSpaceKey);
+
 
 // initial load
 
@@ -345,3 +340,12 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onpopstate = function () {
     home();
 }; history.pushState({}, '/home');
+
+
+// space key
+
+var e = new KeyboardEvent('keydown', { 'keyCode': 32, 'which': 32 });
+
+function sendSpaceKey() {
+    new KeyboardEvent('keydown', { 'keyCode': 32, 'which': 32 });
+}
