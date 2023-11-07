@@ -5,6 +5,15 @@
   justify-content: center;
 }
 
+body.light-theme #game {
+  mix-blend-mode: darken;
+}
+
+body.dark-theme #game {
+  mix-blend-mode: lighten;
+}
+
+
 body.light-theme canvas {
   filter: invert(0);
 }
