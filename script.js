@@ -342,10 +342,16 @@ window.onpopstate = function () {
 }; history.pushState({}, '/home');
 
 
-// space key
+// space key, this is an attempt at a fallback solution when the game's in-built controller inexplicably doesn't work
 
-var e = new KeyboardEvent('keydown', { 'keyCode': 32, 'which': 32 });
+const space = new KeyboardEvent('keydown', {
+    key: ' ',
+    code: 'Space',
+    which: 32,
+    keyCode: 32,
+    bubbles: true
+});
 
 function sendSpaceKey() {
-    new KeyboardEvent('keydown', { 'keyCode': 32, 'which': 32 });
+    document.dispatchEvent(space);
 }
