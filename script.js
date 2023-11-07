@@ -1,5 +1,12 @@
-// initial load
+function sendSpaceKey() {
+    var event = new KeyboardEvent('keydown', { key: ' ' });
+    document.dispatchEvent(event);
+}
 
+// var button = document.getElementById('space');
+// button.addEventListener('click', sendSpaceKey);
+
+// initial load
 
 window.addEventListener('DOMContentLoaded', function () {
     globalThis.mobileWidth = window.matchMedia('(max-width: 650px)');
