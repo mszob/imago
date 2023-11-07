@@ -251,7 +251,7 @@ function game() {
     if (mobileHeight.matches || mobileWidth.matches) { // game width seems to adapt to explicit main-col width, so we force a main-col width
         document.getElementById("main-col").style.width = "600px";
         document.getElementById("main-col").style.maxWidth = "85vw";
-        document.getElementById("content").style.position = "fixed";
+        // document.getElementById("content").style.position = "fixed";
     }
     // if page has been resized since page load, then the game will disappear for some reason
     // so in that case, the page must be reloaded for game to reappear
