@@ -298,3 +298,15 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onpopstate = function () {
     home();
 }; history.pushState({}, '/home');
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var includedContent = document.querySelector("#includedContent");
+    fetch("run.html")
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (data) {
+            includedContent.innerHTML = data;
+        });
+});
