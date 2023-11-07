@@ -41,6 +41,12 @@ function adaptLayout() {
         mainCol.style.position = 'fixed';
         document.getElementById('link-right').style.color = 'var(--text-primary)';
         mainCol.style.width = 'var(--sidebar-width)';
+        document.querySelectorAll('main:not(#home-main)').forEach(element => {
+            element.style.display = 'none';
+        });
+        document.querySelectorAll('nav:not(#home-nav)').forEach(element => {
+            element.style.display = 'none';
+        });
     } else {
         mainCol.style.position = 'relative';
         document.getElementById('link-right').style.color = 'var(--text-light)';
@@ -194,6 +200,11 @@ function largePage() {
     document.getElementById('main-col').style.paddingBottom = "4rem"
 }
 
+function fitContent() {
+    var content = document.getElementById('content');
+    content.style.width = 'var(--content-width-md)';
+}
+
 
 // individual pages
 
@@ -215,7 +226,7 @@ function script() {
 function reflection() {
     hidePages();
     globalThis.page = 'reflection';
-    largePage();
+    fitContent();
     showPage();
 }
 

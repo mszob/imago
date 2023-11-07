@@ -2251,14 +2251,16 @@
         update: function (activated, delta) {
             // Update body background, invert canvas
             if (activated) {
-                document.getElementById("body").style.background = "rgb(16,16,18)";
-                document.getElementById("main-frame-error").style.filter = "invert(100%) sepia(1)";
-                document.getElementById("dishes").style.filter = "invert(100%) sepia(1)";
-                document.getElementById("message").style.visibility = "none";
+                document.getElementById("body").className = "dark-theme";
+                // document.getElementById("game").className = "dark-theme";
+                // document.getElementById("main-frame-error").style.filter = "invert(100%) sepia(1)";
+                // document.getElementById("dishes").style.filter = "invert(100%) sepia(1)";
+                // document.getElementById("message").style.visibility = "none";
             } else {
-                document.getElementById("body").style.background = "white";
-                document.getElementById("main-frame-error").style.filter = "invert(0%) sepia(0)";
-                document.getElementById("dishes").style.filter = "invert(0%) sepia(0)";
+                document.getElementById("body").className = "light-theme";
+                // document.getElementById("game").className = "light-theme";
+                // document.getElementById("main-frame-error").style.filter = "invert(0%) sepia(0)";
+                // document.getElementById("dishes").style.filter = "invert(0%) sepia(0)";
             }
             // Moon phase.
             if (activated && this.opacity == 0) {
