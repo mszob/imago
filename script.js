@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', function () {
 // continual resize
 
 addEventListener('resize', (event) => {
+    globalThis.resize = true;
     adaptLayout();
 });
 
@@ -22,7 +23,9 @@ addEventListener("deviceorientation", (event) => {
 
 addEventListener('click', (event) => {
     document.getElementById('content').style.transition = "height 0.3s 0s";
-    adaptLayout();
+    if (page == "home") {
+        adaptLayout();
+    }
 });
 
 function adaptLayout() {
@@ -231,6 +234,16 @@ function reflection() {
     showPage();
 }
 
+// if page has been resized since page load, then the game will disappear for some reason
+// so in that case, the page must be reloaded for game to reappear
+function reflectionReload() {
+    if (resize == true) {
+        setTimeout(function () {
+            location.reload();
+        }, 500);
+    }
+}
+
 
 // toggle theme button
 
@@ -310,15 +323,3 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onpopstate = function () {
     home();
 }; history.pushState({}, '/home');
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    var includedContent = document.querySelector("#includedContent");
-    fetch("run.html")
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            includedContent.innerHTML = data;
-        });
-});

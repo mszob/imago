@@ -2257,12 +2257,13 @@
                 // document.getElementById("dishes").style.filter = "invert(100%) sepia(1)";
                 // document.getElementById("message").style.visibility = "none";
             } else {
-                document.getElementById("body").className = "light-theme";
-                // document.getElementById("game").className = "light-theme";
-                // document.getElementById("main-frame-error").style.filter = "invert(0%) sepia(0)";
-                // document.getElementById("dishes").style.filter = "invert(0%) sepia(0)";
+                if (Runner.instance_.activated == true && page == "reflection") {
+                    document.getElementById("body").className = "light-theme";
+                    // document.getElementById("game").className = "light-theme";
+                    // document.getElementById("main-frame-error").style.filter = "invert(0%) sepia(0)";
+                    // document.getElementById("dishes").style.filter = "invert(0%) sepia(0)";
+                }
             }
-            // Moon phase.
             if (activated && this.opacity == 0) {
                 this.currentPhase++;
                 if (this.currentPhase >= NightMode.phases.length) {
