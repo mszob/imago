@@ -4,7 +4,7 @@
 // initial load
 
 window.addEventListener('DOMContentLoaded', function () {
-    globalThis.mobileWidth = window.matchMedia('(max-width: 650px)');
+    globalThis.mobileWidth = window.matchMedia('(max-width: 700px)');
     globalThis.mobileHeight = window.matchMedia('(max-height: 600px)');
     globalThis.page = 'home';
     adaptLayout();
@@ -17,12 +17,19 @@ window.addEventListener('DOMContentLoaded', function () {
 addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
+    if (!mobileHeight.matches && !mobileWidth.matches) {
+        reloadGame();
+    }
+});
+
+function reloadGame() {
     if (page == "game") { // this only partially works for avoiding resize issues, && Runner.instance_.activated == true
         setTimeout(function () {
             location.reload()
-        }, 200);
+        }, 300);
     }
-});
+}
+
 
 addEventListener("deviceorientation", (event) => {
     adaptLayout();
@@ -151,7 +158,7 @@ function typingToggle() {
 window.addEventListener("hashchange", function () {
 
     // back to animation
-    document.getElementById('content').style.transition = "height 0.7s 0.2s, width 0.2s 0s";
+    document.getElementById('content').style.transition = "height 0.2s ease-out 0.2s, width 0.1s ease-out 0s";
 
     // Get the hash fragment from the URL
     route();
@@ -222,7 +229,7 @@ function fitContent() {
 // individual pages
 
 function home() { //initial load to home is not controlled by this function, see CSS
-    document.getElementById('content').style.transition = "height 0.4s 0.1s, width 0.2s 0s";
+    document.getElementById('content').style.transition = "height 0.2s ease-out 0.2s, width 0.1s ease-out 0s";
     hidePages();
     globalThis.page = 'home';
     smallPage();
@@ -258,16 +265,17 @@ function game() {
     }
     // if page has been resized since page load, then the game will disappear for some reason
     // so in that case, the page must be reloaded for game to reappear
-    if (resize == true) {
-        setTimeout(function () {
-            location.reload();
-        }, 500);
+    if (resize == true || theme == true) {
+        if (!mobileHeight.matches && !mobileWidth.matches) {
+            reloadGame();
+        }
     }
 }
 
 // toggle theme button
 
 function themeToggle() {
+    globalThis.theme = true;
     if (body.className.includes('light-theme')) {
         body.className = "dark-theme";
         // document.getElementById('legend').className = "dark-img";
