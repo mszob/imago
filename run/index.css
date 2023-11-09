@@ -1,6 +1,7 @@
-.runner-container {
+/* #messageBox,
+#game {
   margin-top: 20vh;
-}
+} */
 
 #game {
   display: flex;
