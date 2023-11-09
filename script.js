@@ -25,14 +25,6 @@ addEventListener('resize', (event) => {
 function reloadGame() {
     setTimeout(function () {
         location.reload();
-        // fetch('index.html')
-        //     .then(response => response.text())
-        //     .then(data => {
-        //         document.getElementById('game-desktop').innerHTML = data;
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error);
-        //     });
     }, 200);
 }
 
@@ -268,7 +260,9 @@ function game() {
     fitContent();
     showPage();
     if (resize == true) {
-        reloadGame();
+        if (!mobileHeight.matches && !mobileWidth.matches) {
+            reloadGame();
+        }
     }
     // if (mobileHeight.matches) {
     //     document.getElementById("banner-right").style.display = "none";
