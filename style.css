@@ -605,6 +605,10 @@ only screen and (max-height: 600px) {
         --default-font-size: 14px;
     }
 
+    #easter-egg {
+        display: none;
+    }
+
     #toggle-wrapper {
         position: fixed;
         bottom: 0;
