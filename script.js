@@ -4,6 +4,8 @@
 // initial load
 
 window.addEventListener('DOMContentLoaded', function () {
+    globalThis.resize = false;
+    globalThis.theme = false;
     globalThis.mobileWidth = window.matchMedia('(max-width: 700px)');
     globalThis.mobileHeight = window.matchMedia('(max-height: 600px)');
     globalThis.page = 'home';
@@ -23,11 +25,12 @@ addEventListener('resize', (event) => {
 });
 
 function reloadGame() {
-    if (page == "game") { // this only partially works for avoiding resize issues, && Runner.instance_.activated == true
-        setTimeout(function () {
+    // this only partially works for avoiding resize issues, && Runner.instance_.activated == true
+    setTimeout(function () {
+        if (page == "game") {
             location.reload()
-        }, 300);
-    }
+        }
+    }, 200);
 }
 
 
@@ -266,9 +269,7 @@ function game() {
     // if page has been resized since page load, then the game will disappear for some reason
     // so in that case, the page must be reloaded for game to reappear
     if (resize == true || theme == true) {
-        if (!mobileHeight.matches && !mobileWidth.matches) {
-            reloadGame();
-        }
+        reloadGame();
     }
 }
 
