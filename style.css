@@ -23,18 +23,34 @@
     --par-margin: 0.8rem;
 }
 
-body.dark-theme #game-mobile {
+/* body.dark-theme #game-mobile {
     filter: invert(1);
     mix-blend-mode: lighten;
-}
+} */
 
 #game-mobile {
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     /* z-index: 2; */
+}
+
+
+#back-game {
+    position: fixed;
+    top: 80vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+
+#back-game a {
+    border: none;
+    color: rgb(19, 19, 19);
 }
 
 main:not(#home-main) {
