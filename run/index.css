@@ -1,3 +1,7 @@
+.runner-container {
+  margin-top: 20vh;
+}
+
 #game {
   display: flex;
   flex-direction: row;

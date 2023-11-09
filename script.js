@@ -260,9 +260,9 @@ function game() {
         document.getElementById("main-col").style.maxWidth = "85vw";
         // document.getElementById("content").style.position = "fixed";
     }
-    if (mobileHeight.matches) {
-        document.getElementById("banner-right").style.display = "none";
-    }
+    // if (mobileHeight.matches) {
+    //     document.getElementById("banner-right").style.display = "none";
+    // }
     // if page has been resized since page load, then the game will disappear for some reason
     // so in that case, the page must be reloaded for game to reappear
     if (resize == true || theme == true) {

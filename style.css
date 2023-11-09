@@ -46,6 +46,7 @@
     right: 0;
     text-align: center;
     margin: auto;
+    z-index: 2;
 }
 
 #back-game a {
@@ -170,6 +171,11 @@ hr {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#banner-right {
+    position: relative;
+    z-index: 2;
 }
 
 body.light-theme {
