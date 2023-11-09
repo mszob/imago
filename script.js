@@ -1,6 +1,3 @@
-
-
-
 // initial load
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -15,13 +12,11 @@ window.addEventListener('DOMContentLoaded', function () {
     document.getElementById('content').style.transition = "height 0s"; // prevent animations on load
 });
 
-// continual resize
-
 addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
     if (page == "game") {
-        if (mobileHeight.matches || mobileWidth.matches) {
+        if (!mobileHeight.matches && !mobileWidth.matches) {
             reloadGame();
         }
     }
@@ -43,6 +38,9 @@ function reloadGame() {
 
 addEventListener("deviceorientation", (event) => {
     adaptLayout();
+    if (page == "game") {
+        reloadGame();
+    }
 });
 
 addEventListener('click', (event) => {
@@ -51,6 +49,8 @@ addEventListener('click', (event) => {
         adaptLayout();
     }
 });
+
+// continual resize
 
 function adaptLayout() {
 
