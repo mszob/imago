@@ -6,6 +6,7 @@
 window.addEventListener('DOMContentLoaded', function () {
     globalThis.resize = false;
     globalThis.theme = false;
+    globalThis.fromHome = false;
     globalThis.mobileWidth = window.matchMedia('(max-width: 700px)');
     globalThis.mobileHeight = window.matchMedia('(max-height: 600px)');
     globalThis.page = 'home';
@@ -19,20 +20,16 @@ window.addEventListener('DOMContentLoaded', function () {
 addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
-    if (!mobileHeight.matches && !mobileWidth.matches) {
+    if (page == "game") {
         reloadGame();
     }
 });
 
 function reloadGame() {
-    // this only partially works for avoiding resize issues, && Runner.instance_.activated == true
     setTimeout(function () {
-        if (page == "game") {
-            location.reload()
-        }
+        location.reload();
     }, 200);
 }
-
 
 addEventListener("deviceorientation", (event) => {
     adaptLayout();
@@ -199,6 +196,7 @@ function scrollToTop() {
 function hidePages() {
     document.getElementById(page + '-main').style.display = 'none';
     document.getElementById(page + '-nav').style.display = 'none';
+    document.getElementById("game-main").style.opacity = "0";
 }
 
 function showPage() {
@@ -232,6 +230,7 @@ function fitContent() {
 // individual pages
 
 function home() { //initial load to home is not controlled by this function, see CSS
+    globalThis.fromHome = true;
     document.getElementById('content').style.transition = "height 0.2s ease-out 0.2s, width 0.1s ease-out 0s";
     hidePages();
     globalThis.page = 'home';
@@ -258,18 +257,24 @@ function game() {
     globalThis.page = 'game';
     fitContent();
     showPage();
-    if (mobileHeight.matches || mobileWidth.matches) { // game width seems to adapt to explicit main-col width, so we force a main-col width
-        document.getElementById("main-col").style.width = "600px";
-        document.getElementById("main-col").style.maxWidth = "85vw";
-        // document.getElementById("content").style.position = "fixed";
+    if (resize == true) {
+        reloadGame();
     }
     // if (mobileHeight.matches) {
     //     document.getElementById("banner-right").style.display = "none";
     // }
     // if page has been resized since page load, then the game will disappear for some reason
     // so in that case, the page must be reloaded for game to reappear
-    if (resize == true || theme == true) {
-        reloadGame();
+    setTimeout(function () {
+        document.getElementById("game-main").style.opacity = "1";
+    }, 200);
+    if (mobileHeight.matches || mobileWidth.matches) { // game width seems to adapt to explicit main-col width, so we force a main-col width
+        document.getElementById("main-col").style.width = "600px";
+        document.getElementById("main-col").style.maxWidth = "85vw";
+        // document.getElementById("content").style.position = "fixed";
+        if (fromHome == true) {
+            reloadGame();
+        }
     }
 }
 
@@ -300,10 +305,10 @@ function themeToggle() {
 
 // forget first visit and reload button
 
-function showLogo() {
-    localStorage.noFirstVisit = null;
-    location.reload();
-}
+// function showLogo() {
+//     localStorage.noFirstVisit = null;
+//     location.reload();
+// }
 
 // theme and favicon adapts to browser theme on load
 

@@ -23,6 +23,10 @@
     --par-margin: 0.8rem;
 }
 
+#game-main {
+    transition: opacity ease-in-out 1s;
+}
+
 /* body.dark-theme #game-mobile {
     filter: invert(1);
     mix-blend-mode: lighten;
