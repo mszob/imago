@@ -27,7 +27,15 @@ addEventListener('resize', (event) => {
 
 function reloadGame() {
     setTimeout(function () {
-        location.reload();
+        // location.reload();
+        fetch('index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('game-main').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }, 200);
 }
 
