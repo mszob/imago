@@ -21,7 +21,7 @@ addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
     if (page == "game") {
-        reloadGame();
+        // reloadGame();
     }
 });
 
