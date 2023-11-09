@@ -21,7 +21,9 @@ addEventListener('resize', (event) => {
     globalThis.resize = true;
     adaptLayout();
     if (page == "game") {
-        // reloadGame();
+        if (mobileHeight.matches || mobileWidth.matches) {
+            reloadGame();
+        }
     }
 });
 
