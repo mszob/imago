@@ -23,6 +23,11 @@
     --par-margin: 0.8rem;
 }
 
+.cursive table tbody tr :first-child {
+    font-family: "pictura";
+    font-size: 1.7rem;
+    text-align: center;
+}
 
 .cursive table th {
     width: 5rem;
@@ -149,6 +154,7 @@ only screen and (max-height: 600px) {
 } */
 
 #easter-egg {
+    display: none;
     position: fixed;
     bottom: 0;
     left: 0;
