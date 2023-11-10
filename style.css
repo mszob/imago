@@ -23,6 +23,49 @@
     --par-margin: 0.8rem;
 }
 
+
+.cursive table th {
+    width: 5rem;
+}
+
+table img {
+    position: relative;
+}
+
+table img.h3 {
+    height: 3rem;
+}
+
+table img.h2b,
+table img.h2t {
+    height: 1.8rem;
+}
+
+table img.h1 {
+    height: 0.8rem;
+}
+
+table td.tg-0lax.h2b {
+    vertical-align: bottom;
+}
+
+table td.tg-0lax.h1 {
+    vertical-align: middle;
+}
+
+table td.tg-0lax.h2t {
+    vertical-align: top;
+}
+
+.dark-theme table img {
+    filter: invert(1);
+}
+
+.cursive table.tg td img {
+    vertical-align: middle;
+}
+
+
 #game-main {
     transition: opacity ease-in-out 1s;
 }
