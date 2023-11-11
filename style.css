@@ -334,6 +334,15 @@ img.small {
 
 /* tables */
 
+/* .cursive table tbody tr td+td {
+    border-top: none;
+    border-bottom: none;
+}
+
+.cursive table tbody :last-child td {
+    border-bottom: 1px solid var(--text-light);
+} */
+
 div.large-table {
     max-width: 100%;
     overflow-x: scroll;
