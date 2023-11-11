@@ -232,7 +232,7 @@ hr {
 }
 
 body.light-theme {
-    transition: color 0.4s linear, background 0.4s;
+    transition: color 0.3s linear, background 0.3s;
     --background-color: rgb(255, 255, 255);
     --text-primary: black;
     --text-light: rgba(125, 125, 125, 0.7);
@@ -243,7 +243,7 @@ body.light-theme {
 }
 
 body.dark-theme {
-    transition: color 0.4s linear, background 0.4s;
+    transition: color 0.3s linear, background 0.3s;
     --background-color: rgb(25, 25, 25);
     --text-primary: white;
     --text-light: rgba(125, 125, 125, 0.7);
@@ -340,15 +340,31 @@ div.large-table {
     margin: 3rem 0rem;
 }
 
-div.script table.tg tbody tr td,
-div.simple-script table.tg tbody tr td+td {
-    font-family: 'pictura';
-    font-size: 1.7rem;
+span.script,
+div.simple-script table.tg tbody tr td+td,
+div.simple-script .tg td.tg-0lax+td.tg-0lax {
     text-align: center;
+    vertical-align: middle;
+}
+
+table.tg .tg-0lax span.script,
+.script .tg td span.script {
+    font-family: 'pictura';
+    color: var(--text-primary);
+    font-size: 1.7rem;
+    vertical-align: middle;
+}
+
+.simple-script table.tg .tg-0lax span.script {
+    font-size: 2.5rem;
 }
 
 div.simple-script table.tg tbody tr td+td {
     font-size: 3rem;
+}
+
+.tg td.script {
+    color: var(--text-light);
 }
 
 .script tr:nth-child(1) td:nth-child(-n + 2),
