@@ -23,6 +23,14 @@
     --par-margin: 0.8rem;
 }
 
+
+
+
+.script {
+    font-family: "pictura";
+    font-size: 1.3rem;
+}
+
 .cursive table tbody tr :first-child {
     font-family: "pictura";
     font-size: 1.7rem;
@@ -334,14 +342,44 @@ img.small {
 
 /* tables */
 
-/* .cursive table tbody tr td+td {
-    border-top: none;
-    border-bottom: none;
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-.cursive table tbody :last-child td {
-    border-bottom: 1px solid var(--text-light);
-} */
+.tg td {
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-style: solid;
+    border-width: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-8jgo {
+    border: none;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-0pky,
+.tg .tg-0lax {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
 
 div.large-table {
     max-width: 100%;
@@ -386,13 +424,6 @@ div.simple-script table.tg tbody tr td+td {
     font-size: 0.8rem;
 }
 
-/* initial load */
-
-/* main:not(#home-main),
-nav:not(#home-nav) {
-    display: none;
-} */
-
 /* text */
 
 body,
@@ -417,7 +448,7 @@ h6 {
 }
 
 h1 {
-    border-bottom: 1px solid var(--text-light);
+    border-bottom: 1px double var(--text-light);
 }
 
 #main-col h1 {
@@ -432,17 +463,17 @@ h1 {
 
 h2 {
     margin-top: 4rem;
-    /* border-bottom: 1px solid var(--text-light); */
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed var(--text-light);
 }
 
 h3 {
     font-size: var(--default-font-size);
     font-family: courier, monospace;
     font-weight: 500;
-    text-transform: uppercase;
-    /* text-decoration: underline; */
-    margin: var(--h3-margin);
-    /* border-bottom: 1px solid var(--text-light); */
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    /* color: var(--text-light); */
 }
 
 p {

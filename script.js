@@ -380,4 +380,3 @@ const space = new KeyboardEvent('keydown', {
 function sendSpaceKey() {
     document.dispatchEvent(space);
 }
-
