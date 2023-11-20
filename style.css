@@ -10,7 +10,7 @@
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 14rem;
+    --sidebar-width: 15rem;
     /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
@@ -385,6 +385,19 @@ div.large-table {
     max-width: 100%;
     overflow-x: scroll;
     margin: 3rem 0rem;
+}
+
+.vowels table tbody td {
+    position: relative;
+    width: 6rem;
+    height: 3.5rem;
+}
+
+.vowels table td img {
+    position: absolute;
+    max-width: 40px;
+    right: 0;
+    bottom: 0;
 }
 
 span.script,
