@@ -387,10 +387,14 @@ div.large-table {
     margin: 3rem 0rem;
 }
 
+.vowels table tbody tr td+td {
+    color: var(--text-light);
+}
+
 .vowels table tbody td {
     position: relative;
-    width: 6rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 3rem;
 }
 
 .vowels table td img {
