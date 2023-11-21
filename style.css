@@ -74,6 +74,10 @@ table td.tg-0lax.h2t {
     filter: invert(1);
 }
 
+.dark-theme img {
+    filter: invert(1);
+}
+
 .cursive table.tg td img {
     vertical-align: middle;
 }
@@ -349,7 +353,7 @@ img.small {
 
 .tg td {
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
     overflow: hidden;
@@ -359,7 +363,7 @@ img.small {
 
 .tg th {
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.5px;
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -403,6 +407,7 @@ div.large-table {
     max-width: 40px;
     left: 0;
     bottom: 0;
+    padding: 0.1rem;
 }
 
 span.script,
@@ -450,6 +455,10 @@ code,
 pre {
     font-family: 'Courier New', Courier, monospace;
     font-size: var(--default-font-size);
+}
+
+body,
+#theme-toggle {
     color: var(--text-primary);
 }
 
@@ -529,7 +538,8 @@ pre.button {
     text-align: center;
 }
 
-p code {
+p code,
+li code {
     color: var(--text-light);
 }
 
