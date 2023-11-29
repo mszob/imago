@@ -60,8 +60,8 @@ function adaptLayout() {
 
     sidebar.style.position = 'fixed';
 
+    // home versus not home stuff
     if (page == 'home') {
-        mainCol.style.position = 'fixed';
         document.getElementById('link-right').style.color = 'var(--text-primary)';
         content.style.width = 'var(--content-width-sm)';
         mainCol.style.width = 'var(--sidebar-width)';
@@ -77,13 +77,16 @@ function adaptLayout() {
         mainCol.style.position = 'relative';
         document.getElementById('link-right').style.color = 'var(--text-light)';
         mainCol.style.width = '';
+        // this allows main-col to fold out during animation, but scroll properly following
     }
 
+    // mobile vs not-mobile
     if (mobileHeight.matches || mobileWidth.matches) {
         document.getElementById('home-main').style.textAlign = 'center';
         sidebar.style.height = 'fit-content';
 
         if (page == 'home') {
+            mainCol.style.overflowX = '';
             sidebar.style.display = 'block';
             // sidebar.style.marginTop = mainCol.offsetHeight + 'px';
             content.style.height = sidebar.offsetHeight + mainCol.offsetHeight + 'px';
@@ -104,6 +107,13 @@ function adaptLayout() {
         }
 
     } else {
+        if (page == 'home') {
+            mainCol.style.overflowX = 'hidden';
+        } else {
+            setTimeout(function () {
+                mainCol.style.overflowX = '';
+            }, 300);
+        }
         document.getElementById('home-main').style.textAlign = 'left';
         wrapper.style.alignItems = 'center';
         content.style.marginTop = '';
@@ -111,8 +121,6 @@ function adaptLayout() {
         sidebar.style.display = 'block';
         sidebar.style.marginTop = '0px';
         mainCol.style.textAlign = 'left';
-        content.style.minHeight = sidebar.offsetHeight + 'px';
-        // content.style.maxHeight = sidebar.offsetHeight + 'px'; // ACTIVATE THIS TO FIX BANNER
         content.style.height = mainCol.offsetHeight + 'px';
     }
 
@@ -164,8 +172,8 @@ function typingToggle() {
 window.addEventListener("hashchange", function () {
 
     // back to animation
-    document.getElementById('content').style.transition = "height 0.2s ease-out 0.2s, width 0.1s ease-out 0s";
-
+    document.getElementById('content').style.transition = "height 0.2s ease-in 0.3s, width 0.2s ease-out 0s";
+    document.getElementById('link-right').style.transition = "color 0.3s";
     // Get the hash fragment from the URL
     route();
 });
@@ -207,6 +215,8 @@ function hidePages() {
 
 function showPage() {
     document.getElementById(page + '-main').style.display = 'block';
+    // document.getElementById(page + '-main').style.transition = 'opacity 1s';
+    document.getElementById(page + '-main').style.opacity = '1';
     document.getElementById(page + '-nav').style.display = 'block';
     adaptLayout();
 }
@@ -275,7 +285,7 @@ function game() {
     // so in that case, the page must be reloaded for game to reappear
     setTimeout(function () {
         document.getElementById("game-main").style.opacity = "1";
-    }, 200);
+    }, 400);
     if (mobileHeight.matches || mobileWidth.matches) { // game width seems to adapt to explicit main-col width, so we force a main-col width
         document.getElementById("main-col").style.width = "600px";
         document.getElementById("main-col").style.maxWidth = "85vw";

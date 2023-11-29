@@ -5,12 +5,12 @@
 
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --content-width-sm: 30rem;
+    --content-width-sm: 32rem;
     /* content-width-sm needs to match the width of sidebar+gutter+main-col */
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 15rem;
+    --sidebar-width: 14.5rem;
     /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
@@ -23,13 +23,36 @@
     --par-margin: 0.8rem;
 }
 
-
-
-
 .script {
     font-family: "pictura";
     font-size: 1.3rem;
 }
+
+/* table stuff */
+
+table {
+    margin: 80px 0px;
+    margin: auto;
+    max-width: 100% !important;
+}
+
+.tg td {
+    min-width: 2.5rem;
+}
+
+.tg .tg-8jgo {
+    border-color: var(--background-color);
+    border-right: inherit;
+    border-bottom: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tg th,
+.tg td {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 
 .cursive table tbody tr :first-child {
     font-family: "pictura";
@@ -80,6 +103,111 @@ table td.tg-0lax.h2t {
 
 .cursive table.tg td img {
     vertical-align: middle;
+}
+
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.8rem;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.8rem;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-8jgo {
+    border: none;
+    text-align: center;
+    vertical-align: top
+}
+
+.tg .tg-0pky,
+.tg .tg-0lax {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top
+}
+
+div.large-table {
+    max-width: 100%;
+    overflow-x: scroll;
+    margin: 3rem 0rem;
+}
+
+.vowels table tbody tr td+td {
+    color: var(--text-light);
+    text-align: right !important;
+}
+
+.vowels table tbody td {
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+}
+
+.vowels table td img {
+    position: absolute;
+    max-width: 40px;
+    left: 0;
+    bottom: 0;
+    padding: 0.1rem;
+}
+
+span.script,
+div.simple-script table.tg tbody tr td+td,
+div.simple-script .tg td.tg-0lax+td.tg-0lax {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.tg .tg-0lax span.script,
+.script .tg td span.script {
+    font-family: 'pictura';
+    color: var(--text-primary);
+    font-size: 1.7rem;
+    vertical-align: middle;
+}
+
+.simple-script table.tg .tg-0lax span.script {
+    font-size: 2.5rem;
+}
+
+div.simple-script table.tg tbody tr td+td {
+    font-size: 3rem;
+}
+
+.tg td.script {
+    color: var(--text-light);
+}
+
+.script tr:nth-child(1) td:nth-child(-n + 2),
+.script tr:nth-child(4) td:nth-child(-n + 2),
+.script tr:nth-child(8) td:nth-child(-n + 2),
+.script tr:nth-child(3) td:nth-child(-n + 1),
+.script tr:nth-child(9) td:nth-child(-n + 1),
+.script tr:nth-child(11) td:nth-child(-n + 1) {
+    font-family: 'Courier New', 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+}
+
+#cursive-table {
+    max-height: 30rem;
+    max-width: none;
 }
 
 
@@ -330,7 +458,6 @@ img.small {
 #main-col {
     position: relative;
     height: fit-content;
-    /* overflow: scroll; */
     padding-left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
@@ -344,108 +471,6 @@ img.small {
     letter-spacing: 0px;
 }
 
-/* tables */
-
-.tg {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.tg td {
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg th {
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg .tg-8jgo {
-    border: none;
-    text-align: center;
-    vertical-align: top
-}
-
-.tg .tg-0pky,
-.tg .tg-0lax {
-    border-color: inherit;
-    text-align: left;
-    vertical-align: top
-}
-
-div.large-table {
-    max-width: 100%;
-    overflow-x: scroll;
-    margin: 3rem 0rem;
-}
-
-.vowels table tbody tr td+td {
-    color: var(--text-light);
-    text-align: right !important;
-}
-
-.vowels table tbody td {
-    position: relative;
-    width: 5rem;
-    height: 3rem;
-}
-
-.vowels table td img {
-    position: absolute;
-    max-width: 40px;
-    left: 0;
-    bottom: 0;
-    padding: 0.1rem;
-}
-
-span.script,
-div.simple-script table.tg tbody tr td+td,
-div.simple-script .tg td.tg-0lax+td.tg-0lax {
-    text-align: center;
-    vertical-align: middle;
-}
-
-table.tg .tg-0lax span.script,
-.script .tg td span.script {
-    font-family: 'pictura';
-    color: var(--text-primary);
-    font-size: 1.7rem;
-    vertical-align: middle;
-}
-
-.simple-script table.tg .tg-0lax span.script {
-    font-size: 2.5rem;
-}
-
-div.simple-script table.tg tbody tr td+td {
-    font-size: 3rem;
-}
-
-.tg td.script {
-    color: var(--text-light);
-}
-
-.script tr:nth-child(1) td:nth-child(-n + 2),
-.script tr:nth-child(4) td:nth-child(-n + 2),
-.script tr:nth-child(8) td:nth-child(-n + 2),
-.script tr:nth-child(3) td:nth-child(-n + 1),
-.script tr:nth-child(9) td:nth-child(-n + 1),
-.script tr:nth-child(11) td:nth-child(-n + 1) {
-    font-family: 'Courier New', 'Courier New', Courier, monospace;
-    font-size: 0.8rem;
-}
 
 /* text */
 
@@ -485,7 +510,7 @@ h1 {
 }
 
 #sidebar h1 {
-    margin-left: 24px;
+    margin-left: 33px;
 }
 
 h2 {
