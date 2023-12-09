@@ -28,6 +28,11 @@
     font-size: 1.3rem;
 }
 
+img.script-scan {
+    max-height: 6rem;
+    padding: 1rem 0px;
+}
+
 /* table stuff */
 
 table {
@@ -513,6 +518,33 @@ h1 {
     margin-left: 33px;
 }
 
+/* headings */
+
+
+h1::after,
+h2::after,
+h3::after {
+    display: inline-block;
+    position: absolute;
+    color: var(--text-light);
+    opacity: 0.5;
+    font-family: "courier new";
+    /* font-size: 0.7rem; */
+}
+
+h2::after,
+h3::after {
+    right: 0;
+}
+
+#main-col h2::after {
+    content: "h2";
+}
+
+#main-col h3::after {
+    content: "h3";
+}
+
 h2 {
     margin-top: 4rem;
     margin-bottom: 2rem;
@@ -520,8 +552,10 @@ h2 {
 }
 
 h3 {
+    border-bottom: 1px dashed var(--text-light);
+    display: inline-block;
     font-size: var(--default-font-size);
-    font-family: courier, monospace;
+    font-family: 'Courier New', monospace;
     font-weight: 500;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
@@ -657,6 +691,17 @@ only screen and (min-height: 600px) {
         max-width: calc(85vw - (var(--sidebar-width) + var(--gutter-width)));
     }
 } */
+
+/* anything that is not phone */
+
+@media only screen and (min-width: 700px) and (min-height: 600px) {
+    #main-col h1::after {
+        content: "h1";
+        right: auto;
+        left: 0 !important;
+        transform: scale(-1, 1);
+    }
+}
 
 @media only screen and (min-width: 701px) and (min-height: 600px) {
     #home-nav #toggle-wrapper {
@@ -843,5 +888,11 @@ only screen and (max-height: 600px) {
         transform: scale(1, 1);
         text-align: left;
         color: var(--text-primary);
+    }
+
+    #main-col h1::after {
+        content: "h1";
+        right: 0 !important;
+        transform: scale(1, 1);
     }
 }

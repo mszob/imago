@@ -1,7 +1,3 @@
-
-
-
-
 // initial load
 
 window.addEventListener('DOMContentLoaded', function () {
