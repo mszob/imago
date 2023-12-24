@@ -628,11 +628,6 @@ li code {
     color: var(--text-light);
 }
 
-#sidebar nav a:hover,
-#sidebar #theme-toggle:hover {
-    color: var(--text-primary);
-}
-
 #name-left,
 #name-right {
     font-size: 1.52rem;
@@ -730,12 +725,11 @@ only screen and (min-height: 600px) {
 /* anything that is not phone */
 
 @media only screen and (min-width: 700px) and (min-height: 600px) {
-    /* #main-col h1::after {
-        content: "h1";
-        right: auto;
-        left: 0 !important;
-        transform: scale(-1, 1);
-    } */
+
+    #sidebar nav a:hover,
+    #sidebar #theme-toggle:hover {
+        color: var(--text-primary);
+    }
 }
 
 @media only screen and (min-width: 701px) and (min-height: 600px) {
