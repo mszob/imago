@@ -50,8 +50,8 @@ function adaptLayout() {
     var content = document.getElementById('content');
     var mainCol = document.getElementById('main-col');
     var sidebar = document.getElementById('sidebar');
-    var writing = document.getElementById('writing-toggle');
-    var typing = document.getElementById('typing-toggle');
+    var writing = document.getElementById('writing-toggled');
+    var typing = document.getElementById('typing-toggled');
 
 
     sidebar.style.position = 'fixed';
@@ -124,8 +124,8 @@ function adaptLayout() {
     // main-Col height must be calculated after auto resizing (all the above function content) in order to preserver smooth animations
     if (page == 'home') {
         if (!mobileHeight.matches || !mobileWidth.matches) {
-            if (document.getElementById('writing-toggle').classList.contains('hidden')) {
-                if (document.getElementById('typing-toggle').classList.contains('hidden')) {
+            if (document.getElementById('writing-toggled').classList.contains('hidden')) {
+                if (document.getElementById('typing-toggled').classList.contains('hidden')) {
                     globalThis.homeHeight = mainCol.offsetHeight + 'px';
                     // ^ saves the home main-col height to a variable, which can then be used to set sidebar height even when main-col height changes
                 } else {
@@ -133,7 +133,7 @@ function adaptLayout() {
                     // no idea why I need to manually adjust with random pixel values, but oh well
                 }
             } else {
-                if (document.getElementById('typing-toggle').classList.contains('hidden')) {
+                if (document.getElementById('typing-toggled').classList.contains('hidden')) {
                     globalThis.homeHeight = mainCol.offsetHeight - writing.offsetHeight - 14 + 'px';
                 } else {
                     globalThis.homeHeight = mainCol.offsetHeight - writing.offsetHeight - typing.offsetHeight - 28 + 'px';
@@ -153,13 +153,15 @@ function adaptLayout() {
 // home toggles
 
 function writingToggle() {
-    var writing = document.getElementById('writing-toggle')
+    var writing = document.getElementById('writing-toggled');
     writing.classList.toggle('hidden');
+    document.getElementById('writing-toggle').classList.toggle('collapsed');
 }
 
 function typingToggle() {
-    var typing = document.getElementById('typing-toggle')
+    var typing = document.getElementById('typing-toggled')
     typing.classList.toggle('hidden');
+    document.getElementById('typing-toggle').classList.toggle('collapsed');
 }
 
 

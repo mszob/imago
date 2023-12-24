@@ -37,39 +37,45 @@
                 <header id="banner-right" class="">
                     <a href="#home">
                         <div id="name-right" class="">pictura mundi</div>
-                        <div id="author-right" class="">by matthias</div>
+                        <div id="author-right" class="">by <span id="spacer"></span> matthias</div>
                     </a>
                 </header>
 
                 <main id="home-main">
                     <section class="hobby">
-                        <p><a href="https://picturamundi.github.io/www-operation-manta" target="_blank">opération
-                                manta the game</a></p>
+                        <p><a href="https://picturamundi.github.io/www-operation-manta" target="_blank"
+                                class="external-link">opération
+                                manta</a></p>
                     </section>
 
                     <section class="hobby">
-                        <p><a onclick="typingToggle()">typing tools</a></p>
+                        <p><a onclick="typingToggle()" class="section-toggle collapsed" id="typing-toggle">typing
+                                tools</a></p>
 
-                        <section class="hidden toggle" id="typing-toggle">
-                            <p><a href="https://github.com/picturamundi/zmk-config" target="_blank">36-key
+                        <section class="hidden toggle" id="typing-toggled">
+                            <p><a href="https://github.com/picturamundi/zmk-config" target="_blank"
+                                    class="external-link">36-key
                                     firmware</a>
                             </p>
-                            <p><a href="https://github.com/picturamundi/keyboard-layouts" target="_blank">custom
+                            <p><a href="https://github.com/picturamundi/keyboard-layouts" target="_blank"
+                                    class="external-link">
                                     typing layouts</a></p>
                         </section>
                     </section>
 
                     <section class="hobby">
-                        <p><a onclick="writingToggle()">writing tools</p>
-                        <section class="hidden toggle" id="writing-toggle">
-                            <p><a href="#script">ink script</a></p>
+                        <p><a onclick="writingToggle()" class="section-toggle collapsed" id="writing-toggle">writing
+                                tools</a></p>
+                        <section class="hidden toggle" id="writing-toggled">
+                            <p><a href="#script" class="local-page">ink script</a></p>
 
-                            <p><a href="#reflection">reflection notes</a></p>
+                            <p><a href="#reflection" class="local-page">reflection notes</a></p>
                         </section>
                     </section>
 
                     <section class="hobby">
-                        <p><a href="https://facultejeancalvin.academia.edu/MatthiasSzobody" target="_blank">research</a>
+                        <p><a href="https://facultejeancalvin.academia.edu/MatthiasSzobody" target="_blank"
+                                class="external-link">theology</a>
                         </p>
                     </section>
 
@@ -110,9 +116,9 @@
                 <main id="script-main">
                     <article>
                         <h1>ink script</h1>
-                        <p>I use this custom English script to explore aspects of writing which I find interesting. I
-                            try to make it 1] a bit more phonetic than standard English spelling, 2] fun to write in
-                            cursive!
+                        <p>This is where I lay out a writing system I use to explore what I find interesting about
+                            manuscripts. For now, I've tried to make the system 1] a bit more phonetic its spelling
+                            than standard English, and 2] fun to write in cursive!
                         </p>
 
                         <p>It is a work in progress.</p>
@@ -125,9 +131,13 @@
 
                         <h2 id="consonants">consonants</h2>
 
-                        <p>The table below summarizes how the script approaches organizing consonants.</p>
+                        <p>There are 29 English consonant sounds that are represented. Rather than simply come up
+                            with 29 unique graphemes, we'll devise a system to organize
+                            these sounds in way that makes writing them more manageable.</p>
 
                         <h3 id="consonant-sounds">consonant sounds</h3>
+
+                        <p>The table below summarizes how the script approaches organizing consonant sounds.</p>
 
                         <p>1. Sounds are organized into three families based on the general area where they are
                             pronounced
@@ -632,14 +642,16 @@
 
                         <h3>connecting words</h3>
 
-                        <p>Words can appear next to each other in a larger variety of ways than in normal english
-                            writing. There are no rules around this flexibility, other than that :</p>
+                        <p>Words don't always need to be written from left to right with spaces in between; they can
+                            succeed one another in other ways as well. Despite this flexibility, words
+                            and word order remains distinct thanks to the two following constants:</p>
 
                         <ul>
-                            <li>Seperation between distinct words is always recognizable in that those words don't
-                                connect in a cursive manner</li>
-                            <li>Word order is always recognizable by which beginning letter of a given word appears
-                                first on the writing line.</li>
+                            <li>Words never connect to one another in a cursive manner, meaning that the first letter of
+                                a word will never be written with the same pen stroke as the last letter of the
+                                preceding word.</li>
+                            <li>While whole words don't always appear left-to-right, the first letter of a word will
+                                always appear further left than the first letter of another word that follows it.</li>
                         </ul>
 
                         <p>Some exmaples :</p>
@@ -660,30 +672,23 @@
                         <p>In addition to choosing the middle form of the letter
                             <code><span class="script">t</span></code>, I have also extended the tail of this letter in
                             a way that that obscures the space between
-                            the two words because it causes the second to “sit” on the first. However, as the letters of
-                            the words are not connected with cursive, the words
-                            remain distinct. Cursive, and not spaces,
-                            distinguishes words.
+                            the two words and causes the second to “sit” on the first. This is the most common way in
+                            which words overlap on the horizontal axis, and it can be briefly explained in three points.
                         </p>
 
-                        <p>To take another example, below is how I would personally write the two words
-                            <code>of the</code>.
-                        </p>
+                        <ul>
+                            <li>
+                                A word can sit on a horizontal stroke that sits on the writing line in a previous
+                                word.
+                            </li>
+                            <li>The two words remain distinct in that no single stroke connects them.</li>
+                            <li>Word order remains discernible in that the first letter of the first word precedes the
+                                first letter of the second word.</li>
+                        </ul>
 
-                        <p style="text-align: center;">
-                            <img class="script-scan" src="assets/images/script/of-the.svg" alt="">
-                        </p>
-
-                        <p>The word <code>the</code> sits on top of the word <code>of</code> (as something of a rule, I
-                            only do this if the top word can float over a stroke which sits on the line in the bottom
-                            word). However,
-                            word
-                            order remains clear because the first letter of the first word appears before the first
-                            letter of the second word.</p>
-
-                        <p>For an example of how this looks in a phrase, below is how it would appear in the words “the
-                            nib
-                            of the pen”.</p>
+                        <p>Add more words to the phrase, and it may seem best to modify how they succeed one another. In
+                            the phrase below, <code>the nib of the pen</code>, the article <code>the</code> is
+                            now written in two different ways depending on the surrounding words.</p>
 
                         <p style="text-align: center;">
                             <img class="script-scan" src="assets/images/script/the-nib-of-the-pen.svg" alt="">
@@ -864,7 +869,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                         <div id="name-left" class="name">pictura mundi
 
                         </div>
-                        <div id="author-left" class="author">by matthias</div>
+                        <div id="author-left" class="author">by<span id="spacer"> </span>matthias</div>
                     </a>
                 </header>
 
@@ -895,7 +900,7 @@ A story note contains wikilinks such as [[this one]]. Links refer to various not
                 <nav id="script-nav">
                     <section>
                         <h1>ink script</h1>
-                        <div id="back"><a href="#home">&lt;&lt;&lt;&lt;------------ back</a></div>
+                        <div id="back"><a href="#home">&lt;&lt;&lt;&lt;----------- back</a></div>
                     </section>
                     <section>
                         <h2><a onclick="scrollToTop()">outline</a></h2>

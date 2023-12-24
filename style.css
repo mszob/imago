@@ -1,16 +1,19 @@
 :root {
-    --content-height-mobile: 27.5rem
-        /* this needs to match the height of #content contents for transitions to be seamless */
+    --default-font: 'Courier New';
+    --bold-font: courier;
+
+    --content-height-mobile: 27.5rem;
+    /* this needs to match the height of #content contents for transitions to be seamless */
     ;
 
     --content-max-width: 90vw;
     --content-width-mobile: 13rem;
-    --content-width-sm: 32rem;
+    --content-width-sm: 26rem;
     /* content-width-sm needs to match the width of sidebar+gutter+main-col */
     --content-width-md: 55rem;
     --content-width-lg: 60rem;
 
-    --sidebar-width: 14.5rem;
+    --sidebar-width: 12.01rem;
     /* sidebar-width is also used for the width of main-col at home */
     --gutter-width: 2rem;
 
@@ -22,6 +25,7 @@
     --full-trans: rgba(0, 0, 0, 0);
     --par-margin: 0.8rem;
 }
+
 
 .script {
     font-family: "pictura";
@@ -55,7 +59,7 @@ table {
 
 .tg th,
 .tg td {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--default-font), Courier, monospace;
 }
 
 
@@ -102,7 +106,7 @@ table td.tg-0lax.h2t {
     filter: invert(1);
 }
 
-.dark-theme img {
+.dark-theme img:not(.theme-img) {
     filter: invert(1);
 }
 
@@ -206,7 +210,7 @@ div.simple-script table.tg tbody tr td+td {
 .script tr:nth-child(3) td:nth-child(-n + 1),
 .script tr:nth-child(9) td:nth-child(-n + 1),
 .script tr:nth-child(11) td:nth-child(-n + 1) {
-    font-family: 'Courier New', 'Courier New', Courier, monospace;
+    font-family: var(--default-font), var(--default-font), Courier, monospace;
     font-size: 0.8rem;
 }
 
@@ -483,7 +487,7 @@ body,
 #theme-toggle,
 code,
 pre {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--default-font), var(--bold-font), monospace;
     font-size: var(--default-font-size);
 }
 
@@ -500,9 +504,18 @@ h4,
 h5,
 h6 {
     font-size: var(--default-font-size);
-    font-family: Courier, monospace;
+    font-family: var(--bold-font), monospace;
     font-weight: 500;
 }
+
+/* h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: right !important;
+    right: 0px;
+} */
 
 h1 {
     border-bottom: 1px double var(--text-light);
@@ -514,36 +527,34 @@ h1 {
     color: var(--text-light);
 }
 
-#sidebar h1 {
-    margin-left: 33px;
-}
-
 /* headings */
 
 
-h1::after,
-h2::after,
-h3::after {
+h1::before,
+h2::before,
+h3::before {
     display: inline-block;
     position: absolute;
     color: var(--text-light);
-    opacity: 0.5;
-    font-family: "courier new";
-    /* font-size: 0.7rem; */
+    opacity: 0.7;
+    font-family: var(--default-font);
+    font-size: 0.8rem;
+    /* margin-top: 0.15rem; */
+    margin-right: 100%;
 }
 
-h2::after,
-h3::after {
-    right: 0;
+h2::before,
+h3::before {
+    left: calc(var(--sidebar-width) + var(--gutter-width));
 }
 
-#main-col h2::after {
+/* #main-col h2::before {
     content: "h2";
 }
 
-#main-col h3::after {
+#main-col h3::before {
     content: "h3";
-}
+} */
 
 h2 {
     margin-top: 4rem;
@@ -551,11 +562,15 @@ h2 {
     border-bottom: 1px dashed var(--text-light);
 }
 
+#sidebar h2 {
+    margin-bottom: var(--par-margin);
+}
+
 h3 {
     border-bottom: 1px dashed var(--text-light);
-    display: inline-block;
+    /* display: inline-block; */
     font-size: var(--default-font-size);
-    font-family: 'Courier New', monospace;
+    font-family: var(--default-font), monospace;
     font-weight: 500;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
@@ -565,6 +580,10 @@ h3 {
 p {
     margin-top: var(--par-margin);
     margin-bottom: var(--par-margin);
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 pre.note {
@@ -609,9 +628,14 @@ li code {
     color: var(--text-light);
 }
 
+#sidebar nav a:hover,
+#sidebar #theme-toggle:hover {
+    color: var(--text-primary);
+}
+
 #name-left,
 #name-right {
-    font-size: 1.6rem;
+    font-size: 1.52rem;
 }
 
 #name-right,
@@ -620,6 +644,17 @@ li code {
     transform: scale(-1, 1);
     text-align: right;
 }
+
+/* #author-left,
+#author-right {
+    font-size: 0.95rem;
+    padding-right: 0.2rem;
+}
+
+#author-left #spacer,
+#author-right #spacer {
+    letter-spacing: 0.5rem;
+} */
 
 #home-main .hobby {
     margin-bottom: var(--home-section-spacing);
@@ -639,7 +674,7 @@ li code {
 
 aside#sidebar nav h2,
 aside#sidebar nav section h2 a {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--default-font), Courier, monospace;
     border: none;
     color: var(--text-primary);
 }
@@ -695,12 +730,12 @@ only screen and (min-height: 600px) {
 /* anything that is not phone */
 
 @media only screen and (min-width: 700px) and (min-height: 600px) {
-    #main-col h1::after {
+    /* #main-col h1::after {
         content: "h1";
         right: auto;
         left: 0 !important;
         transform: scale(-1, 1);
-    }
+    } */
 }
 
 @media only screen and (min-width: 701px) and (min-height: 600px) {
@@ -710,6 +745,48 @@ only screen and (min-height: 600px) {
         right: 0;
         margin-bottom: var(--home-section-spacing);
     }
+
+    .external-link::after,
+    .section-toggle::after,
+    .local-page::after {
+        position: absolute;
+        right: 0;
+        color: var(--text-light);
+        font-family: courier;
+    }
+
+    .external-link:hover::after,
+    .section-toggle:hover::after,
+    .local-page:hover::after {
+        color: var(--text-primary);
+    }
+
+    .external-link::after {
+        content: '➚';
+    }
+
+    .section-toggle::after {
+        content: '∨';
+    }
+
+    .section-toggle.collapsed::after {
+        content: '>';
+    }
+
+    .local-page::after {
+        content: '•';
+    }
+
+    /* 
+
+    .reddit-link::before,
+    .twitter-link::before,
+    .keebtalk-link::before {
+        position: absolute;
+        content: "↗︎";
+        left: 0;
+    }
+
 
     .keebtalk-link::before {
         content: "keebtalk: ";
@@ -734,7 +811,7 @@ only screen and (min-height: 600px) {
     .twitter-link:hover::before,
     .reddit-link:hover::before {
         opacity: 1;
-    }
+    } */
 
 }
 
@@ -890,9 +967,14 @@ only screen and (max-height: 600px) {
         color: var(--text-primary);
     }
 
-    #main-col h1::after {
+    /* #main-col h1::after {
         content: "h1";
         right: 0 !important;
         transform: scale(1, 1);
+    } */
+
+    h2::before,
+    h3::before {
+        left: 0;
     }
 }
