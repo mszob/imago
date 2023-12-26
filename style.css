@@ -730,6 +730,36 @@ only screen and (min-height: 600px) {
     #sidebar #theme-toggle:hover {
         color: var(--text-primary);
     }
+
+    .social-link {
+        display: inline-block;
+        width: 8.5rem;
+    }
+
+    .reddit-link::before {
+        content: "u/picturamundi";
+    }
+
+    .reddit-link:hover::before {
+        content: "reddit";
+        text-align: left;
+    }
+
+    .keebtalk-link::before {
+        content: "u/picturamundi"
+    }
+
+    .keebtalk-link:hover::before {
+        content: "keebtalk"
+    }
+
+    .twitter-link::before {
+        content: "@picturamundi"
+    }
+
+    .twitter-link:hover::before {
+        content: "twitter"
+    }
 }
 
 @media only screen and (min-width: 701px) and (min-height: 600px) {
@@ -923,6 +953,18 @@ only screen and (max-height: 600px) {
 
     #sidebar nav section {
         margin-bottom: var(--home-section-spacing);
+    }
+
+    .reddit-link::before {
+        content: "reddit";
+    }
+
+    .keebtalk-link::before {
+        content: "keebtalk";
+    }
+
+    .twitter-link::before {
+        content: "twitter";
     }
 
     #theme-toggle {
