@@ -220,6 +220,19 @@ div.simple-script table.tg tbody tr td+td {
     max-width: none;
 }
 
+#print-font-table tr td,
+#print-font-table tr th {
+    font-size: 1rem;
+}
+
+table#print-font-table {
+    margin: 0px 0px;
+}
+
+#print-font-table tbody tr td+td {
+    font-family: "pictura";
+    font-size: 1.7rem;
+}
 
 #game-main {
     transition: opacity ease-in-out 1s;
@@ -530,6 +543,12 @@ h1 {
 #main-col h1 {
     transform: scale(-1, 1);
     text-align: right;
+    color: var(--text-light);
+}
+
+#theology:hover::after {
+    content: "coming soon";
+    font-weight: 100;
     color: var(--text-light);
 }
 
