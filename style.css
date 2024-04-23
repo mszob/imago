@@ -548,6 +548,7 @@ h1 {
 
 #theology:hover::after {
     content: "coming soon";
+    font-family: var(--default-font);
     font-weight: 100;
     color: var(--text-light);
 }
@@ -961,6 +962,11 @@ and (max-height: 600px) {
 
 @media only screen and (max-width: 700px),
 only screen and (max-height: 600px) {
+
+    #theology {
+        display: none;
+    }
+
     :root {
         --default-font-size: 14px;
     }
