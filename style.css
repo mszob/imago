@@ -108,7 +108,7 @@ table td.tg-0lax.h2t {
 }
 
 .dark-theme img:not(.inverted-img) {
-    filter: invert(1) hue-rotate(180deg);
+    filter: invert(1) hue-rotate(180deg) saturate(0);
 }
 
 .cursive table.tg td img {
@@ -717,6 +717,14 @@ img {
     mix-blend-mode: var(--blend-img);
 }
 
+.dark-theme .img-transparent {
+    mix-blend-mode: lighten;
+}
+
+.light-theme .img-transparent {
+    mix-blend-mode: darken;
+    filter: saturate(0) brightness(1.1);
+}
 
 /* some folding phones portrait, mid phones landscape */
 
