@@ -618,6 +618,10 @@ li {
 
 }
 
+li::marker {
+    color: var(--text-light);
+}
+
 pre.note {
     white-space: pre-wrap;
     border: 1px solid var(--text-light);
@@ -640,6 +644,10 @@ button {
 
 main a {
     border-bottom: 1px solid var(--text-light);
+}
+
+.underlined {
+    border-bottom: 1px solid var(--text-primary);
 }
 
 pre.button {
