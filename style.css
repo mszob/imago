@@ -606,10 +606,10 @@ h3 {
 p {
     margin-top: var(--par-margin);
     margin-bottom: var(--par-margin);
-    -webkit-hyphens: auto;
+/*    -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    hyphens: auto;
+    hyphens: auto;*/
 }
 
 li {
