@@ -318,14 +318,27 @@ only screen and (max-height: 600px) {
 
 #easter-egg {
     display: none;
+    opacity: 0;
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.7rem;
+    height: 1.7rem;
     padding: 1rem;
     margin: 0.5rem;
-    opacity: 0.7;
+    animation: appear;
+    animation-delay: 60s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .dark-theme #avatar {
@@ -546,13 +559,6 @@ h1 {
     color: var(--text-light);
 }
 
-#theology:hover::after {
-    content: "coming soon";
-    font-family: var(--default-font);
-    font-weight: 100;
-    color: var(--text-light);
-}
-
 /* headings */
 
 
@@ -622,7 +628,7 @@ li::marker {
     color: var(--text-light);
 }
 
-pre.note {
+.note {
     white-space: pre-wrap;
     border: 1px solid var(--text-light);
     padding: 2rem;
@@ -656,7 +662,7 @@ pre.button {
     text-align: center;
 }
 
-p code,
+code,
 li code {
     color: var(--text-light);
 }
@@ -772,7 +778,7 @@ only screen and (min-height: 600px) {
 
 /* anything that is not phone */
 
-@media only screen and (min-width: 700px) and (min-height: 600px) {
+@media only screen and (min-width: 701px) and (min-height: 600px) {
 
     #sidebar nav a:hover,
     #sidebar #theme-toggle:hover {
@@ -835,7 +841,7 @@ only screen and (min-height: 600px) {
     }
 }
 
-@media only screen and (min-width: 701px) and (min-height: 600px) {
+@media only screen and (min-width: 701px) and (min-height: 601px) {
     #home-nav #toggle-wrapper {
         position: absolute;
         bottom: 0;
@@ -912,7 +918,7 @@ only screen and (min-height: 600px) {
 
 }
 
-@media only screen and (min-width: 700px) and (min-height: 600px) {
+@media only screen and (min-width: 701px) and (min-height: 601px) {
 
     /* social links */
 
@@ -979,16 +985,12 @@ and (max-height: 600px) {
 @media only screen and (max-width: 700px),
 only screen and (max-height: 600px) {
 
-    #theology {
+    #easter-egg {
         display: none;
     }
 
     :root {
         --default-font-size: 14px;
-    }
-
-    #easter-egg {
-        display: none;
     }
 
     #toggle-wrapper {
@@ -1080,9 +1082,11 @@ only screen and (max-height: 600px) {
     }
 
     #main-col h1 {
-        transform: scale(1, 1);
         text-align: left;
+        transform: scale(1, 1);
         color: var(--text-primary);
+/*        margin-bottom: 2rem;
+        text-align: center;*/
     }
 
     /* #main-col h1::after {
